@@ -1,0 +1,33 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/logo-grid/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-logo-grid {
+  max-width: var(--wp--custom--small-size);
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+.wp-block-heru-logo-grid .section-title {
+  font-size: 2.5rem;
+  color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-logo-grid .logo-grid__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+.wp-block-heru-logo-grid .logo-grid__logos .logo-grid__item {
+  width: calc(25% - 3rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-heru-logo-grid .logo-grid__logos img {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

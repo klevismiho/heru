@@ -1,0 +1,80 @@
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/hero/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-hero {
+  max-width: var(--wp--style--global--wide-size);
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 6rem 4rem;
+  background-color: var(--wp--preset--color--heru-secondary);
+  color: var(--wp--preset--color--white);
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.wp-block-heru-hero::before, .wp-block-heru-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+.wp-block-heru-hero::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--wp--preset--color--heru-teal) 0%, transparent 70%);
+  bottom: -150px;
+  left: -100px;
+}
+.wp-block-heru-hero::after {
+  width: 720px;
+  height: 580px;
+  background: radial-gradient(circle, var(--wp--preset--color--heru-primary) 0%, transparent 70%);
+  right: 0;
+  top: 0;
+}
+.wp-block-heru-hero .section-subtitle {
+  color: var(--wp--preset--color--heru-mint);
+}
+.wp-block-heru-hero .section-title {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  font-size: 4rem;
+}
+.wp-block-heru-hero p {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.wp-block-heru-hero .wp-block-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+.wp-block-heru-hero .wp-block-button.is-style-outline .wp-element-button {
+  background-color: transparent;
+  color: var(--wp--preset--color--heru-mint);
+  border: 1px solid var(--wp--preset--color--heru-mint);
+}
+.wp-block-heru-hero .hero-statistics {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+.wp-block-heru-hero .hero-statistics .statistic-item {
+  text-align: left;
+}
+.wp-block-heru-hero .hero-statistics .statistic-item .statistic-number {
+  font-size: 4rem;
+  color: var(--wp--preset--color--heru-lilac);
+}
+.wp-block-heru-hero .hero-statistics .statistic-item .statistic-label {
+  font-size: 1rem;
+  color: var(--wp--preset--color--white);
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,92 @@
+.wp-block-heru-hero {
+    max-width: var(--wp--style--global--wide-size);
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 6rem 4rem;
+    background-color: var(--wp--preset--color--heru-secondary);
+    color: var(--wp--preset--color--white);
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.4;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &::before {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--wp--preset--color--heru-teal) 0%, transparent 70%);
+        bottom: -150px;
+        left: -100px;
+    }
+
+    &::after {
+        width: 720px;
+        height: 580px;
+        background: radial-gradient(circle, var(--wp--preset--color--heru-primary) 0%, transparent 70%);
+        right: 0;
+        top: 0;
+    }
+
+    .section-subtitle {
+        color: var(--wp--preset--color--heru-mint);
+    }
+
+    .section-title {
+        margin-top: 1.4rem;
+        margin-bottom: 1.4rem;
+        font-size: 4rem;
+    }
+
+    p {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .wp-block-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 4rem;
+    }
+
+    .wp-block-button {
+        &.is-style-outline {
+            .wp-element-button {
+                background-color: transparent;
+                color: var(--wp--preset--color--heru-mint);
+                border: 1px solid var(--wp--preset--color--heru-mint);
+            }
+        }
+    }
+
+    .hero-statistics {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 4rem;
+
+        .statistic-item {
+            text-align: left;
+
+            .statistic-number {
+                font-size: 4rem;
+                color: var(--wp--preset--color--heru-lilac);
+            }
+
+            .statistic-label {
+                font-size: 1rem;
+                color: var(--wp--preset--color--white);
+            }
+        }
+    }
+}

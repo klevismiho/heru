@@ -1,0 +1,17 @@
+.site-header {
+    padding: 2rem 0;
+    .wp-block-navigation {
+        ul {
+            gap: 2rem;
+        } 
+    }
+    .wp-block-button {
+        &.is-style-outline {
+            .wp-element-button {
+                background-color: transparent;
+                color: var(--wp--preset--color--heru-primary);
+                border: 1px solid var(--wp--preset--color--heru-primary);
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+  "version": 3,
+
+  "settings": {
+    "layout": {
+      "contentSize": "1280px",
+      "wideSize": "1440px"
+    },
+    "custom": {
+      "small-size": "960px"
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Omnes, system-ui, sans-serif",
+          "slug": "heru-heading-font",
+          "name": "Omnes",
+          "fontFace": [
+            {
+              "fontFamily": "Omnes",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/src/fonts/Omnes.woff2" ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Poppins, sans-serif",
+          "slug": "heru-body-font",
+          "name": "Poppins",
+          "fontFace": [
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "src": [ "file:./assets/src/fonts/poppins-v24-latin-regular.woff2" ]
+            }
+          ]
+        }
+      ]
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "heru-primary",
+          "color": "#5E83FF",
+          "name": "Heru Primary"
+        },
+        {
+          "slug": "heru-secondary",
+          "color": "#191631",
+          "name": "Heru Secondary"
+        },
+        {
+          "slug": "heru-cyan",
+          "color": "#00E0FF",
+          "name": "Heru Cyan"
+        },
+        {
+          "slug": "heru-teal",
+          "color": "#24E8BD",
+          "name": "Heru Teal"
+        },
+        {
+          "slug": "heru-mint",
+          "color": "#5FFFA3",
+          "name": "Heru Mint"
+        },
+        {
+          "slug": "heru-lilac",
+          "color": "#9FA8FF",
+          "name": "Heru Lilac"
+        }
+      ]
+    }
+  },
+
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--heru-body-font)"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heru-heading-font)",
+          "fontWeight": "400"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "color": {
+          "background": "var(--wp--preset--color--heru-primary)",
+          "text": "#FFFFFF"
+        },
+        "typography": {
+          "fontWeight": "700"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "#FFFFFF"
+            },
+            ":hover": {
+              "color": {
+                "background": "var(--wp--preset--color--heru-secondary)",
+                "text": "#FFFFFF"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
