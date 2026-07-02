@@ -7,7 +7,9 @@
 	"category": "heru",
 	"icon": "cover-image",
 	"description": "Heru hero section",
-	"example": {},
+	"example": {
+		"viewportWidth": 1200
+	},
 	"supports": {
 		"html": false
 	},

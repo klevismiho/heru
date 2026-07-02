@@ -15,5 +15,7 @@ class Block_Registry {
 	public function register_blocks() {
 		register_block_type( HERU_THEME_DIR . '/blocks/hero' );
 		register_block_type( HERU_THEME_DIR . '/blocks/logo-grid' );
+		register_block_type( HERU_THEME_DIR . '/blocks/split-card-with-highlights' );
+		register_block_type( HERU_THEME_DIR . '/blocks/split-with-image' );
 	}
 }

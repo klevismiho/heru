@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/logo-grid/style.scss"
-/*!*************************************!*\
-  !*** ./blocks/logo-grid/style.scss ***!
-  \*************************************/
+/***/ "./blocks/split-card-with-highlights/style.scss"
+/*!******************************************************!*\
+  !*** ./blocks/split-card-with-highlights/style.scss ***!
+  \******************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -44,20 +44,10 @@ module.exports = window["wp"]["blocks"];
 
 /***/ },
 
-/***/ "@wordpress/components"
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-(module) {
-
-module.exports = window["wp"]["components"];
-
-/***/ },
-
-/***/ "./blocks/logo-grid/edit.js"
-/*!**********************************!*\
-  !*** ./blocks/logo-grid/edit.js ***!
-  \**********************************/
+/***/ "./blocks/split-card-with-highlights/edit.js"
+/*!***************************************************!*\
+  !*** ./blocks/split-card-with-highlights/edit.js ***!
+  \***************************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -65,164 +55,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 
 
-
-function Edit({
-  attributes,
-  setAttributes
-}) {
-  const {
-    heading,
-    buttonText,
-    buttonUrl,
-    logos
-  } = attributes;
+function Edit() {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
-  const updateLogo = (index, field, value) => {
-    const updated = logos.map((item, i) => i === index ? {
-      ...item,
-      [field]: value
-    } : item);
-    setAttributes({
-      logos: updated
-    });
-  };
-  const removeLogo = index => {
-    setAttributes({
-      logos: logos.filter((_, i) => i !== index)
-    });
-  };
-  const addLogo = media => {
-    setAttributes({
-      logos: [...logos, {
-        src: media.url,
-        alt: media.alt || '',
-        url: ''
-      }]
-    });
-  };
-  const moveLogo = (index, direction) => {
-    const updated = [...logos];
-    const newIndex = index + direction;
-    if (newIndex < 0 || newIndex >= updated.length) return;
-    [updated[index], updated[newIndex]] = [updated[newIndex], updated[index]];
-    setAttributes({
-      logos: updated
-    });
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        title: "Logos",
-        initialOpen: true,
-        children: [logos.map((logo, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          style: {
-            marginBottom: '16px',
-            paddingBottom: '16px',
-            borderBottom: '1px solid #e0e0e0'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: logo.src,
-            alt: logo.alt,
-            style: {
-              maxWidth: '100%',
-              marginBottom: '8px'
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: "Link URL (optional)",
-            value: logo.url,
-            onChange: value => updateLogo(index, 'url', value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: "Alt text",
-            value: logo.alt,
-            onChange: value => updateLogo(index, 'alt', value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              gap: '8px',
-              marginBottom: '8px'
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-              icon: "arrow-up-alt2",
-              label: "Move up",
-              variant: "secondary",
-              onClick: () => moveLogo(index, -1),
-              disabled: index === 0
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-              icon: "arrow-down-alt2",
-              label: "Move down",
-              variant: "secondary",
-              onClick: () => moveLogo(index, 1),
-              disabled: index === logos.length - 1
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-              isDestructive: true,
-              variant: "secondary",
-              onClick: () => removeLogo(index),
-              children: "Remove"
-            })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    ...blockProps,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "top-section",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "top-presentation",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "section-left",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "section-eyebrow",
+            children: "ABOUT HERU"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            className: "section-title",
+            children: "Clinical Excellence"
           })]
-        }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
-            onSelect: addLogo,
-            allowedTypes: ['image'],
-            render: ({
-              open
-            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-              variant: "primary",
-              onClick: open,
-              children: "Add Logo"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "wp-block-buttons",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "wp-block-button",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              className: "wp-block-button__link wp-element-button",
+              href: "#",
+              children: "Shop Heru"
             })
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "wp-block-button is-style-outline",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              className: "wp-block-button__link wp-element-button",
+              href: "#",
+              children: "Meet the Team"
+            })
+          })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        title: "Button",
-        initialOpen: false,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-          label: "Button URL",
-          value: buttonUrl,
-          onChange: value => setAttributes({
-            buttonUrl: value
-          })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "top-details",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Our technology is the culmination of over 15 years of clinical and scientific research and development led by Heru\u2019s Founder and CEO Mohamed Abou Shousha, MD, PhD, associate professor of clinical ophthalmology, Bascom Palmer Eye Institute."
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      ...blockProps,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-        tagName: "h2",
-        className: "section-title",
-        value: heading,
-        onChange: value => setAttributes({
-          heading: value
-        }),
-        placeholder: "Enter heading\u2026"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "logo-grid__logos",
-        children: [logos.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          style: {
-            opacity: 0.5
-          },
-          children: "Add logos via the sidebar panel."
-        }), logos.map((logo, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "logo-grid__item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: logo.src,
-            alt: logo.alt
-          })
-        }, index))]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "wp-block-button",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-          tagName: "span",
-          value: buttonText,
-          className: "wp-block-button__link wp-element-button",
-          onChange: value => setAttributes({
-            buttonText: value
-          }),
-          placeholder: "Button text\u2026"
-        })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "bottom-section",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "item",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: "For ECPs"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Increased exam lane throughput with less time spent on manual, variable pre-testing and more time on patient care."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "item",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: "For Technicians"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Faster, guided workflows with cleaner outputs and fewer \"what happened here?\" moments."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "item",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: "For Patients"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Higher confidence in the practice and process when the experience feels modern and guided."
+        })]
       })]
     })]
   });
@@ -230,18 +129,18 @@ function Edit({
 
 /***/ },
 
-/***/ "./blocks/logo-grid/index.js"
-/*!***********************************!*\
-  !*** ./blocks/logo-grid/index.js ***!
-  \***********************************/
+/***/ "./blocks/split-card-with-highlights/index.js"
+/*!****************************************************!*\
+  !*** ./blocks/split-card-with-highlights/index.js ***!
+  \****************************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/logo-grid/style.scss");
-/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/logo-grid/edit.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/logo-grid/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/logo-grid/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/split-card-with-highlights/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/split-card-with-highlights/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/split-card-with-highlights/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/split-card-with-highlights/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -283,10 +182,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./blocks/logo-grid/save.js"
-/*!**********************************!*\
-  !*** ./blocks/logo-grid/save.js ***!
-  \**********************************/
+/***/ "./blocks/split-card-with-highlights/save.js"
+/*!***************************************************!*\
+  !*** ./blocks/split-card-with-highlights/save.js ***!
+  \***************************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -294,27 +193,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ save)
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
 
 
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {Element} Element to render.
+ */
 function save() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-      children: "Trusted By Industry Experts."
-    })
-  });
+  return null;
 }
 
 /***/ },
 
-/***/ "./blocks/logo-grid/block.json"
-/*!*************************************!*\
-  !*** ./blocks/logo-grid/block.json ***!
-  \*************************************/
+/***/ "./blocks/split-card-with-highlights/block.json"
+/*!******************************************************!*\
+  !*** ./blocks/split-card-with-highlights/block.json ***!
+  \******************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/logo-grid","version":"0.1.0","title":"Logo Grid","category":"heru","icon":"grid-view","description":"Example block scaffolded with Create Block tool.","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"heading":{"type":"string","default":"Trusted By Industry Experts."},"buttonText":{"type":"string","default":"See the Difference"},"buttonUrl":{"type":"string","default":"#"},"logos":{"type":"array","default":[],"items":{"type":"object"}}},"textdomain":"logo-grid","editorScript":"file:../../assets/build/blocks/logo-grid/index.js","style":"file:../../assets/build/blocks/logo-grid/style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/split-card-with-highlights","version":"0.1.0","title":"Split Card with Highlights","category":"heru","icon":"feedback","description":"Split Card with Highlights","example":{"viewportWidth":1200},"supports":{"html":false},"textdomain":"heru","editorScript":"file:../../assets/build/blocks/split-card-with-highlights/index.js","style":"file:../../assets/build/blocks/split-card-with-highlights/style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -488,7 +396,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./blocks/logo-grid/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./blocks/split-card-with-highlights/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

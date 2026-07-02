@@ -7,7 +7,9 @@
 	"category": "heru",
 	"icon": "grid-view",
 	"description": "Example block scaffolded with Create Block tool.",
-	"example": {},
+	"example": {
+		"viewportWidth": 1200
+	},
 	"supports": {
 		"html": false
 	},

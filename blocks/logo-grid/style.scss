@@ -9,19 +9,19 @@
 		color: var(--wp--preset--color--heru-primary);
 	}
 	.logo-grid__logos {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 3rem;
-	margin: 3rem 0;
-
-	.logo-grid__item {
-		width: calc( 25% - 3rem );
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-	}
+		gap: 3rem;
+		margin: 3rem 0;
+
+		.logo-grid__item {
+			width: calc( 25% - 3rem );
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		img {
 			display: inline-block;
 		}

@@ -1,0 +1,80 @@
+.wp-block-heru-split-card-with-highlights {
+    max-width: var(--wp--style--global--content-size);
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 4rem;
+    background-color: #024657;
+    border-radius: 20px;
+
+    .top-section {
+        display: flex;
+        gap: 4rem;
+
+        .top-presentation {
+            color: var(--wp--preset--color--white);
+
+            .section-eyebrow {
+                font-weight: 600;
+                color: var(--wp--preset--color--heru-cyan);
+            }
+
+            .section-title {
+                margin: 1rem 0 2rem 0;
+                font-size: 4.5rem;
+            }
+
+            .wp-block-buttons {
+                display: flex;
+                gap: 1rem;
+
+                .wp-block-button {
+                    .wp-element-button {
+                        background-color: var(--wp--preset--color--heru-cyan);
+                        color: var(--wp--preset--color--black);
+                    }
+
+                    &.is-style-outline {
+                        .wp-element-button {
+                            background-color: transparent;
+                            color: var(--wp--preset--color--white);
+                            border: 1px solid var(--wp--preset--color--white);
+                        }
+                    }
+                }
+            }
+        }
+
+        .top-details {
+            padding: 3rem;
+            background-color: var(--wp--preset--color--white);
+            border-radius: 20px;
+
+            p {
+                margin: 0;
+                font-size: 1.5rem;
+            }
+
+            img {
+                margin-top: 1rem;
+            }
+        }
+    }
+    .bottom-section {
+        display: flex;
+        gap: 4rem;
+        max-width: 80%;
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 4rem;
+        text-align: center;
+        color: var(--wp--preset--color--white);
+        h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+}

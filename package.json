@@ -6,7 +6,9 @@
   "scripts": {
     "dev:assets": "vite build --watch",
     "dev:hero": "wp-scripts start blocks/hero/index.js --output-path assets/build/blocks/hero",
-    "dev:logo-grid": "wp-scripts start blocks/logo-grid/index.js --output-path assets/build/blocks/logo-grid"
+    "dev:logo-grid": "wp-scripts start blocks/logo-grid/index.js --output-path assets/build/blocks/logo-grid",
+    "dev:split-card-with-highlights": "wp-scripts start blocks/split-card-with-highlights/index.js --output-path assets/build/blocks/split-card-with-highlights",
+    "dev:split-with-image": "wp-scripts start blocks/split-with-image/index.js --output-path assets/build/blocks/split-with-image"
   },
   "keywords": [],
   "author": "",

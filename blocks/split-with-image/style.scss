@@ -1,0 +1,37 @@
+.wp-block-heru-split-with-image {
+    display: flex;
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 4rem 0;
+    gap: 4rem;
+
+    .section-content {
+        flex: 1;
+
+        .section-title {
+            margin: 0;
+            font-size: 4.5rem;
+        }
+
+        .wp-block-buttons {
+            display: flex;
+            gap: 1rem;
+
+            .wp-block-button {
+                .wp-element-button {}
+
+                &.is-style-outline {
+                    .wp-element-button {
+                        background-color: transparent;
+                        color: var(--wp--preset--color--heru-primary);
+                        border: 1px solid var(--wp--preset--color--heru-primary);
+                    }
+                }
+            }
+        }
+    }
+
+    .section-image {
+        flex: 1;
+    }
+}
