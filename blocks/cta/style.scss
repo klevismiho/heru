@@ -1,0 +1,35 @@
+.wp-block-heru-cta {
+    background-color: var(--wp--preset--color--heru-secondary);
+    padding: 4rem 0;
+
+    .cta-inner {
+        display: flex;
+        gap: 4rem;
+        max-width: var(--wp--style--global--content-size);
+        margin: 0 auto;
+    }
+
+    .section-content {
+        flex: 1;
+        color: var(--wp--preset--color--white);
+
+        .section-title {
+            margin: 0;
+            font-size: 4.5rem;
+        }
+
+        .wp-block-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .section-image {
+        flex: 1;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+}

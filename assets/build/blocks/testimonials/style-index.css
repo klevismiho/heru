@@ -1,0 +1,62 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/testimonials/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-testimonials {
+  max-width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+.wp-block-heru-testimonials .section-header {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.wp-block-heru-testimonials .section-header .section-title {
+  margin: 0;
+  font-size: 3.75rem;
+  color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-testimonials .section-header .embla__dots {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+.wp-block-heru-testimonials .section-header .embla__dots .embla__dot {
+  width: 15px;
+  height: 15px;
+  background-color: #D9D9D9;
+  border-radius: 50px;
+  border: none;
+}
+.wp-block-heru-testimonials .section-header .embla__dots .embla__dot.is-selected {
+  background-color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-testimonials .testimonial {
+  display: flex;
+  gap: 2rem;
+}
+.wp-block-heru-testimonials .testimonial .testimonial__image {
+  flex: 0 0 200px;
+}
+.wp-block-heru-testimonials .testimonial .testimonial__content {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.wp-block-heru-testimonials .testimonial .testimonial__content a {
+  color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-testimonials .testimonial .testimonial__author {
+  font-size: 1rem;
+}
+.wp-block-heru-testimonials .embla__viewport {
+  overflow: hidden;
+}
+.wp-block-heru-testimonials .embla__container {
+  display: flex;
+}
+.wp-block-heru-testimonials .embla__slide {
+  flex: 0 0 100%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -302,7 +302,7 @@ function save() {
   \********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/hero","version":"0.1.0","title":"Hero","category":"heru","icon":"cover-image","description":"Heru hero section","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"The Software Powering Modern Eye Exams"},"description":{"type":"string","default":"Heru is a clinical diagnostic software company that helps clinics deliver more consistent workflows, clearer results, and better patient and technician experiences without compromising clinical rigor."},"subtitle":{"type":"string","default":"MEET HERU"},"buttons":{"type":"array","default":[{"text":"Test Drive","url":"#","outlined":true},{"text":"Shop Heru","url":"#","outlined":false}],"items":{"type":"object"}},"statistics":{"type":"array","default":[{"number":"1.5M+","label":"Eyes Tested"},{"number":"1700+","label":"Patients in Clinical Trials"},{"number":"70+","label":"US and International Patents"},{"number":"15+","label":"Years of Clinical Research out of Bascom Palmer"},{"number":"13","label":"Testing Modalities And Counting..."}],"items":{"type":"object"}}},"textdomain":"hero","editorScript":"file:../../assets/build/blocks/hero/index.js","style":"file:../../assets/build/blocks/hero/style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/hero","version":"0.1.0","title":"Hero","category":"heru","icon":"cover-image","description":"Heru hero section","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"The Software Powering Modern Eye Exams"},"description":{"type":"string","default":"Heru is a clinical diagnostic software company that helps clinics deliver more consistent workflows, clearer results, and better patient and technician experiences without compromising clinical rigor."},"subtitle":{"type":"string","default":"MEET HERU"},"buttons":{"type":"array","default":[{"text":"Test Drive","url":"#","outlined":true},{"text":"Shop Heru","url":"#","outlined":false}],"items":{"type":"object"}},"statistics":{"type":"array","default":[{"number":"1.5M+","label":"Eyes Tested"},{"number":"1700+","label":"Patients in Clinical Trials"},{"number":"70+","label":"US and International Patents"},{"number":"15+","label":"Years of Clinical Research out of Bascom Palmer"},{"number":"13","label":"Testing Modalities And Counting..."}],"items":{"type":"object"}}},"textdomain":"hero","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -425,8 +425,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"index": 0,
-/******/ 			"./style-index": 0
+/******/ 			"hero/index": 0,
+/******/ 			"hero/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -476,7 +476,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./blocks/hero/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["hero/style-index"], () => (__webpack_require__("./blocks/hero/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

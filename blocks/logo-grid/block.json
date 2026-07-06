@@ -35,8 +35,8 @@
 		}
 	},
 	"textdomain": "logo-grid",
-	"editorScript": "file:../../assets/build/blocks/logo-grid/index.js",
-	"style": "file:../../assets/build/blocks/logo-grid/style-index.css",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js",
 	"render": "file:./render.php"
 }

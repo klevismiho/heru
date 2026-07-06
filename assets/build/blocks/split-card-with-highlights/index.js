@@ -222,7 +222,7 @@ function save() {
   \******************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/split-card-with-highlights","version":"0.1.0","title":"Split Card with Highlights","category":"heru","icon":"feedback","description":"Split Card with Highlights","example":{"viewportWidth":1200},"supports":{"html":false},"textdomain":"heru","editorScript":"file:../../assets/build/blocks/split-card-with-highlights/index.js","style":"file:../../assets/build/blocks/split-card-with-highlights/style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/split-card-with-highlights","version":"0.1.0","title":"Split Card with Highlights","category":"heru","icon":"feedback","description":"Split Card with Highlights","example":{"viewportWidth":1200},"supports":{"html":false},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -345,8 +345,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"index": 0,
-/******/ 			"./style-index": 0
+/******/ 			"split-card-with-highlights/index": 0,
+/******/ 			"split-card-with-highlights/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -396,7 +396,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./blocks/split-card-with-highlights/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["split-card-with-highlights/style-index"], () => (__webpack_require__("./blocks/split-card-with-highlights/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

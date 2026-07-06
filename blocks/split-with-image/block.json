@@ -14,7 +14,7 @@
 		"html": false
 	},
 	"textdomain": "heru",
-	"editorScript": "file:../../assets/build/blocks/split-with-image/index.js",
-	"style": "file:../../assets/build/blocks/split-with-image/style-index.css",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
 	"render": "file:./render.php"
 }
