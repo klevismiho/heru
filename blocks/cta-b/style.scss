@@ -1,0 +1,45 @@
+.wp-block-heru-cta-b {
+    max-width: var(--wp--style--global--content-size);
+    margin: 0 auto;
+    padding: 6rem;
+    background-color: var(--wp--preset--color--heru-secondary);
+    color: var(--wp--preset--color--white);
+    text-align: center;
+    border-radius: 20px;
+
+    .section-title {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 0;
+        font-size: 2.25;
+        color: var(--wp--preset--color--heru-lilac);
+    }
+
+    p {
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .wp-block-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 3rem;
+
+        .wp-block-button {
+            .wp-element-button {
+                background-color: var(--wp--preset--color--heru-lilac);
+                color: var(--wp--preset--color--black);
+            }
+
+            &.is-style-outline {
+                .wp-element-button {
+                    background-color: transparent;
+                    color: var(--wp--preset--color--heru-lilac);
+                    border: 1px solid var(--wp--preset--color--heru-lilac);
+                }
+            }
+        }
+    }
+}

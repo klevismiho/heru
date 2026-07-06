@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "heru/split-with-image-b",
+	"version": "0.1.0",
+	"title": "Split Card with Image B",
+	"category": "heru",
+	"icon": "align-pull-right",
+	"description": "Split Card with Image B",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "heru",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
