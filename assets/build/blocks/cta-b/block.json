@@ -13,6 +13,19 @@
   "supports": {
     "html": false
   },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "buttons": {
+      "type": "array"
+    }
+  },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",

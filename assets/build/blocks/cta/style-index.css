@@ -8,6 +8,7 @@
 .wp-block-heru-cta .cta-inner {
   display: flex;
   gap: 4rem;
+  align-items: center;
   max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
 }
@@ -17,7 +18,7 @@
 }
 .wp-block-heru-cta .section-content .section-title {
   margin: 0;
-  font-size: 4.5rem;
+  font-size: 2.5rem;
 }
 .wp-block-heru-cta .section-content .wp-block-buttons {
   display: flex;

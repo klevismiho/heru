@@ -4,8 +4,11 @@
     margin: 4rem auto;
     max-width: var(--wp--style--global--content-size);
     padding: 4rem;
-    background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 20%, white);
-    border-radius: 20px;
+
+    &.has-background {
+        background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 20%, white);
+        border-radius: 20px;
+    }
 
     .section-content {
         flex: 1;
@@ -37,5 +40,9 @@
 
     .section-podcast-embed {
         flex: 1;
+
+        iframe {
+            border-radius: 12px;
+        }
     }
 }

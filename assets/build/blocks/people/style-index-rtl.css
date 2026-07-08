@@ -1,0 +1,95 @@
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/people/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-people {
+  display: flex;
+  max-width: var(--wp--style--global--content-size);
+  margin: 4rem auto;
+  padding: 2rem 0;
+  gap: 6rem;
+}
+.wp-block-heru-people .section-content {
+  flex: 1;
+}
+.wp-block-heru-people .section-content .section-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-people .section-content p {
+  font-size: 1.5rem;
+}
+.wp-block-heru-people .section-image {
+  flex: 1;
+}
+.wp-block-heru-people .section-image img {
+  width: 100%;
+}
+.wp-block-heru-people .wp-block-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.wp-block-heru-people .wp-block-buttons .wp-block-button {
+  width: fit-content;
+}
+.wp-block-heru-people .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
+  background-color: transparent;
+  color: var(--wp--preset--color--heru-primary);
+  border: 1px solid var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-people .people-list {
+  flex: 1;
+}
+.wp-block-heru-people .people-list .person {
+  margin-bottom: 1rem;
+}
+.wp-block-heru-people .people-list .person.is-open .person-summary::after {
+  transform: translateY(-30%) rotate(-225deg);
+}
+.wp-block-heru-people .people-list .person .person-summary {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  min-height: 50px;
+  border-bottom: 1px solid var(--wp--preset--color--black);
+  position: relative;
+  cursor: pointer;
+}
+.wp-block-heru-people .people-list .person .person-summary::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(-45deg);
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+}
+.wp-block-heru-people .people-list .person .person-summary .person-image {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+.wp-block-heru-people .people-list .person .person-summary .person-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.wp-block-heru-people .people-list .person .person-summary .person-details .person-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.wp-block-heru-people .people-list .person .person-summary .person-details .person-title {
+  font-size: 1rem;
+}
+.wp-block-heru-people .people-list .person .person-bio {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}

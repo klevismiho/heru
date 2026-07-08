@@ -1,0 +1,119 @@
+.wp-block-heru-people {
+    display: flex;
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 2rem 0;
+    gap: 6rem;
+
+    .section-content {
+        flex: 1;
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--wp--preset--color--heru-primary);
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+    }
+
+    .section-image {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .wp-block-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        .wp-block-button {
+            width: fit-content;
+
+            &.is-style-outline {
+                .wp-element-button {
+                    background-color: transparent;
+                    color: var(--wp--preset--color--heru-primary);
+                    border: 1px solid var(--wp--preset--color--heru-primary);
+                }
+            }
+        }
+    }
+
+    .people-list {
+        flex: 1;
+
+        .person {
+            margin-bottom: 1rem;
+
+            &.is-open {
+                .person-summary {
+                    &::after {
+                        transform: translateY(-30%) rotate(225deg);
+                    }
+                }
+            }
+
+            .person-summary {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                min-height: 50px;
+                border-bottom: 1px solid var(--wp--preset--color--black);
+                position: relative;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    width: 10px;
+                    height: 10px;
+                    border-right: 2px solid currentColor;
+                    border-bottom: 2px solid currentColor;
+                    transform: translateY(-70%) rotate(45deg);
+                    transition: transform 0.3s ease;
+                    opacity: 0.5;
+                }
+
+                .person-image {
+                    width: 110px;
+                    height: 110px;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
+                }
+
+                .person-details {
+                    .person-name {
+                        margin: 0;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+
+                    .person-title {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .person-bio {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+            }
+        }
+    }
+}

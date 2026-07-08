@@ -1,20 +1,44 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "heru/podcast",
-	"version": "0.1.0",
-	"title": "Podcast",
-	"category": "heru",
-	"icon": "align-pull-right",
-	"description": "Podcast",
-	"example": {
-		"viewportWidth": 1200
-	},
-	"supports": {
-		"html": false
-	},
-	"textdomain": "heru",
-	"editorScript": "file:./index.js",
-	"style": "file:./style-index.css",
-	"render": "file:./render.php"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/podcast",
+  "version": "0.1.0",
+  "title": "Podcast",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Podcast",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "iframe": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Follow Wavelengths",
+          "outlined": false
+        }
+      ]
+    },
+    "background": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
 }

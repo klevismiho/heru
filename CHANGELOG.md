@@ -15,3 +15,10 @@
 ## 1 July 2026
 - Build split-card-with-highlights block frontend
 - Build split-with-image block frontend
+
+## 6 July 2026
+- Build testimonials frontend
+- Build cta-b frontend
+
+## 7 July 2026 
+- Build People block with editable title, description, buttons. Selection of taxonomy and option to hide thumbnails

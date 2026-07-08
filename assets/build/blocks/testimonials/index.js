@@ -76,7 +76,8 @@ function Edit() {
     return select('core').getEntityRecords('postType', 'testimonial', {
       per_page: 10,
       order: 'desc',
-      orderby: 'date'
+      orderby: 'date',
+      _embed: true
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
@@ -100,32 +101,35 @@ function Edit() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               children: "Loading testimonials..."
             })
-          }), testimonials && testimonials.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "embla__slide",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "testimonial",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "testimonial__image",
-                children: item.featured_media_url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                  src: item.featured_media_url,
-                  alt: item.title.rendered
-                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                  src: "https://via.placeholder.com/200",
-                  alt: "placeholder"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "testimonial__content",
+          }), testimonials && testimonials.map(item => {
+            const featuredImage = item._embedded?.['wp:featuredmedia']?.[0]?.media_details?.sizes?.medium?.source_url || item._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "embla__slide",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "testimonial",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  dangerouslySetInnerHTML: {
-                    __html: item.content.rendered
-                  }
+                  className: "testimonial__image",
+                  children: featuredImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: featuredImage,
+                    alt: item.title.rendered
+                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: "https://via.placeholder.com/200",
+                    alt: "placeholder"
+                  })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "testimonial__author",
-                  children: ["-- ", item.title.rendered]
+                  className: "testimonial__content",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    dangerouslySetInnerHTML: {
+                      __html: item.content.rendered
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "testimonial__author",
+                    children: ["-- ", item.title.rendered]
+                  })]
                 })]
-              })]
-            })
-          }, item.id))]
+              })
+            }, item.id);
+          })]
         })
       })
     })]

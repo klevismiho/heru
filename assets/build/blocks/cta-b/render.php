@@ -1,25 +1,51 @@
 <?php
 
 $wrapper_attributes = get_block_wrapper_attributes();
+
+$title       = $attributes['title'] ?? '';
+$description = $attributes['description'] ?? '';
+$buttons     = $attributes['buttons'] ?? [];
+
 ?>
 
 <section <?php echo $wrapper_attributes; ?>>
-  <div class="cta-inner">
-    <div class="section-content">
-      <h2 class="section-title">We are driven by innovation and our goal to provide physicians and patients with cutting-edge technology to help improve access to eye care.</h2>
-      <p>The rapid introduction of telemedicine, and the rising prevalence of glaucoma worldwide, illustrates the need for a portable and user-friendly platform that offers a novel and more cost-effective means of testing.</p>
-      <div class="wp-block-buttons">
-        <div class="wp-block-button">
-          <a class="wp-block-button__link wp-element-button" href="#">
-            Stay Connected
-          </a>
-        </div>
-        <div class="wp-block-button is-style-outline">
-          <a class="wp-block-button__link wp-element-button" href="#">
-            Read Clinical Studies
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="cta-inner">
+		<div class="section-content">
+
+			<?php if ( $title ) : ?>
+				<h2 class="section-title">
+					<?php echo wp_kses_post( $title ); ?>
+				</h2>
+			<?php endif; ?>
+
+			<?php if ( $description ) : ?>
+				<p>
+					<?php echo wp_kses_post( $description ); ?>
+				</p>
+			<?php endif; ?>
+
+
+			<?php if ( ! empty( $buttons ) ) : ?>
+				<div class="wp-block-buttons">
+
+					<?php foreach ( $buttons as $button ) : ?>
+
+						<div class="wp-block-button<?php echo ! empty( $button['outlined'] ) ? ' is-style-outline' : ''; ?>">
+
+							<a 
+								class="wp-block-button__link wp-element-button"
+								href="<?php echo esc_url( $button['url'] ?? '#' ); ?>"
+							>
+								<?php echo esc_html( $button['text'] ?? '' ); ?>
+							</a>
+
+						</div>
+
+					<?php endforeach; ?>
+
+				</div>
+			<?php endif; ?>
+
+		</div>
+	</div>
 </section>

@@ -13,6 +13,30 @@
   "supports": {
     "html": false
   },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "iframe": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Follow Wavelengths",
+          "outlined": false
+        }
+      ]
+    },
+    "background": {
+      "type": "boolean",
+      "default": true
+    }
+  },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",

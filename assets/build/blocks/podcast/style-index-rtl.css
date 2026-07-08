@@ -7,6 +7,8 @@
   margin: 4rem auto;
   max-width: var(--wp--style--global--content-size);
   padding: 4rem;
+}
+.wp-block-heru-podcast.has-background {
   background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 20%, white);
   border-radius: 20px;
 }
@@ -30,4 +32,7 @@
 }
 .wp-block-heru-podcast .section-podcast-embed {
   flex: 1;
+}
+.wp-block-heru-podcast .section-podcast-embed iframe {
+  border-radius: 12px;
 }

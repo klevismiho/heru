@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/split-card-with-image-c",
+  "version": "0.1.0",
+  "title": "Split Card with Image C",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Split Card with Image C",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "image": {
+      "type": "object",
+      "default": null
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "buttons": {
+      "type": "array"
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

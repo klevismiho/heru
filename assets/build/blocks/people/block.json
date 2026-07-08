@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/people",
+  "version": "0.1.0",
+  "title": "People",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "People",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Executive Team"
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "selectedGroup": {
+      "type": "number",
+      "default": 0
+    },
+    "buttons": {
+      "type": "array",
+      "default": []
+    },
+    "showImages": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
