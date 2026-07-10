@@ -76,7 +76,9 @@ $people_query = new WP_Query($args);
               <h3 class="person-name">
                 <?php the_title(); ?>
               </h3>
-              <div class="person-title"><?php the_field('person_title'); ?></div>
+              <?php if (!empty(get_field('person_title'))) : ?>
+                <div class="person-title"><?php the_field('person_title'); ?></div>
+              <?php endif; ?>
             </div>
           </div>
 

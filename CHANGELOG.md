@@ -22,3 +22,9 @@
 
 ## 7 July 2026 
 - Build People block with editable title, description, buttons. Selection of taxonomy and option to hide thumbnails
+
+## 8 July 2026 
+- Build split-card-with-image-c block
+
+## 9 July 2026
+- Build benefits block and tabs block from scrach

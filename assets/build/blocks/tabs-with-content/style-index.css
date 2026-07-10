@@ -1,0 +1,99 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/tabs-with-content/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wp-block-heru-tabs-with-content {
+  margin: 6rem auto;
+  max-width: var(--wp--style--global--content-size);
+  padding: 4rem 0;
+  font-family: var(--wp--preset--font-family--heru-heading-font);
+}
+.wp-block-heru-tabs-with-content .section-header {
+  text-align: center;
+}
+.wp-block-heru-tabs-with-content .section-header .section-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+.wp-block-heru-tabs-with-content .section-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs .tab.is-active {
+  background-color: var(--wp--preset--color--heru-primary);
+  border: 2px solid transparent;
+  color: #FFFFFF;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs .tab {
+  padding: 15px 30px 13px 30px;
+  background-color: #fff;
+  color: var(--wp--preset--color--heru-primary);
+  font-weight: 700;
+  border: 2px solid var(--wp--preset--color--heru-primary);
+  border-radius: 50px;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  display: none;
+  display: none;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content.is-active {
+  animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .image-wrapper {
+  flex: 0 0 35%;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper h3 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li::before {
+  content: "✓";
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

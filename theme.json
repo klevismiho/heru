@@ -81,6 +81,11 @@
           "slug": "heru-lilac",
           "color": "#9FA8FF",
           "name": "Heru Lilac"
+        },
+        {
+          "slug": "heru-light-gray",
+          "color": "#F7F7F7",
+          "name": "Heru Light Gray"
         }
       ]
     }

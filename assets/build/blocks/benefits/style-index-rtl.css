@@ -1,0 +1,48 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/benefits/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-benefits {
+  margin: 4rem 0;
+  background-color: var(--wp--preset--color--heru-light-gray);
+  font-family: var(--wp--preset--font-family--heru-heading-font);
+}
+.wp-block-heru-benefits .section-inner {
+  max-width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  padding: 4rem 0;
+  text-align: center;
+}
+.wp-block-heru-benefits .section-inner .section-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+.wp-block-heru-benefits .section-inner p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.wp-block-heru-benefits .section-inner .benefits-items {
+  display: grid;
+  gap: 4rem;
+  max-width: 750px;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.wp-block-heru-benefits .section-inner .benefits-items .benefit-item .benefit-item-image {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.wp-block-heru-benefits .section-inner .benefits-items .benefit-item img {
+  display: inline-block;
+  width: 50px;
+}
+.wp-block-heru-benefits .section-inner .benefits-items .benefit-item .benefit-name {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}

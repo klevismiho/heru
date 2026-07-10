@@ -1,0 +1,117 @@
+.wp-block-heru-tabs-with-content {
+    margin: 6rem auto;
+    max-width: var(--wp--style--global--content-size);
+    padding: 4rem 0;
+    font-family: var(--wp--preset--font-family--heru-heading-font);
+
+    .section-header {
+        text-align: center;
+
+        .section-title {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    }
+
+    .tabs-container {
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 3rem 0;
+
+            .tab {
+                &.is-active {
+                    background-color: var(--wp--preset--color--heru-primary);
+                    border: 2px solid transparent;
+                    color: #FFFFFF;
+                }
+
+                padding: 15px 30px 13px 30px;
+                background-color: #fff;
+                color: var(--wp--preset--color--heru-primary);
+                font-weight: 700;
+                border: 2px solid var(--wp--preset--color--heru-primary);
+                border-radius: 50px;
+            }
+        }
+
+        .tabs-content {
+            .tab-content {
+                display: flex;
+                gap: 4rem;
+                align-items: center;
+                display: none;
+
+                display: none;
+
+                &.is-active {
+                    animation: fadeIn 0.3s ease-in;
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                .image-wrapper {
+                    flex: 0 0 35%;
+                }
+
+                .content-wrapper {
+                    h3 {
+                        margin: 0;
+                        font-size: 2.25rem;
+                    }
+
+                    p {
+                        font-size: 1.25rem;
+                        line-height: 1.5;
+                    }
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        margin-bottom: 2rem;
+
+                        li {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            margin-bottom: 1rem;
+
+                            &::before {
+                                content: "✓";
+                                width: 24px;
+                                height: 24px;
+                                background-color: #000;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                font-weight: bold;
+                                font-size: 14px;
+                                flex-shrink: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
