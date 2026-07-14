@@ -1,0 +1,39 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/split-with-video/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-split-with-video {
+  display: flex;
+  max-width: var(--wp--style--global--content-size);
+  margin: 4rem auto;
+  padding: 4rem 0;
+  gap: 6rem;
+}
+.wp-block-heru-split-with-video .section-content {
+  flex: 1;
+}
+.wp-block-heru-split-with-video .section-content .section-eyebrow {
+  font-weight: bold;
+  color: var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-split-with-video .section-content .section-title {
+  margin: 2rem 0;
+  font-size: 3.75rem;
+}
+.wp-block-heru-split-with-video .section-content p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.wp-block-heru-split-with-video .section-content p small {
+  display: block;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.wp-block-heru-split-with-video .section-video {
+  flex: 1;
+}
+.wp-block-heru-split-with-video .section-video video {
+  display: block;
+  width: 100%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

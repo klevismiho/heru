@@ -14,6 +14,7 @@ class Assets {
 		$this->manifest_path = HERU_THEME_DIR . '/assets/build/.vite/manifest.json';
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_assets' ) );
 	}
 
 	public function enqueue_assets() {

@@ -263,7 +263,7 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  save: _save_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: () => null
 });
 
 /***/ },

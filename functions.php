@@ -33,3 +33,4 @@ new Block_Category();
 new Post_Type_Testimonial();
 new Post_Type_People();
 new Taxonomy_People_Group();
+new ACF_Fields();

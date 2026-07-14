@@ -1,0 +1,38 @@
+.wp-block-heru-cta-buttons {
+    margin: 6rem auto;
+    max-width: var(--wp--style--global--content-size);
+    font-family: var(--wp--preset--font-family--heru-heading-font);
+    text-align: center;
+
+    .section-header {
+
+        .section-title {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    }
+
+        .wp-block-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 3rem;
+
+        .wp-block-button {
+            &.is-style-outline {
+                .wp-element-button {
+                    background-color: transparent;
+                    color: var(--color-primary);
+                    border: 2px solid var(--color-primary);
+                }
+            }
+        }
+    }
+}

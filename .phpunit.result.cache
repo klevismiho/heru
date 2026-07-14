@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Heru\\Tests\\AssetsTest::test_enqueue_assets_does_nothing_when_manifest_missing":4,"Heru\\Tests\\Block_RegistryTest::test_registers_blocks_on_init":5},"times":{"Heru\\Tests\\AssetsTest::test_enqueue_assets_does_nothing_when_manifest_missing":0.014,"Heru\\Tests\\Block_RegistryTest::test_registers_blocks_on_init":0.06}}

@@ -124,7 +124,7 @@ function Edit({
           label: "Iframe Code",
           value: iframe,
           placeholder: "<iframe src='...'></iframe>",
-          onChange: value => setAttributes({
+          onChange: iframe => setAttributes({
             iframe
           })
         })

@@ -1,0 +1,27 @@
+{
+  "name": "heru/theme",
+  "description": "Heru WordPress theme",
+  "require-dev": {
+    "phpunit/phpunit": "^9.6",
+    "yoast/phpunit-polyfills": "^1.0",
+    "automattic/vipwpcs": "^3.0",
+    "brain/monkey": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Heru\\Theme\\": "inc/",
+      "Heru\\Tests\\": "tests/phpunit/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "lint": "vendor/bin/phpcs",
+    "lint:vip": "php -d memory_limit=512M vendor/bin/phpcs --standard=WordPress-VIP-Go . --ignore=vendor/*,node_modules/*,build/*,bower_components/*,*.js,*.css --warning-severity=0",
+    "lint:vip-file": "php -d memory_limit=512M vendor/bin/phpcs --standard=WordPress-VIP-Go --warning-severity=0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

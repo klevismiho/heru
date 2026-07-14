@@ -18,6 +18,7 @@
 .wp-block-heru-split-with-image .section-content .wp-block-buttons {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 }
 .wp-block-heru-split-with-image .section-content .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
   background-color: transparent;

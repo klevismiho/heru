@@ -1,23 +1,63 @@
 <?php
 
 $wrapper_attributes = get_block_wrapper_attributes();
+
+$title       = $attributes['title'] ?? '';
+$description = $attributes['description'] ?? '';
+$buttons     = $attributes['buttons'] ?? [];
+$image       = $attributes['image'] ?? [];
+
 ?>
 
 <section <?php echo $wrapper_attributes; ?>>
-  <div class="cta-inner">
-    <div class="section-content">
-      <h2 class="section-title">Ready to Prime<br>your Practice?</h2>
-      <p>Learn how Heru Prime can streamline your team’s productivity while providing an improved patient experience—without compromising the quality of care. </p>
-      <div class="wp-block-buttons">
-        <div class="wp-block-button">
-          <a class="wp-block-button__link wp-element-button" href="#">
-            Schedule a Demo Today
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="section-image">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/src/images/cta.jpg" alt="" />
-    </div>
-  </div>
+	<div class="cta-inner">
+
+		<div class="section-content">
+
+			<?php if ($title) : ?>
+				<h2 class="section-title">
+					<?php echo wp_kses_post($title); ?>
+				</h2>
+			<?php endif; ?>
+
+
+			<?php if ($description) : ?>
+				<p>
+					<?php echo wp_kses_post($description); ?>
+				</p>
+			<?php endif; ?>
+
+
+			<?php if (!empty($buttons)) : ?>
+				<div class="wp-block-buttons">
+
+					<?php foreach ($buttons as $button) : ?>
+						<div class="wp-block-button<?php echo !empty($button['outlined']) ? ' is-style-outline' : ''; ?>">
+
+							<a
+								class="wp-block-button__link wp-element-button"
+								href="<?php echo esc_url($button['url'] ?? '#'); ?>"
+							>
+								<?php echo esc_html($button['text'] ?? ''); ?>
+							</a>
+
+						</div>
+					<?php endforeach; ?>
+
+				</div>
+			<?php endif; ?>
+
+		</div>
+
+
+		<?php if (!empty($image['url'])) : ?>
+			<div class="section-image">
+				<img
+					src="<?php echo esc_url($image['url']); ?>"
+					alt="<?php echo esc_attr($image['alt'] ?? ''); ?>"
+				/>
+			</div>
+		<?php endif; ?>
+
+	</div>
 </section>

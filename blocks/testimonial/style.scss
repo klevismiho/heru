@@ -1,0 +1,13 @@
+.wp-block-heru-testimonial {
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 4rem;
+    background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 20%, white);
+    border-radius: 20px;
+    .section-title {
+        margin-top: 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}

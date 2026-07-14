@@ -74,10 +74,10 @@ $people_query = new WP_Query($args);
 
             <div class="person-details">
               <h3 class="person-name">
-                <?php the_title(); ?>
+                <?php echo esc_html(get_the_title()); ?>
               </h3>
               <?php if (!empty(get_field('person_title'))) : ?>
-                <div class="person-title"><?php the_field('person_title'); ?></div>
+                <div class="person-title"><?php echo esc_html(get_field('person_title')); ?></div>
               <?php endif; ?>
             </div>
           </div>

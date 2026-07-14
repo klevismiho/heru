@@ -1,0 +1,40 @@
+.wp-block-heru-split-with-video {
+    display: flex;
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 4rem 0;
+    gap: 6rem;
+
+    .section-content {
+        flex: 1;
+
+        .section-eyebrow {
+            font-weight: bold;
+            color: var(--wp--preset--color--heru-primary);
+        }
+
+        .section-title {
+            margin: 2rem 0;
+            font-size: 3.75rem
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 1.5rem;
+            small {
+                display: block;
+                font-weight: normal;
+                font-size: 1rem;
+            }
+        }
+
+    }
+
+    .section-video {
+        flex: 1;
+        video {
+            display: block;
+            width: 100%;
+        }
+    }
+}

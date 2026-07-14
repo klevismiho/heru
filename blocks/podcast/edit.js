@@ -68,9 +68,7 @@ export default function Edit({ attributes, setAttributes }) {
 						label="Iframe Code"
 						value={iframe}
 						placeholder="<iframe src='...'></iframe>"
-						onChange={(value) =>
-							setAttributes({ iframe })
-						}
+						onChange={(iframe) => setAttributes({ iframe })}
 					/>
 				</PanelBody>
 
