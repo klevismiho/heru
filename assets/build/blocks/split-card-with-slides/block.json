@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/split-card-with-slides",
+  "version": "0.1.0",
+  "title": "Split Card with Slides",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Split Card with Slides",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "SYSTEMATIC REVIEW"
+    },
+    "title": {
+      "type": "string",
+      "default": "How Heru\nStacks Up"
+    },
+    "description": {
+      "type": "string",
+      "default": "A PRISMA-guided systematic review compared several VR perimetry devices..."
+    },
+    "buttons": {
+      "type": "array"
+    },
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "description": "Among all devices evaluated...",
+          "icon": "",
+          "footer": "Evaluating the Clinical Validity..."
+        }
+      ]
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

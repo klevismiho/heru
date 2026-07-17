@@ -4,13 +4,13 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Homepage_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260226-141845/backstop_default_Homepage_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260715-093755/backstop_default_Homepage_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Homepage_0_document_0_phone.png",
         "label": "Homepage",
         "requireSameDimensions": true,
         "misMatchThreshold": 0.1,
-        "url": "https://atlanticcouncil-network.lndo.site/",
+        "url": "https://heru.local",
         "expect": 0,
         "viewportLabel": "phone",
         "diff": {
@@ -27,13 +27,13 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Homepage_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260226-141845/backstop_default_Homepage_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260715-093755/backstop_default_Homepage_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Homepage_0_document_1_tablet.png",
         "label": "Homepage",
         "requireSameDimensions": true,
         "misMatchThreshold": 0.1,
-        "url": "https://atlanticcouncil-network.lndo.site/",
+        "url": "https://heru.local",
         "expect": 0,
         "viewportLabel": "tablet",
         "diff": {

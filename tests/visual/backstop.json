@@ -17,18 +17,18 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "url": "https://atlanticcouncil-network.lndo.site/",
+      "url": "https://heru.local",
       "selectors": ["document"],
       "delay": 1500,
       "removeSelectors": ["#wpadminbar"]
     }
   ],
   "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test": "backstop_data/bitmaps_test",
-    "engine_scripts": "backstop_data/engine_scripts",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
+    "bitmaps_reference": "tests/visual/backstop_data/bitmaps_reference",
+    "bitmaps_test": "tests/visual/backstop_data/bitmaps_test",
+    "engine_scripts": "tests/visual/backstop_data/engine_scripts",
+    "html_report": "tests/visual/backstop_data/html_report",
+    "ci_report": "tests/visual/backstop_data/ci_report"
   },
   "report": ["browser"],
   "engine": "puppeteer",

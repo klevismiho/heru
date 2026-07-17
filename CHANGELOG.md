@@ -28,3 +28,16 @@
 
 ## 9 July 2026
 - Build benefits block and tabs block from scrach
+
+## 14 July 2026 
+- Setup Unit testing
+
+## 15 July 2026 
+- Setup Visual regression testing with Backstop
+
+## 16 July 2026
+- Added split with features block
+
+## 17 July 2026
+- Added split-card-with-slides block
+

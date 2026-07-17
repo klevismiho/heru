@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/split-with-features",
+  "version": "0.1.0",
+  "title": "Split content with features",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Split content with features",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Executive Team"
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "buttons": {
+      "type": "array",
+      "default": []
+    },
+    "features": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

@@ -28,9 +28,18 @@ spl_autoload_register( function ( $class ) {
 new Theme_Setup();
 new SVG_Support();
 new Assets();
-new Block_Registry();
+
+$block_registry = new Block_Registry(
+    HERU_THEME_DIR . '/assets/build/blocks'
+);
+$block_registry->register();
+
 new Block_Category();
 new Post_Type_Testimonial();
-new Post_Type_People();
+
+$post_type_people = new Post_Type_People();
+$post_type_people->register();
+
 new Taxonomy_People_Group();
+new Post_Type_Clinical_Study();
 new ACF_Fields();

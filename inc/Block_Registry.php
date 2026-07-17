@@ -6,25 +6,26 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-class Block_Registry
-{
+class Block_Registry {
 
-	public function __construct()
-	{
-		add_action('init', array($this, 'register_blocks'));
+	private string $blocks_dir;
+
+	public function __construct( string $blocks_dir ) {
+		$this->blocks_dir = $blocks_dir;
 	}
 
-	public function register_blocks()
-	{
-		$blocks_dir = HERU_THEME_DIR . '/assets/build/blocks';
+	public function register(): void {
+		add_action( 'init', array( $this, 'register_blocks' ) );
+	}
 
-		if (! is_dir($blocks_dir)) {
+	public function register_blocks(): void {
+		if ( ! is_dir( $this->blocks_dir ) ) {
 			return;
 		}
 
-		foreach (glob($blocks_dir . '/*', GLOB_ONLYDIR) as $block_path) {
-			if (file_exists($block_path . '/block.json')) {
-				register_block_type($block_path);
+		foreach ( glob( $this->blocks_dir . '/*', GLOB_ONLYDIR ) as $block_path ) {
+			if ( file_exists( $block_path . '/block.json' ) ) {
+				register_block_type( $block_path );
 			}
 		}
 	}

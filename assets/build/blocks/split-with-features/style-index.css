@@ -1,0 +1,50 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/split-with-features/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-split-with-features {
+  display: flex;
+  max-width: var(--wp--style--global--content-size);
+  margin: 4rem auto;
+  padding: 2rem 0;
+  gap: 6rem;
+}
+.wp-block-heru-split-with-features .section-content {
+  flex: 1;
+}
+.wp-block-heru-split-with-features .section-content .section-title {
+  margin-top: 0;
+}
+.wp-block-heru-split-with-features .wp-block-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.wp-block-heru-split-with-features .wp-block-buttons .wp-block-button {
+  width: fit-content;
+}
+.wp-block-heru-split-with-features .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
+  background-color: transparent;
+  color: var(--wp--preset--color--heru-primary);
+  border: 1px solid var(--wp--preset--color--heru-primary);
+}
+.wp-block-heru-split-with-features .features {
+  flex: 1;
+}
+.wp-block-heru-split-with-features .features p {
+  margin-top: 0;
+}
+.wp-block-heru-split-with-features .features-list {
+  padding: 0;
+}
+.wp-block-heru-split-with-features .features-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  min-height: 50px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--wp--preset--color--black);
+  position: relative;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -2,22 +2,36 @@
 
 namespace Heru\Tests;
 
-use Brain\Monkey\Functions;
-use Heru\Theme\Block_Registry;
+class Block_StructureTest extends TestCase {
 
-class Block_RegistryTest extends TestCase {
+	public function test_all_blocks_have_required_files(): void {
 
-	public function test_registers_blocks_on_init(): void {
+		$blocks_dir = HERU_THEME_DIR . '/blocks';
 
-		Functions\expect( 'add_action' )
-			->once()
-			->with(
-				'init',
-				\Mockery::type( 'array' )
-			);
+		$required_files = array(
+			'block.json',
+			'edit.js',
+			'index.js',
+			'save.js',
+			'view.js',
+			'render.php',
+			'editor.scss',
+			'style.scss',
+		);
 
-		new Block_Registry();
+		foreach ( glob( $blocks_dir . '/*', GLOB_ONLYDIR ) as $block_path ) {
 
-		$this->assertTrue( true );
+			foreach ( $required_files as $file ) {
+
+				$this->assertFileExists(
+					$block_path . '/' . $file,
+					sprintf(
+						'Missing %s in block %s',
+						$file,
+						basename( $block_path )
+					)
+				);
+			}
+		}
 	}
 }

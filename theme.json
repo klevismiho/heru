@@ -54,13 +54,18 @@
         },
         {
           "slug": "heru-primary",
-          "color": "#5E83FF",
+          "color": "#505FFF",
           "name": "Heru Primary"
         },
         {
           "slug": "heru-secondary",
           "color": "#191631",
           "name": "Heru Secondary"
+        },
+        {
+          "slug": "heru-grass",
+          "color": "#47E5B3",
+          "name": "Heru Grass"
         },
         {
           "slug": "heru-cyan",

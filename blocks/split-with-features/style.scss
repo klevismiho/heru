@@ -1,0 +1,57 @@
+.wp-block-heru-split-with-features {
+    display: flex;
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 2rem 0;
+    gap: 6rem;
+
+    .section-content {
+        flex: 1;
+
+        .section-title {
+            margin-top: 0;
+        }
+
+    }
+
+    .wp-block-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        .wp-block-button {
+            width: fit-content;
+
+            &.is-style-outline {
+                .wp-element-button {
+                    background-color: transparent;
+                    color: var(--wp--preset--color--heru-primary);
+                    border: 1px solid var(--wp--preset--color--heru-primary);
+                }
+            }
+        }
+    }
+
+    .features {
+        flex: 1;
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    .features-list {
+        padding: 0;
+
+        li {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            min-height: 50px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--wp--preset--color--black);
+            position: relative;
+        }
+    }
+}
