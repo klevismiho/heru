@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v5
 
       - name: Deploy theme
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -20,5 +20,6 @@ jobs:
           username: ${{ secrets.WPE_SFTP_USERNAME }}
           password: ${{ secrets.WPE_SFTP_PASSWORD }}
           port: 2222
+          local_path: ./
           local_path: ./
           remote_path: /wp-content/themes/heru/
