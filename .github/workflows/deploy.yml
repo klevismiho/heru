@@ -22,3 +22,4 @@ jobs:
           port: 2222
           local_path: ./
           remote_path: /wp-content/themes/heru/
+          sftp_only: true
