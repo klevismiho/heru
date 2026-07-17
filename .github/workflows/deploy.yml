@@ -21,5 +21,4 @@ jobs:
           password: ${{ secrets.WPE_SFTP_PASSWORD }}
           port: 2222
           local_path: ./
-          local_path: ./
           remote_path: /wp-content/themes/heru/
