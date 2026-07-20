@@ -42,9 +42,6 @@ class Post_Type_Clinical_Study {
 				'excerpt',
 			],
 
-			'rewrite' => [
-				'slug' => 'clinical-studies',
-			],
 		] );
 	}
 }

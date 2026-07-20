@@ -1,0 +1,12 @@
+.post-share {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+    svg {
+        width: 25px;
+        height: 25px;
+        path {
+            fill: var(--color-primary);
+        }
+    }
+}

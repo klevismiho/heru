@@ -1,0 +1,12 @@
+{
+  "apiVersion": 3,
+  "name": "heru/share",
+  "title": "Share",
+  "supports": {
+    "inserter": false
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

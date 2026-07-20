@@ -1,0 +1,11 @@
+{
+    "apiVersion": 3,
+    "name": "heru/clinical-study-partners",
+    "title": "Clinical Study Partners",
+    "supports": {
+        "inserter": false
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "render": "file:./render.php"
+}

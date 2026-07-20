@@ -42,4 +42,4 @@ $post_type_people->register();
 
 new Taxonomy_People_Group();
 new Post_Type_Clinical_Study();
-new ACF_Fields();
+new ACF();
