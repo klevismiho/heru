@@ -1,0 +1,34 @@
+.wp-block-heru-news {
+    margin: 4rem auto;
+    max-width: var(--wp--style--global--content-size);
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .news-list {
+        .news-item {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-top: 2px solid var(--color-black);
+
+            h3 {
+                margin-top: 1rem;
+                margin-bottom: 0;
+            }
+
+            .item-image {
+                max-width: 200px;
+                width: 100%;
+                img {
+                    height: auto;
+                }
+            }
+
+            .item-content {
+                flex: 1;
+            }
+        }
+    }
+}

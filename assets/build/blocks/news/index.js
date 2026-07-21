@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/clinical-studies/editor.scss"
-/*!*********************************************!*\
-  !*** ./blocks/clinical-studies/editor.scss ***!
-  \*********************************************/
+/***/ "./blocks/news/editor.scss"
+/*!*********************************!*\
+  !*** ./blocks/news/editor.scss ***!
+  \*********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -14,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./blocks/clinical-studies/style.scss"
-/*!********************************************!*\
-  !*** ./blocks/clinical-studies/style.scss ***!
-  \********************************************/
+/***/ "./blocks/news/style.scss"
+/*!********************************!*\
+  !*** ./blocks/news/style.scss ***!
+  \********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -76,10 +76,10 @@ module.exports = window["wp"]["data"];
 
 /***/ },
 
-/***/ "./blocks/clinical-studies/edit.js"
-/*!*****************************************!*\
-  !*** ./blocks/clinical-studies/edit.js ***!
-  \*****************************************/
+/***/ "./blocks/news/edit.js"
+/*!*****************************!*\
+  !*** ./blocks/news/edit.js ***!
+  \*****************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -89,7 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./blocks/clinical-studies/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./blocks/news/editor.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 
 
@@ -102,12 +102,12 @@ function Edit({
   const {
     title
   } = attributes;
-  const clinicalStudies = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => select('core').getEntityRecords('postType', 'clinical-study', {
-    per_page: -1,
+  const newsPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => select('core').getEntityRecords('postType', 'post', {
+    per_page: 10,
     _embed: true
   }), []);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
-  if (!clinicalStudies) {
+  if (!newsPosts) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
       ...blockProps,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Spinner, {})
@@ -117,62 +117,64 @@ function Edit({
     ...blockProps,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
       className: "section-title",
-      children: title || 'Clinical Studies'
-    }), clinicalStudies.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "clinical-studies-list",
-      children: clinicalStudies.map(study => {
-        const featuredImage = study._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+      children: title || 'News'
+    }), newsPosts.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "news-list",
+      children: newsPosts.map(post => {
+        const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+        const postDate = new Date(post.date).toLocaleDateString('en-US', {
+          month: 'long',
+          year: 'numeric'
+        });
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "clinical-study-item",
+          className: "news-item",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "item-image",
-            children: featuredImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              src: featuredImage,
-              alt: study.title.rendered
+            children: featuredImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+              href: post.link,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                src: featuredImage,
+                alt: post.title.rendered
+              })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "item-content",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-              dangerouslySetInnerHTML: {
-                __html: study.title.rendered
-              }
-            }), study.excerpt?.rendered && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              dangerouslySetInnerHTML: {
-                __html: study.excerpt.rendered
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "item-button",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "wp-block-button",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "wp-block-button__link wp-element-button",
-                children: "Read More"
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "item-date",
+              children: postDate
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                href: post.link,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  dangerouslySetInnerHTML: {
+                    __html: post.title.rendered
+                  }
+                })
               })
-            })
+            })]
           })]
-        }, study.id);
+        }, post.id);
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      children: "No clinical studies found."
+      children: "No news found."
     })]
   });
 }
 
 /***/ },
 
-/***/ "./blocks/clinical-studies/index.js"
-/*!******************************************!*\
-  !*** ./blocks/clinical-studies/index.js ***!
-  \******************************************/
+/***/ "./blocks/news/index.js"
+/*!******************************!*\
+  !*** ./blocks/news/index.js ***!
+  \******************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/clinical-studies/style.scss");
-/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/clinical-studies/edit.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/clinical-studies/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/clinical-studies/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/news/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/news/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/news/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/news/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -214,10 +216,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./blocks/clinical-studies/save.js"
-/*!*****************************************!*\
-  !*** ./blocks/clinical-studies/save.js ***!
-  \*****************************************/
+/***/ "./blocks/news/save.js"
+/*!*****************************!*\
+  !*** ./blocks/news/save.js ***!
+  \*****************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -248,13 +250,13 @@ function save() {
 
 /***/ },
 
-/***/ "./blocks/clinical-studies/block.json"
-/*!********************************************!*\
-  !*** ./blocks/clinical-studies/block.json ***!
-  \********************************************/
+/***/ "./blocks/news/block.json"
+/*!********************************!*\
+  !*** ./blocks/news/block.json ***!
+  \********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/clinical-studies","version":"0.1.0","title":"Clinical Studies","category":"heru","icon":"align-pull-right","description":"Clinical Studies","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Clinical Studies"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/news","version":"0.1.0","title":"News","category":"heru","icon":"align-pull-right","description":"News","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"In the News"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -377,8 +379,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"clinical-studies/index": 0,
-/******/ 			"clinical-studies/style-index": 0
+/******/ 			"news/index": 0,
+/******/ 			"news/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -428,7 +430,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["clinical-studies/style-index"], () => (__webpack_require__("./blocks/clinical-studies/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["news/style-index"], () => (__webpack_require__("./blocks/news/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

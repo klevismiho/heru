@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/split-card-b",
+  "version": "0.1.0",
+  "title": "Split Card B",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Split Card B",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "NEWS & PRESS"
+    },
+    "title": {
+      "type": "string",
+      "default": "What’s New with Heru"
+    },
+    "contactLabel": {
+      "type": "string",
+      "default": "Media Inquiries:"
+    },
+    "email": {
+      "type": "string",
+      "default": "pr@heru.net"
+    },
+    "emailUrl": {
+      "type": "string",
+      "default": "mailto:pr@heru.net"
+    },
+    "phone": {
+      "type": "string",
+      "default": "844-SEE-HERU (844-733-4378)"
+    },
+    "phoneUrl": {
+      "type": "string",
+      "default": "tel:844-733-4378"
+    },
+    "newsMode": {
+      "type": "string",
+      "default": "latest"
+    },
+    "selectedPostId": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
