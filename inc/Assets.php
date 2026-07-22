@@ -47,5 +47,22 @@ class Assets {
 			null,
 			true
 		);
+
+		if (! is_admin()) {
+			wp_enqueue_script(
+				'heru-animations',
+				HERU_THEME_URI . '/assets/src/js/animations.js',
+				array(),
+				filemtime(HERU_THEME_DIR . '/assets/src/js/animations.js'),
+				true
+			);
+			wp_enqueue_style(
+				'heru-animations',
+				HERU_THEME_URI . '/assets/src/css/animations.css',
+				array(),
+				null
+			);
+		}
+		
 	}
 }
