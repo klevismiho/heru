@@ -1,1 +1,1 @@
-
+document.addEventListener("DOMContentLoaded",function(){const r=document.querySelectorAll(".wp-block-heru-logo-grid,.wp-block-heru-split-card-with-highlights,.wp-block-heru-split-with-image,.wp-block-heru-split-card,.wp-block-heru-testimonials,.wp-block-heru-podcast,.wp-block-heru-cta"),o=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&(t.target.classList.add("fade-in-up-visible"),o.unobserve(t.target))})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});r.forEach(e=>{o.observe(e)})});

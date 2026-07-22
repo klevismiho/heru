@@ -1,49 +1,104 @@
 <?php
 
 $wrapper_attributes = get_block_wrapper_attributes();
+
+$eyebrow     = $attributes['eyebrow'] ?? '';
+$title       = $attributes['title'] ?? '';
+$description = $attributes['description'] ?? '';
+
+$buttons = $attributes['buttons'] ?? [];
+$items   = $attributes['items'] ?? [];
+
+$icon_image = $attributes['iconImage'] ?? [];
+
 ?>
 
 <section <?php echo $wrapper_attributes; ?>>
 
-  <div class="top-section">
-    <div class="top-presentation">
-      <div class="section-left">
-        <div class="section-eyebrow">ABOUT HERU</div>
-        <h2 class="section-title">Clinical Excellence</h2>
-      </div>
+	<div class="top-section">
 
-      <div class="wp-block-buttons">
-        <div class="wp-block-button">
-          <a class="wp-block-button__link wp-element-button" href="#">
-            Shop Heru
-          </a>
-        </div>
-        <div class="wp-block-button is-style-outline">
-          <a class="wp-block-button__link wp-element-button" href="#">
-            Meet the Team
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="top-details">
-      <p>Our technology is the culmination of over 15 years of clinical and scientific research and development led by Heru’s Founder and CEO Mohamed Abou Shousha, MD, PhD, associate professor of clinical ophthalmology, Bascom Palmer Eye Institute.</p>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/src/images/about-logo.svg" alt="" />
-    </div>
-  </div>
+		<div class="top-presentation">
 
-  <div class="bottom-section">
-    <div class="item">
-      <h3>For ECPs</h3>
-      <p>Increased exam lane throughput with less time spent on manual, variable pre-testing  and more time on patient care.</p>
-    </div>
-      <div class="item">
-      <h3>For Technicians</h3>
-      <p>Faster, guided workflows with cleaner outputs and fewer “what happened here?” moments</p>
-    </div>
-      <div class="item">
-      <h3>For Patients</h3>
-      <p>Higher confidence in the practice and process when the experience feels modern and guided.</p>
-    </div>
-  </div>
+			<div class="section-left">
+
+				<div class="section-eyebrow">
+					<?php echo wp_kses_post( $eyebrow ); ?>
+				</div>
+
+
+				<h2 class="section-title">
+					<?php echo wp_kses_post( $title ); ?>
+				</h2>
+
+			</div>
+
+
+			<div class="wp-block-buttons">
+
+				<?php foreach ( $buttons as $button ) : ?>
+
+					<div
+						class="wp-block-button <?php echo ! empty( $button['outlined'] ) ? 'is-style-outline' : ''; ?>"
+					>
+
+						<a
+							class="wp-block-button__link wp-element-button"
+							href="<?php echo esc_url( $button['url'] ?? '#' ); ?>"
+						>
+							<?php echo esc_html( $button['text'] ?? '' ); ?>
+						</a>
+
+					</div>
+
+				<?php endforeach; ?>
+
+			</div>
+
+		</div>
+
+
+
+		<div class="top-details">
+
+			<p>
+				<?php echo wp_kses_post( $description ); ?>
+			</p>
+
+
+			<?php if ( ! empty( $icon_image['url'] ) ) : ?>
+
+				<img
+					src="<?php echo esc_url( $icon_image['url'] ); ?>"
+					alt="<?php echo esc_attr( $icon_image['alt'] ?? '' ); ?>"
+				/>
+
+			<?php endif; ?>
+
+		</div>
+
+	</div>
+
+
+
+	<div class="bottom-section">
+
+		<?php foreach ( $items as $item ) : ?>
+
+			<div class="item">
+
+				<h3>
+					<?php echo esc_html( $item['title'] ?? '' ); ?>
+				</h3>
+
+
+				<p>
+					<?php echo wp_kses_post( $item['description'] ?? '' ); ?>
+				</p>
+
+			</div>
+
+		<?php endforeach; ?>
+
+	</div>
 
 </section>

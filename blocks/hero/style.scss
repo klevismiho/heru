@@ -16,7 +16,6 @@
         position: absolute;
         border-radius: 50%;
         filter: blur(80px);
-        opacity: 0.4;
         pointer-events: none;
         z-index: 0;
     }
@@ -25,16 +24,14 @@
         width: 500px;
         height: 500px;
         background: radial-gradient(circle, var(--wp--preset--color--heru-teal) 0%, transparent 70%);
-        bottom: -150px;
-        left: -100px;
+        animation: slideInBeforeGradient 1s ease-out forwards;
     }
 
     &::after {
         width: 720px;
         height: 580px;
-        background: radial-gradient(circle, var(--wp--preset--color--heru-primary) 0%, transparent 70%);
-        right: 0;
-        top: 0;
+        background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+        animation: slideInAfterGradient 2s ease-out forwards;
     }
 
     .section-subtitle {
@@ -62,9 +59,14 @@
     .wp-block-button {
         &.is-style-outline {
             .wp-element-button {
+                &:hover {
+                    background-color: var(--color-mint);
+                    color: var(--color-black);
+                }
+
                 background-color: transparent;
-                color: var(--wp--preset--color--heru-mint);
-                border: 1px solid var(--wp--preset--color--heru-mint);
+                color: var(--color-mint);
+                border: 1px solid var(--color-mint);
             }
         }
     }
@@ -79,6 +81,7 @@
             text-align: left;
 
             .statistic-number {
+                min-width: 200px;
                 font-size: 4rem;
                 color: var(--wp--preset--color--heru-lilac);
             }
@@ -89,4 +92,67 @@
             }
         }
     }
+
+    @keyframes slideInBeforeGradient {
+        from {
+            bottom: -250px;
+            left: -200px;
+            opacity: 0;
+        }
+
+        to {
+            bottom: -150px;
+            left: -100px;
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes slideInAfterGradient {
+        from {
+            right: -150px;
+            top: -100px;
+            opacity: 0;
+        }
+
+        to {
+            right: 0;
+            top: 0;
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes floatBeforeGradient {
+        0% {
+            bottom: -150px;
+            left: -100px;
+        }
+
+        50% {
+            bottom: -120px;
+            left: -50px;
+        }
+
+        100% {
+            bottom: -150px;
+            left: -100px;
+        }
+    }
+
+    @keyframes floatAfterGradient {
+        0% {
+            right: 0;
+            top: 0;
+        }
+
+        50% {
+            right: 50px;
+            top: 30px;
+        }
+
+        100% {
+            right: 0;
+            top: 0;
+        }
+    }
+
 }

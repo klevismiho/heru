@@ -11,6 +11,7 @@
         .section-title {
             margin: 0;
             font-size: 4.5rem;
+            line-height: 1;
         }
 
         .wp-block-buttons {
@@ -19,12 +20,21 @@
             margin-top: 2rem;
 
             .wp-block-button {
+                .wp-element-button {
+                    &:hover {
+                        background-color: var(--color-secondary);
+                    }
+                }
 
                 &.is-style-outline {
                     .wp-element-button {
+                        &:hover {
+                            color: var(--color-secondary);
+                            border: 1px solid var(--color-secondary);
+                        }
                         background-color: transparent;
-                        color: var(--wp--preset--color--heru-primary);
-                        border: 1px solid var(--wp--preset--color--heru-primary);
+                        color: var(--color-primary);
+                        border: 1px solid var(--color-primary);
                     }
                 }
             }

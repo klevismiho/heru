@@ -29,3 +29,6 @@
 .wp-block-heru-logo-grid .logo-grid__logos img {
   display: inline-block;
 }
+.wp-block-heru-logo-grid .wp-element-button:hover {
+  background-color: var(--color-secondary);
+}

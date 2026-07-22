@@ -14,16 +14,24 @@
 .wp-block-heru-split-with-image .section-content .section-title {
   margin: 0;
   font-size: 4.5rem;
+  line-height: 1;
 }
 .wp-block-heru-split-with-image .section-content .wp-block-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
+.wp-block-heru-split-with-image .section-content .wp-block-buttons .wp-block-button .wp-element-button:hover {
+  background-color: var(--color-secondary);
+}
+.wp-block-heru-split-with-image .section-content .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button:hover {
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
 .wp-block-heru-split-with-image .section-content .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
   background-color: transparent;
-  color: var(--wp--preset--color--heru-primary);
-  border: 1px solid var(--wp--preset--color--heru-primary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 .wp-block-heru-split-with-image .section-image {
   flex: 1;

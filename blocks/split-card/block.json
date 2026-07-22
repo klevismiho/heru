@@ -13,6 +13,56 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "NEW TO HERU PRIME"
+		},
+		"title": {
+			"type": "string",
+			"default": "PretestPro™"
+		},
+		"subtitle": {
+			"type": "string",
+			"default": "Four tests. 90 Seconds. Zero Guesswork."
+		},
+		"description": {
+			"type": "string",
+			"default": "When paired with Heru's Visual Acuity test, PretestPro™ reduces time spent running four crucial pretests so that you can complete 50% of your pretesting in 90 seconds; all guided by Nora, our friendly fixation target."
+		},
+		"listItems": {
+			"type": "array",
+			"default": [
+				"8-Point Screening Visual Field",
+				"Quantitative Cover Near Test",
+				"Extraocular Motility",
+				"Quantitative Pupil Test"
+			]
+		},
+		"buttons": {
+			"type": "array",
+			"default": [
+				{
+					"text": "Shop Heru",
+					"url": "#",
+					"outlined": false
+				},
+				{
+					"text": "Test Drive",
+					"url": "#",
+					"outlined": true
+				}
+			]
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		}
+	},
 	"textdomain": "heru",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",

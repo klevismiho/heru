@@ -23,6 +23,7 @@
 .wp-block-heru-split-card-with-highlights .top-section .top-presentation .section-title {
   margin: 1rem 0 2rem 0;
   font-size: 4.5rem;
+  line-height: 1;
 }
 .wp-block-heru-split-card-with-highlights .top-section .top-presentation .wp-block-buttons {
   display: flex;
@@ -31,6 +32,10 @@
 .wp-block-heru-split-card-with-highlights .top-section .top-presentation .wp-block-buttons .wp-block-button .wp-element-button {
   background-color: var(--wp--preset--color--heru-cyan);
   color: var(--wp--preset--color--black);
+}
+.wp-block-heru-split-card-with-highlights .top-section .top-presentation .wp-block-buttons .wp-block-button.is-style-outline:hover .wp-element-button {
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 .wp-block-heru-split-card-with-highlights .top-section .top-presentation .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
   background-color: transparent;

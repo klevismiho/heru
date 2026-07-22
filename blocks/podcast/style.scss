@@ -25,13 +25,9 @@
             margin-top: 2rem;
 
             .wp-block-button {
-                .wp-element-button {}
-
-                &.is-style-outline {
-                    .wp-element-button {
-                        background-color: transparent;
-                        color: var(--wp--preset--color--heru-primary);
-                        border: 1px solid var(--wp--preset--color--heru-primary);
+                .wp-element-button {
+                    &:hover {
+                        background-color: var(--color-secondary);
                     }
                 }
             }

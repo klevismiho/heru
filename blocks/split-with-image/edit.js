@@ -9,6 +9,7 @@ import {
 import {
 	PanelBody,
 	TextControl,
+	TextareaControl,
 	CheckboxControl,
 	Button,
 } from '@wordpress/components';
@@ -55,8 +56,12 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 	const removeButton = (index) => {
+		const newButtons = buttons.filter(
+			(_, buttonIndex) => buttonIndex !== index
+		);
+
 		setAttributes({
-			buttons: buttons.filter((_, i) => i !== index),
+			buttons: newButtons,
 		});
 	};
 
@@ -110,7 +115,6 @@ export default function Edit({ attributes, setAttributes }) {
 
 				</PanelBody>
 
-
 				<PanelBody title="Buttons" initialOpen={false}>
 
 					{buttons.map((button, index) => (
@@ -132,6 +136,7 @@ export default function Edit({ attributes, setAttributes }) {
 								}
 							/>
 
+
 							<TextControl
 								label="URL"
 								value={button.url}
@@ -139,6 +144,7 @@ export default function Edit({ attributes, setAttributes }) {
 									updateButton(index, 'url', value)
 								}
 							/>
+
 
 							<CheckboxControl
 								label="Outlined"
@@ -157,6 +163,7 @@ export default function Edit({ attributes, setAttributes }) {
 								Remove Button
 							</Button>
 
+
 						</div>
 
 					))}
@@ -169,8 +176,8 @@ export default function Edit({ attributes, setAttributes }) {
 						Add Button
 					</Button>
 
-
 				</PanelBody>
+
 
 			</InspectorControls>
 
@@ -206,11 +213,11 @@ export default function Edit({ attributes, setAttributes }) {
 
 							<div
 								key={index}
-								className={`wp-block-button${
-									button.outlined
-										? ' is-style-outline'
-										: ''
-								}`}
+								className={
+									index === 1
+										? "wp-block-button is-style-outline"
+										: "wp-block-button"
+								}
 							>
 
 								<a

@@ -21,6 +21,7 @@
             .section-title {
                 margin: 1rem 0 2rem 0;
                 font-size: 4.5rem;
+                line-height: 1;
             }
 
             .wp-block-buttons {
@@ -34,6 +35,12 @@
                     }
 
                     &.is-style-outline {
+                        &:hover {
+                            .wp-element-button {
+                                background-color: var(--color-white);
+                                color: var(--color-black);
+                            }
+                        }
                         .wp-element-button {
                             background-color: transparent;
                             color: var(--wp--preset--color--white);

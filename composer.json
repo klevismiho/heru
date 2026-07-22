@@ -15,9 +15,8 @@
   },
   "scripts": {
     "test": "vendor/bin/phpunit",
-    "lint": "vendor/bin/phpcs",
-    "lint:vip": "php -d memory_limit=512M vendor/bin/phpcs --standard=WordPress-VIP-Go . --ignore=vendor/*,node_modules/*,build/*,bower_components/*,*.js,*.css --warning-severity=0",
-    "lint:vip-file": "php -d memory_limit=512M vendor/bin/phpcs --standard=WordPress-VIP-Go --warning-severity=0"
+    "lint": "vendor/bin/phpcs .",
+    "format": "vendor/bin/phpcbf ."
   },
   "config": {
     "allow-plugins": {

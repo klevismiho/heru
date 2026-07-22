@@ -38,15 +38,20 @@
 
             .wp-block-button {
                 .wp-element-button {
-                    background-color: var(--wp--preset--color--heru-lilac);
-                    color: var(--wp--preset--color--black);
+                    background-color: var(--color-lilac);
+                    color: var(--color-black);
                 }
 
                 &.is-style-outline {
                     .wp-element-button {
+                        &:hover {
+                            background-color: var(--color-lilac);
+                            color: var(--color-black);
+                            border: 1px solid var(--color-lilac);
+                        }
                         background-color: transparent;
-                        color: var(--wp--preset--color--white);
-                        border: 1px solid var(--wp--preset--color--white);
+                        color: var(--color-white);
+                        border: 1px solid var(--color-white);
                     }
                 }
             }

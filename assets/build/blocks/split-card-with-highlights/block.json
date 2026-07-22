@@ -13,6 +13,59 @@
   "supports": {
     "html": false
   },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "ABOUT HERU"
+    },
+    "title": {
+      "type": "string",
+      "default": "Clinical Excellence"
+    },
+    "description": {
+      "type": "string",
+      "default": "Our technology is the culmination of over 15 years of clinical and scientific research and development led by Heru’s Founder and CEO Mohamed Abou Shousha, MD, PhD, associate professor of clinical ophthalmology, Bascom Palmer Eye Institute."
+    },
+    "buttons": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Shop Heru",
+          "url": "#",
+          "outlined": false
+        },
+        {
+          "text": "Meet the Team",
+          "url": "#",
+          "outlined": true
+        }
+      ]
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "title": "For ECPs",
+          "description": "Increased exam lane throughput with less time spent on manual, variable pre-testing and more time on patient care."
+        },
+        {
+          "title": "For Technicians",
+          "description": "Faster, guided workflows with cleaner outputs and fewer \"what happened here?\" moments."
+        },
+        {
+          "title": "For Patients",
+          "description": "Higher confidence in the practice and process when the experience feels modern and guided."
+        }
+      ]
+    },
+    "iconImage": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "alt": ""
+      }
+    }
+  },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",

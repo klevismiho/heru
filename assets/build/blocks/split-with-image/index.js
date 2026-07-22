@@ -100,8 +100,9 @@ function Edit({
     });
   };
   const removeButton = index => {
+    const newButtons = buttons.filter((_, buttonIndex) => buttonIndex !== index);
     setAttributes({
-      buttons: buttons.filter((_, i) => i !== index)
+      buttons: newButtons
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -193,7 +194,7 @@ function Edit({
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "wp-block-buttons",
           children: buttons.map((button, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: `wp-block-button${button.outlined ? ' is-style-outline' : ''}`,
+            className: index === 1 ? "wp-block-button is-style-outline" : "wp-block-button",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
               className: "wp-block-button__link wp-element-button",
               href: button.url,
