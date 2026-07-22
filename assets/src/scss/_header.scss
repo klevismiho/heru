@@ -3,6 +3,16 @@
     .wp-block-navigation {
         ul {
             gap: 2rem;
+            li {
+                a {
+                    transition: .2s all;
+                }
+                &:hover {
+                    a {
+                        color: var(--color-primary);
+                    }
+                }
+            }
         } 
     }
     .wp-block-button {
