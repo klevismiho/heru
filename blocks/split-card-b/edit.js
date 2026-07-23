@@ -33,7 +33,7 @@ export default function Edit({ attributes, setAttributes }) {
 	 * Get latest news
 	 */
 	const latestPosts = useSelect((select) =>
-		select('core').getEntityRecords('postType', 'post', {
+		select('core').getEntityRecords('postType', 'news', {
 			per_page: 1,
 			orderby: 'date',
 			order: 'desc',
@@ -49,7 +49,7 @@ export default function Edit({ attributes, setAttributes }) {
 			selectedPostId
 				? select('core').getEntityRecord(
 						'postType',
-						'post',
+						'news',
 						selectedPostId
 				  )
 				: null,

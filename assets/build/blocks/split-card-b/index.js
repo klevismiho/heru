@@ -102,7 +102,7 @@ function Edit({
   /**
    * Get latest news
    */
-  const latestPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select('core').getEntityRecords('postType', 'post', {
+  const latestPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select('core').getEntityRecords('postType', 'news', {
     per_page: 1,
     orderby: 'date',
     order: 'desc'
@@ -111,7 +111,7 @@ function Edit({
   /**
    * Get selected news
    */
-  const selectedPost = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => selectedPostId ? select('core').getEntityRecord('postType', 'post', selectedPostId) : null, [selectedPostId]);
+  const selectedPost = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => selectedPostId ? select('core').getEntityRecord('postType', 'news', selectedPostId) : null, [selectedPostId]);
 
   /**
    * Search posts

@@ -1,0 +1,44 @@
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/blog/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-blog {
+  margin: 4rem auto;
+  max-width: var(--wp--style--global--content-size);
+}
+.wp-block-heru-blog .section-title {
+  font-size: 3rem;
+}
+.wp-block-heru-blog .blog-list .blog-item {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 2px solid var(--color-black);
+}
+.wp-block-heru-blog .blog-list .blog-item h3 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.wp-block-heru-blog .blog-list .blog-item .item-image {
+  max-width: 33%;
+}
+.wp-block-heru-blog .blog-list .blog-item .item-image img {
+  height: auto;
+  border-radius: 20px;
+}
+.wp-block-heru-blog .blog-list .blog-item .item-content {
+  flex: 1;
+}
+.wp-block-heru-blog .blog-list .blog-item .item-content .wp-block-button {
+  margin-top: 2rem;
+}
+.wp-block-heru-blog .blog-list .blog-item .item-content .wp-block-button.is-style-outline .wp-element-button {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
+.wp-block-heru-blog .blog-list .blog-item .item-content .wp-block-button.is-style-outline .wp-element-button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/*# sourceMappingURL=style-index.css.map*/

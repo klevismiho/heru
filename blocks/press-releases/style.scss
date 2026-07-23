@@ -1,0 +1,27 @@
+.wp-block-heru-press-releases {
+    margin: 4rem auto;
+    max-width: var(--wp--style--global--content-size);
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        .item {
+            h3 {
+                margin-top: 0;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+            }
+            .item-meta {
+                margin-bottom: 2rem;
+            }
+            .wp-block-button {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

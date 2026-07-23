@@ -42,4 +42,7 @@ $post_type_people->register();
 
 new Taxonomy_People_Group();
 new Post_Type_Clinical_Study();
+new Post_Type_Press_Release();
+new Post_Type_News();
+
 new ACF();

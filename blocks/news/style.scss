@@ -1,3 +1,5 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-news {
     margin: 4rem auto;
     max-width: var(--wp--style--global--content-size);

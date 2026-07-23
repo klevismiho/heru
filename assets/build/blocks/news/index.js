@@ -102,7 +102,7 @@ function Edit({
   const {
     title
   } = attributes;
-  const newsPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => select('core').getEntityRecords('postType', 'post', {
+  const newsPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => select('core').getEntityRecords('postType', 'news', {
     per_page: 10,
     _embed: true
   }), []);

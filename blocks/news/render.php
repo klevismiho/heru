@@ -6,7 +6,7 @@ $title = $attributes['title'] ?? '';
 
 $news_posts = new WP_Query(
 	[
-		'post_type'      => 'post',
+		'post_type'      => 'news',
 		'posts_per_page' => 10,
 		'post_status'    => 'publish',
 	]

@@ -21,7 +21,7 @@ if ($news_mode === 'selected' && $selected_post_id) {
 } else {
 
   $latest_posts = get_posts([
-    'post_type'      => 'post',
+    'post_type'      => 'news',
     'posts_per_page' => 1,
     'post_status'    => 'publish',
   ]);

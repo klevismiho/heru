@@ -9,7 +9,7 @@ export default function Edit( { attributes } ) {
 
 	const newsPosts = useSelect(
 		( select ) =>
-			select( 'core' ).getEntityRecords( 'postType', 'post', {
+			select( 'core' ).getEntityRecords( 'postType', 'news', {
 				per_page: 10,
 				_embed: true,
 			} ),

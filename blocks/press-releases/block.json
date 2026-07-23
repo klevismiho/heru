@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/press-releases",
+  "version": "0.1.0",
+  "title": "Press Releases",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Press Releases",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Press Releases"
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
