@@ -1,0 +1,32 @@
+.wp-block-heru-video {
+
+	.video-wrapper {
+		position: relative;
+	}
+
+	.hero-video {
+		display: block;
+		width: 100%;
+		height: auto;
+        border-radius: 20px;
+	}
+
+	.video-play-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+
+		padding: 0;
+
+		transition: transform 0.2s ease;
+
+		&:hover {
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+	}
+}

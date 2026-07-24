@@ -1,10 +1,12 @@
 .wp-block-heru-benefits {
     margin: 4rem 0;
-    background-color: var(--wp--preset--color--heru-light-gray);
     font-family: var(--wp--preset--font-family--heru-heading-font);
 
+    &.has-background {
+        background-color: var(--wp--preset--color--heru-light-gray);
+    }
+
     .section-inner {
-        max-width: var(--wp--style--global--content-size);
         margin: 0 auto;
         padding: 4rem 0;
         text-align: center;
@@ -12,7 +14,18 @@
         .section-title {
             margin-top: 0;
             margin-bottom: 1rem;
-            font-size: 3rem;
+        }
+
+        h1 {
+            &.section-title {
+                font-size: 5rem;
+            }
+        }
+
+        h2 {
+            &.section-title {
+                font-size: 3rem;
+            }
         }
 
         p {
@@ -43,6 +56,7 @@
                     display: inline-block;
                     width: 50px;
                 }
+
                 .benefit-name {
                     font-size: 1.25rem;
                     line-height: 1.25;

@@ -4,7 +4,6 @@
 @charset "UTF-8";
 .wp-block-heru-tabs-with-content {
   margin: 6rem auto;
-  max-width: var(--wp--style--global--content-size);
   padding: 4rem 0;
   font-family: var(--wp--preset--font-family--heru-heading-font);
 }

@@ -23,6 +23,13 @@
     },
     "benefits": {
       "type": "array"
+    },
+    "hasBackground": {
+      "type": "boolean"
+    },
+    "headingLevel": {
+      "type": "string",
+      "default": "h2"
     }
   },
   "textdomain": "heru",

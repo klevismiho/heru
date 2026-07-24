@@ -1,0 +1,54 @@
+.wp-block-heru-benefits-b {
+    margin: 4rem 0;
+    font-family: var(--wp--preset--font-family--heru-heading-font);
+    margin: 0 auto;
+    padding: 4rem 0;
+    text-align: center;
+
+    p {
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    .benefits-items {
+        display: grid;
+        gap: 2rem;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+
+        .benefit-item {
+            padding: 4rem 1rem;
+            background-color: var(--color-light-gray);
+            border-radius: 16px;
+
+            .benefit-item-image {
+                display: flex;
+                height: 50px;
+                width: 100%;
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+
+            img {
+                display: inline-block;
+                width: 50px;
+            }
+
+            .benefit-name {
+                font-size: 1.5rem;
+                line-height: 1.25;
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

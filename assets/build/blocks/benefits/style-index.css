@@ -3,11 +3,12 @@
   \***************************************************************************************************************************************************************************************************************************************************/
 .wp-block-heru-benefits {
   margin: 4rem 0;
-  background-color: var(--wp--preset--color--heru-light-gray);
   font-family: var(--wp--preset--font-family--heru-heading-font);
 }
+.wp-block-heru-benefits.has-background {
+  background-color: var(--wp--preset--color--heru-light-gray);
+}
 .wp-block-heru-benefits .section-inner {
-  max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
   padding: 4rem 0;
   text-align: center;
@@ -15,6 +16,11 @@
 .wp-block-heru-benefits .section-inner .section-title {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+.wp-block-heru-benefits .section-inner h1.section-title {
+  font-size: 5rem;
+}
+.wp-block-heru-benefits .section-inner h2.section-title {
   font-size: 3rem;
 }
 .wp-block-heru-benefits .section-inner p {

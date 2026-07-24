@@ -11,6 +11,8 @@ import {
 	TextControl,
 	Button,
 	IconButton,
+	ToggleControl,
+	SelectControl,
 } from '@wordpress/components';
 
 import {
@@ -25,6 +27,8 @@ export default function Edit({ attributes, setAttributes }) {
 		title,
 		description,
 		benefits = [],
+		hasBackground,
+		headingLevel = 'h2',
 	} = attributes;
 
 
@@ -94,6 +98,45 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
+
+				<PanelBody
+					title="Settings"
+					initialOpen={true}
+				>
+
+					<ToggleControl
+						label="Enable background"
+						checked={hasBackground}
+						onChange={(value) =>
+							setAttributes({
+								hasBackground: value,
+							})
+						}
+					/>
+
+					<SelectControl
+						label="Heading level"
+						value={headingLevel}
+						options={[
+							{
+								label: 'H1',
+								value: 'h1',
+							},
+							{
+								label: 'H2',
+								value: 'h2',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({
+								headingLevel: value,
+							})
+						}
+					/>
+
+				</PanelBody>
+
+
 				<PanelBody
 					title="Benefits"
 					initialOpen={true}
@@ -104,10 +147,8 @@ export default function Edit({ attributes, setAttributes }) {
 							<div
 								key={index}
 								style={{
-									marginBottom:
-										'20px',
-									paddingBottom:
-										'20px',
+									marginBottom: '20px',
+									paddingBottom: '20px',
 									borderBottom:
 										'1px solid #ddd',
 								}}
@@ -115,8 +156,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 								<div
 									style={{
-										display:
-											'flex',
+										display: 'flex',
 										justifyContent:
 											'space-between',
 										alignItems:
@@ -125,6 +165,7 @@ export default function Edit({ attributes, setAttributes }) {
 											'10px',
 									}}
 								>
+
 									<strong>
 										Benefit {index + 1}
 									</strong>
@@ -132,17 +173,13 @@ export default function Edit({ attributes, setAttributes }) {
 
 									<div
 										style={{
-											display:
-												'flex',
-											gap:
-												'4px',
+											display: 'flex',
+											gap: '4px',
 										}}
 									>
 
 										<IconButton
-											icon={
-												arrowUp
-											}
+											icon={arrowUp}
 											label="Move up"
 											onClick={() =>
 												moveBenefit(
@@ -156,9 +193,7 @@ export default function Edit({ attributes, setAttributes }) {
 										/>
 
 										<IconButton
-											icon={
-												arrowDown
-											}
+											icon={arrowDown}
 											label="Move down"
 											onClick={() =>
 												moveBenefit(
@@ -173,9 +208,7 @@ export default function Edit({ attributes, setAttributes }) {
 										/>
 
 										<IconButton
-											icon={
-												close
-											}
+											icon={close}
 											label="Remove benefit"
 											onClick={() =>
 												removeBenefit(
@@ -259,14 +292,22 @@ export default function Edit({ attributes, setAttributes }) {
 					</Button>
 
 				</PanelBody>
+
 			</InspectorControls>
 
 
-			<section {...useBlockProps()}>
+			<section
+				{...useBlockProps({
+					className: hasBackground
+						? 'has-background'
+						: '',
+				})}
+			>
+
 				<div className="section-inner">
 
 					<RichText
-						tagName="h2"
+						tagName={headingLevel}
 						className="section-title"
 						value={title}
 						onChange={(value) =>
@@ -310,9 +351,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 									<div className="benefit-name">
-										{
-											benefit.text
-										}
+										{benefit.text}
 									</div>
 
 								</div>
@@ -322,6 +361,7 @@ export default function Edit({ attributes, setAttributes }) {
 					</div>
 
 				</div>
+
 			</section>
 		</>
 	);

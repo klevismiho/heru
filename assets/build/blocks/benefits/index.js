@@ -157,7 +157,9 @@ function Edit({
   const {
     title,
     description,
-    benefits = []
+    benefits = [],
+    hasBackground,
+    headingLevel = 'h2'
   } = attributes;
   const updateBenefit = (index, key, value) => {
     const newBenefits = [...benefits];
@@ -195,8 +197,31 @@ function Edit({
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Settings",
+        initialOpen: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: "Enable background",
+          checked: hasBackground,
+          onChange: value => setAttributes({
+            hasBackground: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+          label: "Heading level",
+          value: headingLevel,
+          options: [{
+            label: 'H1',
+            value: 'h1'
+          }, {
+            label: 'H2',
+            value: 'h2'
+          }],
+          onChange: value => setAttributes({
+            headingLevel: value
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: "Benefits",
         initialOpen: true,
         children: [benefits.map((benefit, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -264,13 +289,15 @@ function Edit({
           onClick: addBenefit,
           children: "Add Benefit"
         })]
-      })
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+        className: hasBackground ? 'has-background' : ''
+      }),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "section-inner",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-          tagName: "h2",
+          tagName: headingLevel,
           className: "section-title",
           value: title,
           onChange: value => setAttributes({
@@ -397,7 +424,7 @@ function save() {
   \************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/benefits","version":"0.1.0","title":"Benefits","category":"heru","icon":"align-pull-right","description":"Benefits","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"In-Clinic Benefits"},"description":{"type":"string"},"benefits":{"type":"array"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/benefits","version":"0.1.0","title":"Benefits","category":"heru","icon":"align-pull-right","description":"Benefits","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"In-Clinic Benefits"},"description":{"type":"string"},"benefits":{"type":"array"},"hasBackground":{"type":"boolean"},"headingLevel":{"type":"string","default":"h2"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
