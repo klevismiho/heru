@@ -1,0 +1,74 @@
+.wp-block-heru-contact {
+    display: flex;
+    max-width: var(--wp--style--global--content-size);
+    margin: 4rem auto;
+    padding: 4rem 0;
+    gap: 6rem;
+
+    .section-content {
+        flex: 1;
+
+        .section-title {
+            margin: 2rem 0;
+            margin-top: 0;
+            font-size: 3.75rem
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 1.5rem;
+
+            small {
+                display: block;
+                font-weight: normal;
+                font-size: 1rem;
+            }
+        }
+
+        form {
+
+            .hs-form-field {
+                margin-bottom: 10px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            select {
+                width: 100%;
+                height: 40px;
+                background-color: #eeeeee;
+                border: none;
+            }
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                background-color: #eeeeee;
+                border: none;
+            }
+
+            .hs-button {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                background-color: var(--wp--preset--color--heru-primary);
+                color: var(--color-white);
+                font-weight: 700;
+                line-height: inherit;
+                border-radius: 50px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .section-image {
+        flex: 1;
+
+        img {
+            width: 100%;
+            border: 20px;
+        }
+    }
+}

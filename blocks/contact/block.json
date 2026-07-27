@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "heru/split-with-image-b",
+  "name": "heru/contact",
   "version": "0.1.0",
-  "title": "Split Card with Image B",
+  "title": "Contact",
   "category": "heru",
   "icon": "align-pull-right",
-  "description": "Split Card with Image B",
+  "description": "Contact",
   "example": {
     "viewportWidth": 1200
   },
@@ -14,10 +14,6 @@
     "html": false
   },
   "attributes": {
-    "eyebrow": {
-      "type": "string",
-      "default": ""
-    },
     "title": {
       "type": "string",
       "default": ""
@@ -33,6 +29,10 @@
     "image": {
       "type": "object",
       "default": null
+    },
+    "embedCode": {
+      "type": "string",
+      "default": ""
     }
   },
   "textdomain": "heru",

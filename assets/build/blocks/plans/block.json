@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "heru/video",
+  "name": "heru/plans",
   "version": "0.1.0",
-  "title": "Video",
+  "title": "Plans",
   "category": "heru",
   "icon": "align-pull-right",
-  "description": "Video",
+  "description": "Plans",
   "example": {
     "viewportWidth": 1200
   },
@@ -14,16 +14,13 @@
     "html": false
   },
   "attributes": {
-    "videoId": {
-      "type": "number"
-    },
-    "videoUrl": {
-      "type": "string"
+    "plans": {
+      "type": "array",
+      "default": []
     }
   },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
-  "viewScript": "file:./view.js",
   "render": "file:./render.php"
 }

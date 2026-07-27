@@ -1,0 +1,63 @@
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/contact/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+.wp-block-heru-contact {
+  display: flex;
+  max-width: var(--wp--style--global--content-size);
+  margin: 4rem auto;
+  padding: 4rem 0;
+  gap: 6rem;
+}
+.wp-block-heru-contact .section-content {
+  flex: 1;
+}
+.wp-block-heru-contact .section-content .section-title {
+  margin: 2rem 0;
+  margin-top: 0;
+  font-size: 3.75rem;
+}
+.wp-block-heru-contact .section-content p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.wp-block-heru-contact .section-content p small {
+  display: block;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.wp-block-heru-contact .section-content form .hs-form-field {
+  margin-bottom: 10px;
+}
+.wp-block-heru-contact .section-content form input[type=text],
+.wp-block-heru-contact .section-content form input[type=email],
+.wp-block-heru-contact .section-content form select {
+  width: 100%;
+  height: 40px;
+  background-color: #eeeeee;
+  border: none;
+}
+.wp-block-heru-contact .section-content form textarea {
+  width: 100%;
+  height: 150px;
+  background-color: #eeeeee;
+  border: none;
+}
+.wp-block-heru-contact .section-content form .hs-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--wp--preset--color--heru-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: inherit;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+.wp-block-heru-contact .section-image {
+  flex: 1;
+}
+.wp-block-heru-contact .section-image img {
+  width: 100%;
+  border: 20px;
+}

@@ -1,0 +1,65 @@
+.wp-block-heru-plans {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 4rem 0;
+    font-family: var(--wp--preset--font-family--heru-heading-font);
+
+    p {
+        max-width: 600px;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .plans-items {
+        display: grid;
+        gap: 2rem;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+
+        .plan-item {
+            display: flex;
+            flex-direction: column;
+            padding: 3rem 2rem;
+            background-color: color-mix(in srgb, var(--color-primary) 10%, white);
+            border-radius: 16px;
+
+            &.best-item {
+                margin-top: -3rem;
+                margin-bottom: -3rem;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                z-index: 1;
+                background-color: color-mix(in srgb, var(--color-mint) 30%, white);
+                .wp-block-button {
+                    margin-top: 3rem;
+                    .wp-element-button {
+                        padding: 1.5rem;
+                    }
+                }
+            }
+
+            .benefit-name {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+                line-height: 1.25;
+            }
+
+            ul {
+                padding-left: 1rem;
+                list-style-position: inside;
+
+                li {
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                }
+            }
+            .wp-block-button {
+                margin-top: auto;
+                .wp-element-button {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -9,17 +9,18 @@ import {
 import {
 	Button,
 	PanelBody,
+	TextareaControl,
 } from '@wordpress/components';
 
 
 export default function Edit({ attributes, setAttributes }) {
 
 	const {
-		eyebrow,
 		title,
 		description,
 		smallText,
 		image,
+		embedCode,
 	} = attributes;
 
 
@@ -37,6 +38,7 @@ export default function Edit({ attributes, setAttributes }) {
 				>
 
 					<MediaUploadCheck>
+
 						<MediaUpload
 							onSelect={(media) =>
 								setAttributes({
@@ -60,6 +62,7 @@ export default function Edit({ attributes, setAttributes }) {
 								</Button>
 							)}
 						/>
+
 					</MediaUploadCheck>
 
 
@@ -79,6 +82,27 @@ export default function Edit({ attributes, setAttributes }) {
 
 				</PanelBody>
 
+
+				<PanelBody
+					title="Embed Code"
+					initialOpen={false}
+				>
+
+					<TextareaControl
+						label="HTML Embed"
+						value={embedCode}
+						onChange={(value) =>
+							setAttributes({
+								embedCode: value,
+							})
+						}
+						rows={12}
+						help="Paste your embed code here"
+					/>
+
+				</PanelBody>
+
+
 			</InspectorControls>
 
 
@@ -86,18 +110,6 @@ export default function Edit({ attributes, setAttributes }) {
 			<section {...blockProps}>
 
 				<div className="section-content">
-
-					<RichText
-						tagName="div"
-						className="section-eyebrow"
-						value={eyebrow}
-						placeholder="Enter eyebrow..."
-						onChange={(value) =>
-							setAttributes({
-								eyebrow: value,
-							})
-						}
-					/>
 
 
 					<RichText
@@ -136,7 +148,19 @@ export default function Edit({ attributes, setAttributes }) {
 						}
 					/>
 
+
+					{embedCode && (
+						<div
+							className="embed-code"
+							dangerouslySetInnerHTML={{
+								__html: embedCode,
+							}}
+						/>
+					)}
+
+
 				</div>
+
 
 
 				<div className="section-image">
@@ -149,6 +173,7 @@ export default function Edit({ attributes, setAttributes }) {
 					)}
 
 				</div>
+
 
 			</section>
 

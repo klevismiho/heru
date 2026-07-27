@@ -8,13 +8,6 @@ $wrapper_attributes = get_block_wrapper_attributes();
 
 	<div class="section-content">
 
-		<?php if ($attributes['eyebrow']) : ?>
-			<div class="section-eyebrow">
-				<?php echo esc_html($attributes['eyebrow']); ?>
-			</div>
-		<?php endif; ?>
-
-
 		<?php if ($attributes['title']) : ?>
 			<h2 class="section-title">
 				<?php echo wp_kses_post($attributes['title']); ?>
@@ -37,6 +30,14 @@ $wrapper_attributes = get_block_wrapper_attributes();
 			</p>
 		<?php endif; ?>
 
+		<?php if (! empty($attributes['embedCode'])) : ?>
+
+			<div class="embed-code">
+				<?php echo $attributes['embedCode']; ?>
+			</div>
+
+		<?php endif; ?>
+
 	</div>
 
 	<div class="section-image">
@@ -45,8 +46,7 @@ $wrapper_attributes = get_block_wrapper_attributes();
 
 			<img
 				src="<?php echo esc_url($attributes['image']['url']); ?>"
-				alt="<?php echo esc_attr($attributes['image']['alt']); ?>"
-			/>
+				alt="<?php echo esc_attr($attributes['image']['alt']); ?>" />
 
 		<?php endif; ?>
 

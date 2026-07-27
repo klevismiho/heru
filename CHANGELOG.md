@@ -42,4 +42,10 @@ Added split with features block
 Added split-card-with-slides block
 
 ## 23 July 2026
-Added featured-article, block and press-release blocks
+Added featured-article block and press-release blocks
+
+## 24 July 2026
+Add benefits-b and video block
+
+## 27 July 2026
+Add plans and contact blocks

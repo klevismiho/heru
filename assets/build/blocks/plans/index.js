@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/video/style.scss"
+/***/ "./blocks/plans/style.scss"
 /*!*********************************!*\
-  !*** ./blocks/video/style.scss ***!
+  !*** ./blocks/plans/style.scss ***!
   \*********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -54,9 +54,19 @@ module.exports = window["wp"]["components"];
 
 /***/ },
 
-/***/ "./blocks/video/edit.js"
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ },
+
+/***/ "./blocks/plans/edit.js"
 /*!******************************!*\
-  !*** ./blocks/video/edit.js ***!
+  !*** ./blocks/plans/edit.js ***!
   \******************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -66,7 +76,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+
 
 
 
@@ -75,57 +87,99 @@ function Edit({
   setAttributes
 }) {
   const {
-    videoId = 0,
-    videoUrl = ''
+    plans = []
   } = attributes;
-  const selectVideo = media => {
-    setAttributes({
-      videoId: media.id,
-      videoUrl: media.url
-    });
-  };
-  const removeVideo = () => {
-    setAttributes({
-      videoId: 0,
-      videoUrl: ''
-    });
-  };
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    ...blockProps,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
-        onSelect: selectVideo,
-        allowedTypes: ['video'],
-        value: videoId,
-        render: ({
-          open
-        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            variant: "primary",
-            onClick: open,
-            children: videoUrl ? 'Replace Video' : 'Upload Video'
-          }), videoUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  const updatePlan = (index, field, value) => {
+    const newPlans = [...plans];
+    newPlans[index] = {
+      ...newPlans[index],
+      [field]: value
+    };
+    setAttributes({
+      plans: newPlans
+    });
+  };
+  const addPlan = () => {
+    setAttributes({
+      plans: [...plans, {
+        title: 'New Plan',
+        content: '<p>Plan description</p>',
+        buttonText: 'Learn More',
+        buttonLink: '#',
+        featured: false
+      }]
+    });
+  };
+  const removePlan = index => {
+    setAttributes({
+      plans: plans.filter((_, i) => i !== index)
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Plans",
+        initialOpen: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          variant: "primary",
+          onClick: addPlan,
+          children: "Add Plan"
+        }), plans.map((plan, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
+            children: ["Plan ", index + 1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: "Featured plan",
+            checked: plan.featured,
+            onChange: value => updatePlan(index, 'featured', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: "Title",
+            value: plan.title,
+            onChange: value => updatePlan(index, 'title', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+            label: "HTML Content",
+            value: plan.content,
+            onChange: value => updatePlan(index, 'content', value),
+            help: "Add HTML like <p>, <ul>, <li>",
+            rows: 8
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: "Button text",
+            value: plan.buttonText,
+            onChange: value => updatePlan(index, 'buttonText', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: "Button link",
+            value: plan.buttonLink,
+            onChange: value => updatePlan(index, 'buttonLink', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
             variant: "secondary",
-            onClick: removeVideo,
-            style: {
-              marginLeft: '10px'
-            },
-            children: "Remove Video"
+            isDestructive: true,
+            onClick: () => removePlan(index),
+            children: "Remove"
           })]
-        })
+        }, index))]
       })
-    }), videoUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      style: {
-        marginTop: '20px'
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("video", {
-        src: videoUrl,
-        controls: true,
-        style: {
-          width: '100%',
-          height: 'auto'
-        }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+      ...blockProps,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "plans-items",
+        children: plans.map((plan, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: `plan-item ${plan.featured ? 'best-item' : ''}`,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "benefit-name",
+            children: plan.title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "plan-content",
+            dangerouslySetInnerHTML: {
+              __html: plan.content
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "wp-block-button",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              className: "wp-block-button__link wp-element-button",
+              children: plan.buttonText
+            })
+          })]
+        }, index))
       })
     })]
   });
@@ -133,18 +187,18 @@ function Edit({
 
 /***/ },
 
-/***/ "./blocks/video/index.js"
+/***/ "./blocks/plans/index.js"
 /*!*******************************!*\
-  !*** ./blocks/video/index.js ***!
+  !*** ./blocks/plans/index.js ***!
   \*******************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/video/style.scss");
-/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/video/edit.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/video/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/video/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/plans/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/plans/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/plans/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/plans/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -186,9 +240,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./blocks/video/save.js"
+/***/ "./blocks/plans/save.js"
 /*!******************************!*\
-  !*** ./blocks/video/save.js ***!
+  !*** ./blocks/plans/save.js ***!
   \******************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -220,13 +274,13 @@ function save() {
 
 /***/ },
 
-/***/ "./blocks/video/block.json"
+/***/ "./blocks/plans/block.json"
 /*!*********************************!*\
-  !*** ./blocks/video/block.json ***!
+  !*** ./blocks/plans/block.json ***!
   \*********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/video","version":"0.1.0","title":"Video","category":"heru","icon":"align-pull-right","description":"Video","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"videoId":{"type":"number"},"videoUrl":{"type":"string"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/plans","version":"0.1.0","title":"Plans","category":"heru","icon":"align-pull-right","description":"Plans","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"plans":{"type":"array","default":[]}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -349,8 +403,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"video/index": 0,
-/******/ 			"video/style-index": 0
+/******/ 			"plans/index": 0,
+/******/ 			"plans/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -400,7 +454,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["video/style-index"], () => (__webpack_require__("./blocks/video/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["plans/style-index"], () => (__webpack_require__("./blocks/plans/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

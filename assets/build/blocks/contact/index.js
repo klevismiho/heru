@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/hero/style.scss"
-/*!********************************!*\
-  !*** ./blocks/hero/style.scss ***!
-  \********************************/
+/***/ "./blocks/contact/style.scss"
+/*!***********************************!*\
+  !*** ./blocks/contact/style.scss ***!
+  \***********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -54,10 +54,10 @@ module.exports = window["wp"]["components"];
 
 /***/ },
 
-/***/ "./blocks/hero/edit.js"
-/*!*****************************!*\
-  !*** ./blocks/hero/edit.js ***!
-  \*****************************/
+/***/ "./blocks/contact/edit.js"
+/*!********************************!*\
+  !*** ./blocks/contact/edit.js ***!
+  \********************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -77,131 +77,94 @@ function Edit({
   const {
     title,
     description,
-    subtitle,
-    buttons,
-    statistics
+    smallText,
+    image,
+    embedCode
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
-  const updateStatistic = (index, field, value) => {
-    const updated = statistics.map((item, i) => i === index ? {
-      ...item,
-      [field]: value
-    } : item);
-    setAttributes({
-      statistics: updated
-    });
-  };
-  const updateButton = (index, field, value) => {
-    const updated = buttons.map((btn, i) => i === index ? {
-      ...btn,
-      [field]: value
-    } : btn);
-    setAttributes({
-      buttons: updated
-    });
-  };
-  const addButton = () => {
-    setAttributes({
-      buttons: [...buttons, {
-        text: 'New Button',
-        url: '#',
-        outlined: false
-      }]
-    });
-  };
-  const removeButton = index => {
-    setAttributes({
-      buttons: buttons.filter((_, i) => i !== index)
-    });
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        title: "Buttons",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Image",
         initialOpen: true,
-        children: [buttons.map((btn, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          style: {
-            marginBottom: '16px',
-            paddingBottom: '16px',
-            borderBottom: '1px solid #e0e0e0'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: `Button ${index + 1} Text`,
-            value: btn.text,
-            onChange: value => updateButton(index, 'text', value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: "URL",
-            value: btn.url,
-            onChange: value => updateButton(index, 'url', value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
-            label: "Outlined",
-            checked: btn.outlined,
-            onChange: value => updateButton(index, 'outlined', value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            isDestructive: true,
-            variant: "secondary",
-            onClick: () => removeButton(index),
-            children: "Remove"
-          })]
-        }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-          variant: "primary",
-          onClick: addButton,
-          children: "Add Button"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+            onSelect: media => setAttributes({
+              image: {
+                id: media.id,
+                url: media.url,
+                alt: media.alt
+              }
+            }),
+            allowedTypes: ['image'],
+            value: image?.id,
+            render: ({
+              open
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              variant: "secondary",
+              onClick: open,
+              children: image ? 'Replace Image' : 'Select Image'
+            })
+          })
+        }), image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          isDestructive: true,
+          variant: "secondary",
+          onClick: () => setAttributes({
+            image: null
+          }),
+          children: "Remove Image"
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Embed Code",
+        initialOpen: false,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+          label: "HTML Embed",
+          value: embedCode,
+          onChange: value => setAttributes({
+            embedCode: value
+          }),
+          rows: 12,
+          help: "Paste your embed code here"
+        })
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
       ...blockProps,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-        tagName: "div",
-        className: "section-subtitle",
-        value: subtitle,
-        onChange: value => setAttributes({
-          subtitle: value
-        }),
-        placeholder: "Subtitle\u2026"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-        tagName: "h1",
-        className: "section-title",
-        value: title,
-        onChange: value => setAttributes({
-          title: value
-        }),
-        placeholder: "Enter heading\u2026"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-        tagName: "p",
-        value: description,
-        onChange: value => setAttributes({
-          description: value
-        }),
-        placeholder: "Enter description\u2026"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "wp-block-buttons",
-        children: buttons.map((btn, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: `wp-block-button${btn.outlined ? ' is-style-outline' : ''}`,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "wp-block-button__link wp-element-button",
-            href: btn.url,
-            children: btn.text
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "section-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          tagName: "h2",
+          className: "section-title",
+          value: title,
+          placeholder: "Enter title...",
+          onChange: value => setAttributes({
+            title: value
           })
-        }, index))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          tagName: "p",
+          value: description,
+          placeholder: "Enter description...",
+          onChange: value => setAttributes({
+            description: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          tagName: "p",
+          value: smallText,
+          placeholder: "Enter small text...",
+          onChange: value => setAttributes({
+            smallText: value
+          })
+        }), embedCode && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "embed-code",
+          dangerouslySetInnerHTML: {
+            __html: embedCode
+          }
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "hero-statistics",
-        children: statistics.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "statistic-item",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-            tagName: "div",
-            className: "statistic-number",
-            value: item.number,
-            onChange: value => updateStatistic(index, 'number', value),
-            placeholder: "0"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-            tagName: "div",
-            className: "statistic-label",
-            value: item.label,
-            onChange: value => updateStatistic(index, 'label', value),
-            placeholder: "Label"
-          })]
-        }, index))
+        className: "section-image",
+        children: image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: image.url,
+          alt: image.alt
+        })
       })]
     })]
   });
@@ -209,18 +172,18 @@ function Edit({
 
 /***/ },
 
-/***/ "./blocks/hero/index.js"
-/*!******************************!*\
-  !*** ./blocks/hero/index.js ***!
-  \******************************/
+/***/ "./blocks/contact/index.js"
+/*!*********************************!*\
+  !*** ./blocks/contact/index.js ***!
+  \*********************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/hero/style.scss");
-/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/hero/edit.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/hero/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/hero/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/contact/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/contact/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/contact/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/contact/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -257,15 +220,15 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  save: _save_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: () => null
 });
 
 /***/ },
 
-/***/ "./blocks/hero/save.js"
-/*!*****************************!*\
-  !*** ./blocks/hero/save.js ***!
-  \*****************************/
+/***/ "./blocks/contact/save.js"
+/*!********************************!*\
+  !*** ./blocks/contact/save.js ***!
+  \********************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -296,13 +259,13 @@ function save() {
 
 /***/ },
 
-/***/ "./blocks/hero/block.json"
-/*!********************************!*\
-  !*** ./blocks/hero/block.json ***!
-  \********************************/
+/***/ "./blocks/contact/block.json"
+/*!***********************************!*\
+  !*** ./blocks/contact/block.json ***!
+  \***********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/hero","version":"0.1.0","title":"Hero","category":"heru","icon":"cover-image","description":"Heru hero section","example":{"viewportWidth":1200},"supports":{"html":false,"align":["wide"]},"attributes":{"title":{"type":"string","default":"The Software Powering Modern Eye Exams"},"description":{"type":"string","default":"Heru is a clinical diagnostic software company that helps clinics deliver more consistent workflows, clearer results, and better patient and technician experiences without compromising clinical rigor."},"subtitle":{"type":"string","default":"MEET HERU"},"buttons":{"type":"array","default":[{"text":"Test Drive","url":"#","outlined":true},{"text":"Shop Heru","url":"#","outlined":false}],"items":{"type":"object"}},"statistics":{"type":"array","default":[{"number":"1.5M+","label":"Eyes Tested"},{"number":"1700+","label":"Patients in Clinical Trials"},{"number":"70+","label":"US and International Patents"},{"number":"15+","label":"Years of Clinical Research out of Bascom Palmer"},{"number":"13","label":"Testing Modalities And Counting..."}],"items":{"type":"object"}}},"textdomain":"hero","editorScript":"file:./index.js","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/contact","version":"0.1.0","title":"Contact","category":"heru","icon":"align-pull-right","description":"Contact","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":""},"description":{"type":"string","default":""},"smallText":{"type":"string","default":""},"image":{"type":"object","default":null},"embedCode":{"type":"string","default":""}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -425,8 +388,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		const installedChunks = {
-/******/ 			"hero/index": 0,
-/******/ 			"hero/style-index": 0
+/******/ 			"contact/index": 0,
+/******/ 			"contact/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -476,7 +439,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["hero/style-index"], () => (__webpack_require__("./blocks/hero/index.js")))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["contact/style-index"], () => (__webpack_require__("./blocks/contact/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
