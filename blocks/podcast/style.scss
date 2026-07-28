@@ -1,9 +1,17 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-podcast {
     display: flex;
     gap: 4rem;
+    flex-direction: column;
     margin: 4rem auto;
     max-width: var(--wp--style--global--content-size);
-    padding: 4rem;
+    padding: 2rem 1rem;
+
+    @include breakpoint(small) {
+        flex-direction: row;
+            padding: 4rem;
+    }
 
     &.has-background {
         background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 20%, white);

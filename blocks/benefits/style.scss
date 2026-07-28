@@ -1,9 +1,11 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-benefits {
     margin: 4rem 0;
     font-family: var(--wp--preset--font-family--heru-heading-font);
 
     &.has-background {
-        background-color: var(--wp--preset--color--heru-light-gray);
+        background-color: var(--color-light-gray);
     }
 
     .section-inner {
@@ -39,9 +41,12 @@
             gap: 4rem;
             max-width: 750px;
             justify-content: center;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             margin: 0 auto;
             margin-top: 3rem;
+            @include breakpoint(small) {
+                         grid-template-columns: repeat(3, 1fr);
+            }
 
             .benefit-item {
                 .benefit-item-image {

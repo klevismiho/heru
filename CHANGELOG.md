@@ -49,3 +49,6 @@ Add benefits-b and video block
 
 ## 27 July 2026
 Add plans and contact blocks
+
+## 28 July 2026
+Make blocks responsive

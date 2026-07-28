@@ -1,6 +1,9 @@
+@use 'mixins' as *;
+
 .site-header {
     padding: 2rem 0;
     .wp-block-navigation {
+        order: 1;
         ul {
             gap: 2rem;
             li {
@@ -14,6 +17,12 @@
                 }
             }
         } 
+    }
+    .wp-block-site-logo {
+        order: 2;
+    }
+    .wp-block-buttons {
+        order: 3;
     }
     .wp-block-button {
         &.is-style-outline {

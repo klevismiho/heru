@@ -1,13 +1,24 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-cta {
     background-color: var(--wp--preset--color--heru-secondary);
     padding: 4rem 0;
+    @include breakpoint-down(small) {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 1rem;
+    }
 
     .cta-inner {
         display: flex;
+        flex-direction: column;
         gap: 4rem;
         align-items: center;
         max-width: var(--wp--style--global--content-size);
         margin: 0 auto;
+        @include breakpoint(small) {
+            flex-direction: row;
+        }
     }
 
     .section-content {

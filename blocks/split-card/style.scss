@@ -1,11 +1,20 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-split-card {
     display: flex;
+    flex-direction: column;
     max-width: var(--wp--style--global--content-size);
     margin: 4rem auto;
-    padding: 4rem;
-    gap: 10rem;
+    padding: 2rem 1rem;
+    gap: 3rem;
     background-color: var(--wp--preset--color--heru-secondary);
     border-radius: 20px;
+
+    @include breakpoint(small) {
+        flex-direction: row;
+            padding: 4rem;
+            gap: 10rem;
+    }
 
     .section-presentation {
         color: var(--wp--preset--color--white);
@@ -34,7 +43,13 @@
         .wp-block-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 3rem;
+            flex-direction: column;
+            margin-top: 2rem;
+
+            @include breakpoint(small) {
+                flex-direction: row;
+                margin-top: 3rem;
+            }
 
             .wp-block-button {
                 .wp-element-button {
@@ -59,18 +74,23 @@
     }
 
     .section-details {
-        padding: 3rem;
+        padding: 1rem;
         background-color: var(--wp--preset--color--white);
         border-radius: 20px;
+        @include breakpoint(small) {
+            padding: 3rem;
+        }
 
         p {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
         }
 
         img {
-            float: right;
             margin-top: 1rem;
+            @include breakpoint(small) {
+                float: right;
+            }
         }
     }
 }

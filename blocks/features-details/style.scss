@@ -1,8 +1,7 @@
-.wp-block-heru-features-details {
+@use '../../assets/src/scss/mixins' as *; 
 
-    max-width: var(--content-width);
+.wp-block-heru-features-details {
     margin: 4rem auto;
-    padding: 2rem 0;
 
     .section-header {
         text-align: center;
@@ -10,7 +9,7 @@
         .section-title {
             margin-top: 0;
             margin-bottom: 1rem;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 3vw, 3rem);
         }
 
         p {
@@ -22,8 +21,13 @@
 
     .section-inner {
         display: flex;
-        gap: 6rem;
+        gap: 2rem;
+        flex-direction: column;
         margin-top: 4rem;
+        @include breakpoint(small) {
+            flex-direction: row;
+            gap: 6rem;
+        }
 
         .features-list {
             flex: 1;

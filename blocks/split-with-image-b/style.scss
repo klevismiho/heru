@@ -1,9 +1,15 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-split-with-image-b {
     display: flex;
-    max-width: var(--wp--style--global--content-size);
     margin: 4rem auto;
-    padding: 4rem 0;
-    gap: 6rem;
+    gap: 2rem;
+    flex-direction: column;
+
+    @include breakpoint(small) {
+        flex-direction: row;
+        gap: 6rem;
+    }
 
     .section-content {
         flex: 1;
@@ -15,12 +21,12 @@
 
         .section-title {
             margin: 2rem 0;
-            font-size: 3.75rem
+            font-size: clamp(2rem, 3vw, 3.75rem);
         }
 
         p {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             small {
                 display: block;
                 font-weight: normal;
@@ -34,6 +40,7 @@
         flex: 1;
         img {
             width: 100%;
+            border-radius: 20px;
         }
     }
 }

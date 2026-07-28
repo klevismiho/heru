@@ -1,12 +1,43 @@
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/benefits/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-benefits {
   margin: 4rem 0;
   font-family: var(--wp--preset--font-family--heru-heading-font);
 }
 .wp-block-heru-benefits.has-background {
-  background-color: var(--wp--preset--color--heru-light-gray);
+  background-color: var(--color-light-gray);
 }
 .wp-block-heru-benefits .section-inner {
   margin: 0 auto;
@@ -33,9 +64,14 @@
   gap: 4rem;
   max-width: 750px;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
   margin-top: 3rem;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-benefits .section-inner .benefits-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .wp-block-heru-benefits .section-inner .benefits-items .benefit-item .benefit-item-image {
   display: flex;

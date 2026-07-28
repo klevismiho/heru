@@ -1,16 +1,60 @@
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/cta/style.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-cta {
   background-color: var(--wp--preset--color--heru-secondary);
   padding: 4rem 0;
 }
+@media (max-width: 799.98px) {
+  .wp-block-heru-cta {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1rem;
+  }
+}
 .wp-block-heru-cta .cta-inner {
   display: flex;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
   max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-cta .cta-inner {
+    flex-direction: row;
+  }
 }
 .wp-block-heru-cta .section-content {
   flex: 1;

@@ -1,12 +1,48 @@
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/people/style.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-people {
   display: flex;
-  max-width: var(--wp--style--global--content-size);
   margin: 4rem auto;
-  padding: 2rem 0;
-  gap: 6rem;
+  gap: 2rem;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-people {
+    flex-direction: row;
+    gap: 6rem;
+  }
 }
 .wp-block-heru-people .section-content {
   flex: 1;
@@ -30,8 +66,10 @@
   gap: 1rem;
   flex-direction: column;
 }
-.wp-block-heru-people .wp-block-buttons .wp-block-button {
-  width: fit-content;
+@media (min-width: 800px) {
+  .wp-block-heru-people .wp-block-buttons .wp-block-button {
+    width: fit-content;
+  }
 }
 .wp-block-heru-people .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
   background-color: transparent;
@@ -52,7 +90,7 @@
   gap: 1rem;
   align-items: center;
   min-height: 50px;
-  border-bottom: 1px solid var(--wp--preset--color--black);
+  border-bottom: 1px solid var(--color-black);
   position: relative;
   cursor: pointer;
 }

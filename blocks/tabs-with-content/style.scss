@@ -1,7 +1,12 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-tabs-with-content {
-    margin: 6rem auto;
-    padding: 4rem 0;
+    margin: 4rem 0;
     font-family: var(--wp--preset--font-family--heru-heading-font);
+    @include breakpoint(small) {
+        margin: 6rem 0;
+            padding: 4rem 0;
+    }
 
     .section-header {
         text-align: center;
@@ -26,6 +31,10 @@
             justify-content: center;
             gap: 1rem;
             padding: 3rem 0;
+            @include breakpoint-down(small) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
 
             .tab {
                 &.is-active {
@@ -48,9 +57,11 @@
                 display: flex;
                 gap: 4rem;
                 align-items: center;
+                flex-direction: column;
                 display: none;
-
-                display: none;
+                @include breakpoint(small) {
+                    flex-direction: row;
+                }
 
                 &.is-active {
                     animation: fadeIn 0.3s ease-in;

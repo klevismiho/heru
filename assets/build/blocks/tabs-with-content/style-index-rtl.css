@@ -2,10 +2,46 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/tabs-with-content/style.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-tabs-with-content {
-  margin: 6rem auto;
-  padding: 4rem 0;
+  margin: 4rem 0;
   font-family: var(--wp--preset--font-family--heru-heading-font);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-tabs-with-content {
+    margin: 6rem 0;
+    padding: 4rem 0;
+  }
 }
 .wp-block-heru-tabs-with-content .section-header {
   text-align: center;
@@ -26,6 +62,12 @@
   gap: 1rem;
   padding: 3rem 0;
 }
+@media (max-width: 799.98px) {
+  .wp-block-heru-tabs-with-content .tabs-container .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .wp-block-heru-tabs-with-content .tabs-container .tabs .tab.is-active {
   background-color: var(--wp--preset--color--heru-primary);
   border: 2px solid transparent;
@@ -43,8 +85,13 @@
   display: flex;
   gap: 4rem;
   align-items: center;
+  flex-direction: column;
   display: none;
-  display: none;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
+    flex-direction: row;
+  }
 }
 .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content.is-active {
   animation: fadeIn 0.3s ease-in;

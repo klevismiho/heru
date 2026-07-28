@@ -1,3 +1,5 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-logo-grid {
 	max-width: var(--wp--custom--small-size);
 	margin: 0 auto;
@@ -6,8 +8,9 @@
 	text-align: center;
 
 	.section-title {
+		margin-top: 0;
 		font-size: 2.5rem;
-		color: var(--wp--preset--color--heru-primary);
+		color: var(--color-primary);
 	}
 
 	.logo-grid__logos {
@@ -19,10 +22,12 @@
 		margin: 3rem 0;
 
 		.logo-grid__item {
-			width: calc(25% - 3rem);
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			@include breakpoint(small) {
+				width: calc(25% - 3rem);
+			}
 		}
 
 		img {
