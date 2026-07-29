@@ -85,7 +85,7 @@
 }
 .wp-block-heru-split-card-with-image-c .section-presentation .section-title {
   margin: 1rem 0 1rem 0;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 3vw, 4.5rem);
 }
 .wp-block-heru-split-card-with-image-c .section-presentation h3 {
   margin-top: 0;

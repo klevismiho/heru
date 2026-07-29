@@ -37,7 +37,6 @@
   gap: 4rem;
   flex-direction: column;
   margin: 4rem auto;
-  max-width: var(--wp--style--global--content-size);
   padding: 2rem 1rem;
 }
 @media (min-width: 800px) {
@@ -56,7 +55,7 @@
 }
 .wp-block-heru-podcast .section-content .section-title {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2vw, 2.5rem);
 }
 .wp-block-heru-podcast .section-content .wp-block-buttons {
   display: flex;

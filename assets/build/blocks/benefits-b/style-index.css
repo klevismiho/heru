@@ -1,6 +1,37 @@
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/benefits-b/style.scss ***!
   \*****************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-benefits-b {
   margin: 4rem 0;
   font-family: var(--wp--preset--font-family--heru-heading-font);
@@ -14,10 +45,16 @@
   line-height: 1.5;
 }
 .wp-block-heru-benefits-b .benefits-items {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-benefits-b .benefits-items {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .wp-block-heru-benefits-b .benefits-items .benefit-item {
   padding: 4rem 1rem;

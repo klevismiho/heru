@@ -424,7 +424,7 @@ function save() {
   \************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/benefits","version":"0.1.0","title":"Benefits","category":"heru","icon":"align-pull-right","description":"Benefits","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"In-Clinic Benefits"},"description":{"type":"string"},"benefits":{"type":"array"},"hasBackground":{"type":"boolean"},"headingLevel":{"type":"string","default":"h2"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/benefits","version":"0.1.0","title":"Benefits","category":"heru","icon":"align-pull-right","description":"Benefits","example":{"viewportWidth":1200},"supports":{"html":false,"align":["full"]},"attributes":{"title":{"type":"string","default":"In-Clinic Benefits"},"description":{"type":"string"},"benefits":{"type":"array"},"hasBackground":{"type":"boolean"},"headingLevel":{"type":"string","default":"h2"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 

@@ -1,29 +1,67 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/split-card-b/style.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-split-card-b {
   display: flex;
-  max-width: var(--wp--style--global--content-size);
+  flex-direction: column;
   margin: 4rem auto;
-  padding: 2rem;
-  gap: 10rem;
-  background-color: var(--wp--preset--color--heru-secondary);
+  padding: 2rem 1rem;
+  gap: 2rem;
+  background-color: var(--color-secondary);
   border-radius: 20px;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-split-card-b {
+    flex-direction: row;
+    gap: 10rem;
+    padding: 2rem;
+  }
 }
 .wp-block-heru-split-card-b .section-presentation {
   flex: 0 0 30%;
   display: flex;
   flex-direction: column;
-  color: var(--wp--preset--color--white);
+  color: var(--color-white);
 }
 .wp-block-heru-split-card-b .section-presentation .section-eyebrow {
   font-family: var(--wp--preset--font-family--heru-heading-font);
   font-size: 1.3rem;
-  color: var(--wp--preset--color--heru-lilac);
+  color: var(--color-lilac);
 }
 .wp-block-heru-split-card-b .section-presentation .section-title {
   margin: 1rem 0 1rem 0;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 3vw, 3.5rem);
   line-height: 1.2;
 }
 .wp-block-heru-split-card-b .section-presentation .contact-details {
@@ -38,17 +76,22 @@
 }
 .wp-block-heru-split-card-b .section-presentation h3 {
   margin-top: 0;
-  color: var(--wp--preset--color--heru-lilac);
+  color: var(--color-lilac);
 }
 .wp-block-heru-split-card-b .section-details {
   flex: 1;
-  padding: 2rem;
-  background-color: var(--wp--preset--color--white);
+  padding: 2rem 1rem;
+  background-color: var(--color-white);
   border-radius: 20px;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-split-card-b .section-details {
+    padding: 2rem;
+  }
 }
 .wp-block-heru-split-card-b .section-details h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3vw, 2.5rem);
 }
 .wp-block-heru-split-card-b .section-details .wp-block-button {
   margin-top: 7rem;

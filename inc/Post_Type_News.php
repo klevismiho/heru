@@ -33,12 +33,7 @@ class Post_Type_News {
 
 			'public'            => true,
 			'show_in_rest'      => true,
-			'has_archive'       => true,
-
-			'rewrite' => [
-				'slug' => 'news',
-			],
-
+			'has_archive' => 'news-archive',
 			'menu_icon' => 'dashicons-megaphone',
 
 			'supports' => [

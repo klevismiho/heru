@@ -33,14 +33,14 @@
  * }
  */
 .wp-block-heru-cta {
+  margin-right: -1rem;
+  margin-left: -1rem;
+  padding: 4rem 1rem;
   background-color: var(--wp--preset--color--heru-secondary);
-  padding: 4rem 0;
 }
 @media (max-width: 799.98px) {
   .wp-block-heru-cta {
-    margin-right: -1rem;
-    margin-left: -1rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 }
 .wp-block-heru-cta .cta-inner {

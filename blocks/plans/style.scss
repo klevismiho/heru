@@ -1,8 +1,13 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-plans {
     margin-top: 4rem;
     margin-bottom: 4rem;
-    padding: 4rem 0;
     font-family: var(--wp--preset--font-family--heru-heading-font);
+
+    @include breakpoint(small) {
+        padding: 4rem 0;
+    }
 
     p {
         max-width: 600px;
@@ -11,29 +16,46 @@
     }
 
     .plans-items {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
-        justify-content: center;
-        grid-template-columns: repeat(3, 1fr);
+
+        @include breakpoint(small) {
+            display: grid;
+            gap: 2rem;
+            justify-content: center;
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         .plan-item {
             display: flex;
             flex-direction: column;
-            padding: 3rem 2rem;
+            padding: 2rem 1rem;
             background-color: color-mix(in srgb, var(--color-primary) 10%, white);
             border-radius: 16px;
 
+            @include breakpoint(small) {
+                padding: 3rem 2rem;
+            }
+
             &.best-item {
-                margin-top: -3rem;
-                margin-bottom: -3rem;
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-                z-index: 1;
                 background-color: color-mix(in srgb, var(--color-mint) 30%, white);
+
+                @include breakpoint(small) {
+                    margin-top: -3rem;
+                    margin-bottom: -3rem;
+                    padding-top: 3rem;
+                    padding-bottom: 3rem;
+                    z-index: 1;
+                }
+
                 .wp-block-button {
-                    margin-top: 3rem;
-                    .wp-element-button {
-                        padding: 1.5rem;
+                    @include breakpoint(small) {
+                        margin-top: 3rem;
+
+                        .wp-element-button {
+                            padding: 1.5rem;
+                        }
                     }
                 }
             }
@@ -54,8 +76,10 @@
                     font-size: 1rem;
                 }
             }
+
             .wp-block-button {
                 margin-top: auto;
+
                 .wp-element-button {
                     display: block;
                 }

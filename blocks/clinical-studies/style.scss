@@ -1,21 +1,30 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-clinical-studies {
     margin: 4rem auto;
-    max-width: var(--wp--style--global--content-size);
 
     .section-title {
-        font-size: 3rem;
+        font-size: clamp(2rem, 3vw, 3rem);
     }
 
     .clinical-studies-list {
         .clinical-study-item {
             display: flex;
             gap: 2rem;
+            flex-direction: column;
             padding: 2rem 0;
             border-top: 2px solid var(--color-black);
+            @include breakpoint(small) {
+                flex-direction: row;
+            }
 
             h3 {
                 margin-top: 0;
                 margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 0;
             }
 
             .item-image {

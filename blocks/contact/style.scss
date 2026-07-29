@@ -1,9 +1,15 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-contact {
     display: flex;
-    max-width: var(--wp--style--global--content-size);
-    margin: 4rem auto;
+    flex-direction: column;
     padding: 4rem 0;
-    gap: 6rem;
+    gap: 2rem;
+
+    @include breakpoint(small) {
+        flex-direction: row;
+        gap: 6rem;
+    }
 
     .section-content {
         flex: 1;
@@ -11,7 +17,7 @@
         .section-title {
             margin: 2rem 0;
             margin-top: 0;
-            font-size: 3.75rem
+            font-size: clamp(2.5rem, 3vw, 3.75rem);
         }
 
         p {

@@ -1,11 +1,46 @@
 /*!************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/plans/style.scss ***!
   \************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-plans {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding: 4rem 0;
   font-family: var(--wp--preset--font-family--heru-heading-font);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-plans {
+    padding: 4rem 0;
+  }
 }
 .wp-block-heru-plans p {
   max-width: 600px;
@@ -13,31 +48,49 @@
   line-height: 1.5;
 }
 .wp-block-heru-plans .plans-items {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-plans .plans-items {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .wp-block-heru-plans .plans-items .plan-item {
   display: flex;
   flex-direction: column;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   background-color: color-mix(in srgb, var(--color-primary) 10%, white);
   border-radius: 16px;
 }
+@media (min-width: 800px) {
+  .wp-block-heru-plans .plans-items .plan-item {
+    padding: 3rem 2rem;
+  }
+}
 .wp-block-heru-plans .plans-items .plan-item.best-item {
-  margin-top: -3rem;
-  margin-bottom: -3rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  z-index: 1;
   background-color: color-mix(in srgb, var(--color-mint) 30%, white);
 }
-.wp-block-heru-plans .plans-items .plan-item.best-item .wp-block-button {
-  margin-top: 3rem;
+@media (min-width: 800px) {
+  .wp-block-heru-plans .plans-items .plan-item.best-item {
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    z-index: 1;
+  }
 }
-.wp-block-heru-plans .plans-items .plan-item.best-item .wp-block-button .wp-element-button {
-  padding: 1.5rem;
+@media (min-width: 800px) {
+  .wp-block-heru-plans .plans-items .plan-item.best-item .wp-block-button {
+    margin-top: 3rem;
+  }
+  .wp-block-heru-plans .plans-items .plan-item.best-item .wp-block-button .wp-element-button {
+    padding: 1.5rem;
+  }
 }
 .wp-block-heru-plans .plans-items .plan-item .benefit-name {
   margin-bottom: 1rem;

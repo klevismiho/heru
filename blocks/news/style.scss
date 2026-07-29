@@ -1,19 +1,22 @@
 @use '../../assets/src/scss/mixins' as *;
 
 .wp-block-heru-news {
-    margin: 4rem auto;
-    max-width: var(--wp--style--global--content-size);
+    margin: 4rem 0;
 
     .section-title {
-        font-size: 3rem;
+        font-size: clamp(2rem, 3vw, 3rem);
     }
 
     .news-list {
         .news-item {
             display: flex;
             gap: 2rem;
+            flex-direction: column;
             padding: 2rem 0;
             border-top: 2px solid var(--color-black);
+            @include breakpoint(small) {
+                flex-direction: row;
+            }
 
             h3 {
                 margin-top: 1rem;
@@ -21,8 +24,10 @@
             }
 
             .item-image {
-                max-width: 200px;
                 width: 100%;
+                @include breakpoint(small) {
+                    max-width: 200px;
+                }
                 img {
                     height: auto;
                 }

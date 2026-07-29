@@ -10,8 +10,10 @@
 
     .section-inner {
         margin: 0 auto;
-        padding: 4rem 0;
         text-align: center;
+        @include breakpoint(small) {
+            padding: 4rem 0;
+        }
 
         .section-title {
             margin-top: 0;
@@ -20,7 +22,7 @@
 
         h1 {
             &.section-title {
-                font-size: 5rem;
+                font-size: clamp(2.5rem, 3vw, 5rem);
             }
         }
 

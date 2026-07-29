@@ -41,15 +41,19 @@
 }
 .wp-block-heru-benefits .section-inner {
   margin: 0 auto;
-  padding: 4rem 0;
   text-align: center;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-benefits .section-inner {
+    padding: 4rem 0;
+  }
 }
 .wp-block-heru-benefits .section-inner .section-title {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 .wp-block-heru-benefits .section-inner h1.section-title {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 3vw, 5rem);
 }
 .wp-block-heru-benefits .section-inner h2.section-title {
   font-size: 3rem;

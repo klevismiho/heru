@@ -2,41 +2,82 @@
 
 .site-header {
     padding: 2rem 0;
+
+    @include breakpoint-down(small) {
+        .wp-block-navigation__responsive-container-close {
+            top: 15px;
+            right: 15px;
+        }
+        .wp-block-navigation__responsive-container-content {
+            padding: 1rem;
+            padding-top: 2rem;
+        }
+        .wp-block-navigation__container {
+            width: 100%;
+            li {
+                width: 100%;
+                .wp-block-navigation-item__content {
+                    display: block;
+                    width: 100%;
+                    padding: .5rem 1rem !important;
+                }
+            }
+        }
+    }
+
     .wp-block-navigation {
         order: 1;
+
+        @include breakpoint(small) {
+            order: 2;
+        }
+
         ul {
             gap: 2rem;
+
             li {
                 a {
                     transition: .2s all;
                 }
+
                 &:hover {
                     a {
                         color: var(--color-primary);
                     }
                 }
             }
-        } 
+        }
     }
+
     .wp-block-site-logo {
         order: 2;
     }
+
     .wp-block-buttons {
         order: 3;
     }
+
     .wp-block-button {
         &.is-style-outline {
-            .wp-element-button {
-                &:hover {
+            @include breakpoint-down(small) {
+                display: none;
+            }
+
+            @include breakpoint(small) {
+                .wp-element-button {
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-secondary);
+                        border: 1px solid var(--color-secondary);
+                    }
+
                     background-color: transparent;
-                    color: var(--color-secondary); 
-                    border: 1px solid var(--color-secondary);
+                    color: var(--color-primary);
+                    border: 1px solid var(--wp--preset--color--heru-primary);
                 }
-                background-color: transparent;
-                color: var(--color-primary);
-                border: 1px solid var(--wp--preset--color--heru-primary);
             }
         }
+
         .wp-element-button {
             &:hover {
                 background-color: var(--color-secondary);

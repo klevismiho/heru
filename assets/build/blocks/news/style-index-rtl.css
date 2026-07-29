@@ -33,25 +33,34 @@
  * }
  */
 .wp-block-heru-news {
-  margin: 4rem auto;
-  max-width: var(--wp--style--global--content-size);
+  margin: 4rem 0;
 }
 .wp-block-heru-news .section-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 .wp-block-heru-news .news-list .news-item {
   display: flex;
   gap: 2rem;
+  flex-direction: column;
   padding: 2rem 0;
   border-top: 2px solid var(--color-black);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-news .news-list .news-item {
+    flex-direction: row;
+  }
 }
 .wp-block-heru-news .news-list .news-item h3 {
   margin-top: 1rem;
   margin-bottom: 0;
 }
 .wp-block-heru-news .news-list .news-item .item-image {
-  max-width: 200px;
   width: 100%;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-news .news-list .news-item .item-image {
+    max-width: 200px;
+  }
 }
 .wp-block-heru-news .news-list .news-item .item-image img {
   height: auto;

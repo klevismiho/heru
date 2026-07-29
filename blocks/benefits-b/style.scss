@@ -1,3 +1,5 @@
+@use '../../assets/src/scss/mixins' as *; 
+
 .wp-block-heru-benefits-b {
     margin: 4rem 0;
     font-family: var(--wp--preset--font-family--heru-heading-font);
@@ -12,10 +14,14 @@
     }
 
     .benefits-items {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
-        justify-content: center;
-        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint(small) {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         .benefit-item {
             padding: 4rem 1rem;

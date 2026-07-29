@@ -1,15 +1,22 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-split-card-with-slides {
     display: flex;
-    max-width: var(--wp--style--global--content-size);
+    flex-direction: column;
     margin: 4rem auto;
-    padding: 4rem;
-    gap: 10rem;
+    padding: 2rem 1rem;
+    gap: 2rem;
     background-color: #153632;
     border-radius: 20px;
+    @include breakpoint(small) {
+        gap: 10rem;
+        padding: 4rem;
+        flex-direction: row;
+    }
 
     .section-presentation {
         flex: 0 0 35%;
-        color: var(--wp--preset--color--white);
+        color: var(--color-white);
 
         .section-eyebrow {
             font-family: var(--wp--preset--font-family--heru-heading-font);
@@ -19,7 +26,7 @@
 
         .section-title {
             margin: 1rem 0 1rem 0;
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 3vw, 4.5rem);
             line-height: 1;
         }
 
@@ -41,14 +48,14 @@
             .wp-block-button {
                 .wp-element-button {
                     background-color: var(--color-grass);
-                    color: var(--wp--preset--color--black);
+                    color: var(--color-black);
                 }
 
                 &.is-style-outline {
                     .wp-element-button {
                         background-color: transparent;
-                        color: var(--wp--preset--color--white);
-                        border: 1px solid var(--wp--preset--color--white);
+                        color: var(--color-white);
+                        border: 1px solid var(--color-white);
                     }
                 }
             }
@@ -57,10 +64,13 @@
 
     .section-slides {
         flex: 1;
-        padding: 3rem;
-        background-color: var(--wp--preset--color--white);
+        padding: 1rem;
+        background-color: var(--color-white);
         border-radius: 20px;
         position: relative;
+        @include breakpoint(small) {
+            padding: 3rem;
+        }
 
         .embla__viewport {
             overflow: hidden;
@@ -76,13 +86,17 @@
             .slide-description {
                 p {
                     margin: 0;
-                    font-size: 1.5rem;
+                    font-size: clamp(1rem, 1.5vw, 1.5rem);
                 }
             }
             .slide-footer {
                 display: flex;
                 gap: 1rem;
+                flex-direction: column;
                 margin-top: 2rem;
+                @include breakpoint(small) {
+                    flex-direction: row;
+                }
                 .slide-logo {
                     flex: 0 0 30%;
                 }

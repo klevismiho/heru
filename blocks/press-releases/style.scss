@@ -1,26 +1,40 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-press-releases {
-    margin: 4rem auto;
-    max-width: var(--wp--style--global--content-size);
+    margin: 4rem 0;
 
     .section-title {
-        font-size: 3rem;
+        font-size: clamp(2rem, 3vw, 3rem);
     }
 
     .items {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
         .item {
             h3 {
                 margin-top: 0;
                 margin-bottom: 1rem;
-                font-size: 2rem;
+                font-size: clamp(1.5rem, 3vw, 2rem);
             }
+
             .item-meta {
-                margin-bottom: 2rem;
+                @include breakpoint(small) {
+                    margin-bottom: 2rem;
+                }
             }
+
             .wp-block-button {
-                margin-top: 2rem;
+                margin-top: 1rem;
+                @include breakpoint(small) {
+                    margin-top: 2rem;
+                }
             }
         }
     }

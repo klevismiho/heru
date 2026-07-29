@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/video",
+  "version": "0.1.0",
+  "title": "Video",
+  "category": "heru",
+  "icon": "align-pull-right",
+  "description": "Video",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "videoId": {
+      "type": "number"
+    },
+    "videoUrl": {
+      "type": "string"
+    }
+  },
+  "textdomain": "heru",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
