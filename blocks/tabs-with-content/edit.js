@@ -2,7 +2,6 @@
  * Tabs with Content Block - Editor Component
  */
 
-import { __ } from '@wordpress/i18n';
 import {
   useBlockProps,
   InspectorControls,
@@ -118,24 +117,24 @@ export default function Edit({ attributes, setAttributes }) {
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__('Block Settings', 'heru-tabs')} initialOpen={true}>
+        <PanelBody title="Block Settings" initialOpen={true}>
           <TextControl
-            label={__('Section Title', 'heru-tabs')}
+            label="Section Title"
             value={title}
             onChange={(value) => setAttributes({ title: value })}
           />
           <TextControl
-            label={__('Section Description', 'heru-tabs')}
+            label="Section Description"
             value={description}
             onChange={(value) => setAttributes({ description: value })}
-            help={__('Optional description displayed under the title', 'heru-tabs')}
+            help="Optional description displayed under the title"
           />
         </PanelBody>
 
         {tabs.map((tab, tabIndex) => (
           <PanelBody
             key={tab.id}
-            title={__(`Tab: ${tab.name}`, 'heru-tabs')}
+            title={`Tab: ${tab.name}`}
             initialOpen={selectedTabId === tab.id}
             onClick={() => setSelectedTabId(tab.id)}
             style={{
@@ -145,41 +144,57 @@ export default function Edit({ attributes, setAttributes }) {
             }}
           >
             <TextControl
-              label={__('Tab Name', 'heru-tabs')}
+              label="Tab Name"
               value={tab.name}
               onChange={(value) => updateTab(tabIndex, 'name', value)}
-              help={__('Displayed on the tab button', 'heru-tabs')}
+              help="Displayed on the tab button"
             />
 
             <TextControl
-              label={__('Tab Title', 'heru-tabs')}
+              label="Tab Title"
               value={tab.itemTitle}
               onChange={(value) => updateTab(tabIndex, 'itemTitle', value)}
             />
 
-            <TextControl
-              label={__('Tab Description', 'heru-tabs')}
-              value={tab.itemDescription}
-              onChange={(value) => updateTab(tabIndex, 'itemDescription', value)}
-            />
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500', fontSize: '13px' }}>
+                Tab Description
+              </label>
+              <textarea
+                value={tab.itemDescription}
+                onChange={(e) => updateTab(tabIndex, 'itemDescription', e.target.value)}
+                placeholder="Tab description goes here..."
+                style={{
+                  width: '100%',
+                  minHeight: '100px',
+                  padding: '8px',
+                  borderRadius: '4px',
+                  border: '1px solid #8f8f8f',
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+                  fontSize: '13px',
+                  lineHeight: '1.5',
+                  boxSizing: 'border-box',
+                }}
+              />
+            </div>
 
             <ToggleControl
-              label={__('Show Button', 'heru-tabs')}
+              label="Show Button"
               checked={tab.showButton !== false}
               onChange={(value) => updateTab(tabIndex, 'showButton', value)}
-              help={__('Toggle to show or hide the action button', 'heru-tabs')}
+              help="Toggle to show or hide the action button"
             />
 
             {tab.showButton !== false && (
               <>
                 <TextControl
-                  label={__('Button Text', 'heru-tabs')}
+                  label="Button Text"
                   value={tab.buttonText}
                   onChange={(value) => updateTab(tabIndex, 'buttonText', value)}
                 />
 
                 <TextControl
-                  label={__('Button URL', 'heru-tabs')}
+                  label="Button URL"
                   value={tab.buttonUrl}
                   onChange={(value) => updateTab(tabIndex, 'buttonUrl', value)}
                 />
@@ -187,7 +202,7 @@ export default function Edit({ attributes, setAttributes }) {
             )}
 
             <div style={{ marginBottom: '20px', marginTop: '20px' }}>
-              <h3>{__('List Items', 'heru-tabs')}</h3>
+              <h3>List Items</h3>
               {tab.listItems.map((item, itemIndex) => (
                 <div
                   key={itemIndex}
@@ -201,9 +216,9 @@ export default function Edit({ attributes, setAttributes }) {
                   <TextControl
                     value={item}
                     onChange={(value) => updateListItem(tabIndex, itemIndex, value)}
-                    placeholder={__('List item text', 'heru-tabs')}
+                    placeholder="List item text"
                   />
-                  <Tooltip text={__('Remove item', 'heru-tabs')}>
+                  <Tooltip text="Remove item">
                     <Button
                       isDestructive
                       isSmall
@@ -218,7 +233,7 @@ export default function Edit({ attributes, setAttributes }) {
                 onClick={() => addListItem(tabIndex)}
                 icon={plus}
               >
-                {__('Add Item', 'heru-tabs')}
+                Add Item
               </Button>
             </div>
 
@@ -249,8 +264,8 @@ export default function Edit({ attributes, setAttributes }) {
                     )}
                     <Button variant="primary" onClick={open}>
                       {tab.image && tab.image.url
-                        ? __('Change Image', 'heru-tabs')
-                        : __('Select Image', 'heru-tabs')}
+                        ? 'Change Image'
+                        : 'Select Image'}
                     </Button>
                     {tab.image && tab.image.url && (
                       <Button
@@ -258,7 +273,7 @@ export default function Edit({ attributes, setAttributes }) {
                         onClick={() => updateTab(tabIndex, 'image', null)}
                         style={{ marginLeft: '8px' }}
                       >
-                        {__('Remove Image', 'heru-tabs')}
+                        Remove Image
                       </Button>
                     )}
                   </div>
@@ -271,14 +286,14 @@ export default function Edit({ attributes, setAttributes }) {
               onClick={() => removeTab(tabIndex)}
               style={{ marginTop: '10px', width: '100%' }}
             >
-              {__('Remove Tab', 'heru-tabs')}
+              Remove Tab
             </Button>
           </PanelBody>
         ))}
 
-        <PanelBody title={__('Add Tab', 'heru-tabs')} initialOpen={false}>
+        <PanelBody title="Add Tab" initialOpen={false}>
           <Button isPrimary onClick={addTab} style={{ width: '100%' }}>
-            {__('+ Add New Tab', 'heru-tabs')}
+            + Add New Tab
           </Button>
         </PanelBody>
       </InspectorControls>
@@ -326,14 +341,16 @@ export default function Edit({ attributes, setAttributes }) {
                         color: '#999',
                       }}
                     >
-                      {__('Image placeholder', 'heru-tabs')}
+                      Image placeholder
                     </div>
                   )}
                 </div>
 
                 <div className="content-wrapper">
                   <h3>{tab.itemTitle}</h3>
-                  <p>{tab.itemDescription}</p>
+                  <p style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                    {tab.itemDescription}
+                  </p>
 
                   {tab.listItems.length > 0 && (
                     <ul>

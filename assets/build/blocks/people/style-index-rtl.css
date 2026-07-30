@@ -50,7 +50,7 @@
 .wp-block-heru-people .section-content .section-title {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--wp--preset--color--heru-primary);
+  color: var(--color-primary);
 }
 .wp-block-heru-people .section-content p {
   font-size: 1.5rem;
@@ -73,8 +73,8 @@
 }
 .wp-block-heru-people .wp-block-buttons .wp-block-button.is-style-outline .wp-element-button {
   background-color: transparent;
-  color: var(--wp--preset--color--heru-primary);
-  border: 1px solid var(--wp--preset--color--heru-primary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 .wp-block-heru-people .people-list {
   flex: 1;
@@ -120,6 +120,7 @@
 }
 .wp-block-heru-people .people-list .person .person-summary .person-details .person-name {
   margin: 0;
+  font-family: var(--wp--preset--font-family--heru-body-font);
   font-size: 1.5rem;
   font-weight: bold;
 }

@@ -17,7 +17,7 @@
         .section-title {
             font-size: 1rem;
             font-weight: bold;
-            color: var(--wp--preset--color--heru-primary);
+            color: var(--color-primary);
         }
 
         p {
@@ -47,8 +47,8 @@
             &.is-style-outline {
                 .wp-element-button {
                     background-color: transparent;
-                    color: var(--wp--preset--color--heru-primary);
-                    border: 1px solid var(--wp--preset--color--heru-primary);
+                    color: var(--color-primary);
+                    border: 1px solid var(--color-primary);
                 }
             }
         }
@@ -107,6 +107,7 @@
                 .person-details {
                     .person-name {
                         margin: 0;
+                        font-family: var(--wp--preset--font-family--heru-body-font);
                         font-size: 1.5rem;
                         font-weight: bold;
                     }

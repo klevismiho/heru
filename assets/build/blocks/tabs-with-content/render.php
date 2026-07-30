@@ -51,7 +51,7 @@ $tabs = $attributes['tabs'] ?? [];
 						<?php endif; ?>
 
 						<?php if (!empty($tab['itemDescription'])) : ?>
-							<p><?php echo esc_html($tab['itemDescription']); ?></p>
+							<p><?php echo nl2br(esc_html($tab['itemDescription'])); ?></p>
 						<?php endif; ?>
 
 						<?php if (!empty($tab['listItems']) && is_array($tab['listItems'])) : ?>
