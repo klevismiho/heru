@@ -70,7 +70,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit() {
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    sectionTitle
+  } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   const testimonials = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => {
     return select('core').getEntityRecords('postType', 'testimonial', {
@@ -84,9 +90,15 @@ function Edit() {
     ...blockProps,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "section-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+        tagName: "h2",
         className: "section-title",
-        children: "Trusted by Industry Experts"
+        value: sectionTitle,
+        onChange: value => setAttributes({
+          sectionTitle: value
+        }),
+        placeholder: "Enter section title...",
+        allowedFormats: []
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "embla__dots"
       })]
@@ -231,7 +243,7 @@ function save() {
   \****************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/testimonials","version":"0.1.0","title":"Testimonials","category":"heru","icon":"align-pull-right","description":"Testimonials","example":{"viewportWidth":1200},"supports":{"html":false},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/testimonials","version":"0.1.0","title":"Testimonials","category":"heru","icon":"align-pull-right","description":"Testimonials","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"sectionTitle":{"type":"string","default":"Real Users. Real Outcomes."}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ }
 

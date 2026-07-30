@@ -4,6 +4,8 @@ $args = [
   'posts_per_page' => 10,
 ];
 
+$section_title = $attributes['sectionTitle'] ?? '';
+
 $query = new WP_Query($args);
 
 $wrapper_attributes = get_block_wrapper_attributes();
@@ -11,7 +13,10 @@ $wrapper_attributes = get_block_wrapper_attributes();
 
 <section <?php echo $wrapper_attributes; ?>>
   <div class="section-header">
-    <h2 class="section-title">Trusted by Industry Experts</h2>
+    <h2 class="section-title">
+      <?php echo esc_html($section_title); ?>
+    </h2>
+
     <div class="embla__dots"></div>
   </div>
   <div class="embla">

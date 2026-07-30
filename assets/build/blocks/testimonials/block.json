@@ -13,6 +13,12 @@
   "supports": {
     "html": false
   },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "Real Users. Real Outcomes."
+    }
+  },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",

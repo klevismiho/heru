@@ -52,3 +52,6 @@ Add plans and contact blocks
 
 ## 28 July 2026
 Make blocks responsive
+
+## 29 July 2026
+Make blocks responsive
