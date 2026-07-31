@@ -106,13 +106,22 @@ function Edit({
     }],
     contents = [{
       title: 'Test item 1',
-      description: 'Test item 1 description'
+      description: 'Test item 1 description',
+      mediaId: 0,
+      mediaUrl: '',
+      mediaType: ''
     }, {
       title: 'Test item 2',
-      description: 'Test item 2 description'
+      description: 'Test item 2 description',
+      mediaId: 0,
+      mediaUrl: '',
+      mediaType: ''
     }, {
       title: 'Test item 3',
-      description: 'Test item 3 description'
+      description: 'Test item 3 description',
+      mediaId: 0,
+      mediaUrl: '',
+      mediaType: ''
     }]
   } = attributes;
   const updateFeature = (index, key, value) => {
@@ -135,6 +144,18 @@ function Edit({
       contents: updatedContents
     });
   };
+  const updateContentMedia = (index, media) => {
+    const updatedContents = [...contents];
+    updatedContents[index] = {
+      ...updatedContents[index],
+      mediaId: media.id,
+      mediaUrl: media.url,
+      mediaType: media.type
+    };
+    setAttributes({
+      contents: updatedContents
+    });
+  };
   const addFeature = () => {
     setAttributes({
       features: [...features, {
@@ -144,15 +165,25 @@ function Edit({
       }],
       contents: [...contents, {
         title: 'New Feature',
-        description: ''
+        description: '',
+        mediaId: 0,
+        mediaUrl: '',
+        mediaType: ''
       }]
     });
   };
   const removeFeature = index => {
+    const newFeatures = features.filter((_, i) => i !== index);
+    const newContents = contents.filter((_, i) => i !== index);
     setAttributes({
-      features: features.filter((_, i) => i !== index),
-      contents: contents.filter((_, i) => i !== index)
+      features: newFeatures,
+      contents: newContents
     });
+
+    // Keep the open index valid after removing an item.
+    if (openIndex >= newFeatures.length) {
+      setOpenIndex(Math.max(0, newFeatures.length - 1));
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
     ...blockProps,
@@ -184,10 +215,11 @@ function Edit({
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "feature-header",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+              onClick: event => event.stopPropagation(),
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                 type: "checkbox",
                 checked: feature.isNew,
-                onChange: e => updateFeature(index, 'isNew', e.target.checked)
+                onChange: event => updateFeature(index, 'isNew', event.target.checked)
               }), "NEW"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "feature-header-inner",
@@ -196,11 +228,13 @@ function Edit({
                 className: "feature-name",
                 value: feature.name,
                 onChange: value => updateFeature(index, 'name', value),
-                placeholder: "Feature Name"
+                placeholder: "Feature Name",
+                onClick: event => event.stopPropagation()
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "feature-summary",
+            onClick: event => event.stopPropagation(),
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "p",
               value: feature.summary,
@@ -223,6 +257,47 @@ function Edit({
             value: content.description,
             onChange: value => updateContent(index, 'description', value),
             placeholder: "Content Description"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+              onSelect: media => updateContentMedia(index, media),
+              allowedTypes: ['image', 'video'],
+              value: content.mediaId,
+              render: ({
+                open
+              }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                onClick: open,
+                isSecondary: true,
+                children: content.mediaUrl ? 'Replace Media' : 'Upload Media'
+              })
+            })
+          }), content.mediaUrl && content.mediaType === 'image' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "feature-media-preview",
+            style: {
+              marginTop: '15px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              src: content.mediaUrl,
+              alt: "",
+              style: {
+                display: 'block',
+                maxWidth: '100%',
+                height: 'auto'
+              }
+            })
+          }), content.mediaUrl && content.mediaType === 'video' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "feature-media-preview",
+            style: {
+              marginTop: '15px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
+              src: content.mediaUrl,
+              controls: true,
+              style: {
+                display: 'block',
+                maxWidth: '100%',
+                height: 'auto'
+              }
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
             isDestructive: true,
             onClick: () => removeFeature(index),

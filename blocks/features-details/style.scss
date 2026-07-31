@@ -109,6 +109,7 @@
 
         .features-content {
             flex: 1;
+            height: fit-content;
             padding: 2rem;
             background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 10%, white);
             border-radius: 20px;

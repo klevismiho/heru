@@ -1,4 +1,9 @@
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+    useBlockProps,
+    RichText,
+    MediaUpload,
+    MediaUploadCheck
+} from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
@@ -8,43 +13,127 @@ export default function Edit({ attributes, setAttributes }) {
 
     const {
         title = 'Heru Prime Modalities',
-        description = 'Heru Prime replaces an entire exam lane of traditional diagnostic equipment with a single wearable device.',
+        description =
+            'Heru Prime replaces an entire exam lane of traditional diagnostic equipment with a single wearable device.',
         features = [
-            { name: 'PretestPro™', summary: 'This is a summary of feature 1', isNew: true },
-            { name: 'PretestPro™', summary: 'This is a summary of feature 1', isNew: false },
-            { name: 'PretestPro™', summary: 'This is a summary of feature 1', isNew: true }
+            {
+                name: 'PretestPro™',
+                summary: 'This is a summary of feature 1',
+                isNew: true
+            },
+            {
+                name: 'PretestPro™',
+                summary: 'This is a summary of feature 1',
+                isNew: false
+            },
+            {
+                name: 'PretestPro™',
+                summary: 'This is a summary of feature 1',
+                isNew: true
+            }
         ],
         contents = [
-            { title: 'Test item 1', description: 'Test item 1 description' },
-            { title: 'Test item 2', description: 'Test item 2 description' },
-            { title: 'Test item 3', description: 'Test item 3 description' }
+            {
+                title: 'Test item 1',
+                description: 'Test item 1 description',
+                mediaId: 0,
+                mediaUrl: '',
+                mediaType: ''
+            },
+            {
+                title: 'Test item 2',
+                description: 'Test item 2 description',
+                mediaId: 0,
+                mediaUrl: '',
+                mediaType: ''
+            },
+            {
+                title: 'Test item 3',
+                description: 'Test item 3 description',
+                mediaId: 0,
+                mediaUrl: '',
+                mediaType: ''
+            }
         ]
     } = attributes;
 
     const updateFeature = (index, key, value) => {
         const updatedFeatures = [...features];
-        updatedFeatures[index] = { ...updatedFeatures[index], [key]: value };
-        setAttributes({ features: updatedFeatures });
+
+        updatedFeatures[index] = {
+            ...updatedFeatures[index],
+            [key]: value
+        };
+
+        setAttributes({
+            features: updatedFeatures
+        });
     };
 
     const updateContent = (index, key, value) => {
         const updatedContents = [...contents];
-        updatedContents[index] = { ...updatedContents[index], [key]: value };
-        setAttributes({ contents: updatedContents });
+
+        updatedContents[index] = {
+            ...updatedContents[index],
+            [key]: value
+        };
+
+        setAttributes({
+            contents: updatedContents
+        });
+    };
+
+    const updateContentMedia = (index, media) => {
+        const updatedContents = [...contents];
+
+        updatedContents[index] = {
+            ...updatedContents[index],
+            mediaId: media.id,
+            mediaUrl: media.url,
+            mediaType: media.type
+        };
+
+        setAttributes({
+            contents: updatedContents
+        });
     };
 
     const addFeature = () => {
         setAttributes({
-            features: [...features, { name: 'New Feature', summary: '', isNew: false }],
-            contents: [...contents, { title: 'New Feature', description: '' }]
+            features: [
+                ...features,
+                {
+                    name: 'New Feature',
+                    summary: '',
+                    isNew: false
+                }
+            ],
+            contents: [
+                ...contents,
+                {
+                    title: 'New Feature',
+                    description: '',
+                    mediaId: 0,
+                    mediaUrl: '',
+                    mediaType: ''
+                }
+            ]
         });
     };
 
     const removeFeature = (index) => {
+        const newFeatures = features.filter((_, i) => i !== index);
+        const newContents = contents.filter((_, i) => i !== index);
+
         setAttributes({
-            features: features.filter((_, i) => i !== index),
-            contents: contents.filter((_, i) => i !== index)
+            features: newFeatures,
+            contents: newContents
         });
+
+        // Keep the open index valid after removing an item.
+        if (openIndex >= newFeatures.length) {
+            setOpenIndex(Math.max(0, newFeatures.length - 1));
+        }
     };
 
     return (
@@ -54,13 +143,18 @@ export default function Edit({ attributes, setAttributes }) {
                     tagName="h2"
                     className="section-title"
                     value={title}
-                    onChange={(value) => setAttributes({ title: value })}
+                    onChange={(value) =>
+                        setAttributes({ title: value })
+                    }
                     placeholder="Section Title"
                 />
+
                 <RichText
                     tagName="p"
                     value={description}
-                    onChange={(value) => setAttributes({ description: value })}
+                    onChange={(value) =>
+                        setAttributes({ description: value })
+                    }
                     placeholder="Section Description"
                 />
             </div>
@@ -70,38 +164,66 @@ export default function Edit({ attributes, setAttributes }) {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className={`feature ${openIndex === index ? 'is-open' : ''}`}
+                            className={`feature ${
+                                openIndex === index ? 'is-open' : ''
+                            }`}
                             onClick={() => setOpenIndex(index)}
                         >
                             <div className="feature-header">
-                                <label>
+                                <label
+                                    onClick={(event) =>
+                                        event.stopPropagation()
+                                    }
+                                >
                                     <input
                                         type="checkbox"
                                         checked={feature.isNew}
-                                        onChange={(e) =>
-                                            updateFeature(index, 'isNew', e.target.checked)
+                                        onChange={(event) =>
+                                            updateFeature(
+                                                index,
+                                                'isNew',
+                                                event.target.checked
+                                            )
                                         }
                                     />
                                     NEW
                                 </label>
+
                                 <div className="feature-header-inner">
                                     <RichText
                                         tagName="h3"
                                         className="feature-name"
                                         value={feature.name}
                                         onChange={(value) =>
-                                            updateFeature(index, 'name', value)
+                                            updateFeature(
+                                                index,
+                                                'name',
+                                                value
+                                            )
                                         }
                                         placeholder="Feature Name"
+                                        onClick={(event) =>
+                                            event.stopPropagation()
+                                        }
                                     />
                                 </div>
                             </div>
-                            <div className="feature-summary">
+
+                            <div
+                                className="feature-summary"
+                                onClick={(event) =>
+                                    event.stopPropagation()
+                                }
+                            >
                                 <RichText
                                     tagName="p"
                                     value={feature.summary}
                                     onChange={(value) =>
-                                        updateFeature(index, 'summary', value)
+                                        updateFeature(
+                                            index,
+                                            'summary',
+                                            value
+                                        )
                                     }
                                     placeholder="Feature Summary"
                                 />
@@ -114,26 +236,109 @@ export default function Edit({ attributes, setAttributes }) {
                     {contents.map((content, index) => (
                         <div
                             key={index}
-                            className={`feature-content ${openIndex === index ? 'is-active' : ''}`}
+                            className={`feature-content ${
+                                openIndex === index
+                                    ? 'is-active'
+                                    : ''
+                            }`}
                         >
                             <RichText
                                 tagName="h3"
                                 value={content.title}
-                                onChange={(value) => updateContent(index, 'title', value)}
+                                onChange={(value) =>
+                                    updateContent(
+                                        index,
+                                        'title',
+                                        value
+                                    )
+                                }
                                 placeholder="Content Title"
                             />
+
                             <RichText
                                 tagName="p"
                                 value={content.description}
                                 onChange={(value) =>
-                                    updateContent(index, 'description', value)
+                                    updateContent(
+                                        index,
+                                        'description',
+                                        value
+                                    )
                                 }
                                 placeholder="Content Description"
                             />
+
+                            <MediaUploadCheck>
+                                <MediaUpload
+                                    onSelect={(media) =>
+                                        updateContentMedia(index, media)
+                                    }
+                                    allowedTypes={[
+                                        'image',
+                                        'video'
+                                    ]}
+                                    value={content.mediaId}
+                                    render={({ open }) => (
+                                        <Button
+                                            onClick={open}
+                                            isSecondary
+                                        >
+                                            {content.mediaUrl
+                                                ? 'Replace Media'
+                                                : 'Upload Media'}
+                                        </Button>
+                                    )}
+                                />
+                            </MediaUploadCheck>
+
+                            {content.mediaUrl &&
+                                content.mediaType === 'image' && (
+                                    <div
+                                        className="feature-media-preview"
+                                        style={{
+                                            marginTop: '15px'
+                                        }}
+                                    >
+                                        <img
+                                            src={content.mediaUrl}
+                                            alt=""
+                                            style={{
+                                                display: 'block',
+                                                maxWidth: '100%',
+                                                height: 'auto'
+                                            }}
+                                        />
+                                    </div>
+                                )}
+
+                            {content.mediaUrl &&
+                                content.mediaType === 'video' && (
+                                    <div
+                                        className="feature-media-preview"
+                                        style={{
+                                            marginTop: '15px'
+                                        }}
+                                    >
+                                        <video
+                                            src={content.mediaUrl}
+                                            controls
+                                            style={{
+                                                display: 'block',
+                                                maxWidth: '100%',
+                                                height: 'auto'
+                                            }}
+                                        />
+                                    </div>
+                                )}
+
                             <Button
                                 isDestructive
-                                onClick={() => removeFeature(index)}
-                                style={{ marginTop: '10px' }}
+                                onClick={() =>
+                                    removeFeature(index)
+                                }
+                                style={{
+                                    marginTop: '10px'
+                                }}
                             >
                                 Remove Feature
                             </Button>
@@ -142,7 +347,13 @@ export default function Edit({ attributes, setAttributes }) {
                 </div>
             </div>
 
-            <Button isPrimary onClick={addFeature} style={{ marginTop: '20px' }}>
+            <Button
+                isPrimary
+                onClick={addFeature}
+                style={{
+                    marginTop: '20px'
+                }}
+            >
                 Add Feature
             </Button>
         </section>
