@@ -113,9 +113,6 @@ function Edit({
     buttons = [],
     features = []
   } = attributes;
-
-  /* ---------------- Buttons ---------------- */
-
   const updateButton = (index, field, value) => {
     const newButtons = [...buttons];
     newButtons[index] = {

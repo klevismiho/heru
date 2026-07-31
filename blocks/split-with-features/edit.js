@@ -20,8 +20,6 @@ export default function Edit({ attributes, setAttributes }) {
 		features = [],
 	} = attributes;
 
-	/* ---------------- Buttons ---------------- */
-
 	const updateButton = (index, field, value) => {
 		const newButtons = [...buttons];
 
