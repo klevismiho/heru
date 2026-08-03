@@ -1,0 +1,57 @@
+@use '../../assets/src/scss/mixins' as *;
+
+.wp-block-heru-benefits-c {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-family: var(--wp--preset--font-family--heru-heading-font);
+    padding: 2rem 1rem;
+    background-color: color-mix(in srgb, var(--color-primary) 15%, white);
+    border-radius: 20px;
+    @include breakpoint(small) {
+        padding: 4rem;
+    }
+
+    .section-title {
+        margin-top: 0;
+    }
+
+    .benefits-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+
+        @include breakpoint(small) {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .benefit-item {
+            padding: 4rem 1rem;
+
+            .benefit-item-image {
+                display: flex;
+                height: 50px;
+                width: 100%;
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+
+            img {
+                display: inline-block;
+                width: 50px;
+            }
+
+            .benefit-name {
+                font-size: 1.5rem;
+                line-height: 1.25;
+            }
+
+            p {
+                line-height: 1.3rem;
+            }
+            
+        }
+    }
+}
