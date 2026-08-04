@@ -1,0 +1,1 @@
+{"version":3,"file":"popup/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://heru/./blocks/popup/editor.scss"],"sourcesContent":[".wp-block-heru-popup {\n\tdisplay: block;\n\tbackground: none;\n}"],"names":[],"sourceRoot":""}

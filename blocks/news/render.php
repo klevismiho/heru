@@ -17,20 +17,25 @@ $news_posts = new WP_Query(
 <section <?php echo $wrapper_attributes; ?>>
 
 	<h2 class="section-title">
-		<?php echo wp_kses_post( $title ); ?>
+		<?php echo wp_kses_post($title); ?>
 	</h2>
 
-	<?php if ( $news_posts->have_posts() ) : ?>
+	<?php if ($news_posts->have_posts()) : ?>
 
 		<div class="news-list">
 
-			<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
+			<?php while ($news_posts->have_posts()) : $news_posts->the_post(); ?>
+
+				<?php
+				$author = get_field('author');
+				$source = get_field('source');
+				?>
 
 				<div class="news-item">
 
 					<div class="item-image">
 
-						<?php if ( has_post_thumbnail() ) : ?>
+						<?php if (has_post_thumbnail()) : ?>
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 						<?php endif; ?>
 
@@ -38,8 +43,24 @@ $news_posts = new WP_Query(
 
 					<div class="item-content">
 
-						<div class="item-date">
-							<?php echo esc_html( get_the_date( 'F Y' ) ); ?>
+						<div class="item-meta">
+							<?php if ($author || $source) : ?>
+
+								<?php if ($author) : ?>
+									<span class="item-author">
+										By <?php echo esc_html($author); ?>
+									</span> - 
+								<?php endif; ?>
+
+								<?php if ($source) : ?>
+									<span class="item-source">
+										<?php echo esc_html($source); ?>
+									</span> - 
+								<?php endif; ?>
+							<?php endif; ?>
+							<span class="item-date">
+								<?php echo esc_html(get_the_date('F Y')); ?>
+							</span>
 						</div>
 
 						<h3>

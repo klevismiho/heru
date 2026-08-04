@@ -1,1 +1,498 @@
-(()=>{"use strict";var e={979(){const e=window.wp.blocks,t=window.wp.data,s=window.wp.blockEditor,l=window.wp.components,o=window.ReactJSXRuntime,n=JSON.parse('{"UU":"heru/split-card-b"}');(0,e.registerBlockType)(n.UU,{edit:function({attributes:e,setAttributes:n}){const{eyebrow:a,title:r,contactLabel:c,email:i,emailUrl:d,phone:h,phoneUrl:p,newsMode:u,selectedPostId:b}=e,w=(0,s.useBlockProps)(),x=(0,t.useSelect)(e=>e("core").getEntityRecords("postType","news",{per_page:1,orderby:"date",order:"desc"})),m=(0,t.useSelect)(e=>b?e("core").getEntityRecord("postType","news",b):null,[b]),v=(0,t.useSelect)(e=>e("core").getEntityRecords("postType","post",{per_page:20,search:""})),g=v?.map(e=>({label:e.title.rendered,value:e.id}))||[],j="latest"===u?x?.[0]:m;return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(s.InspectorControls,{children:(0,o.jsxs)(l.PanelBody,{title:"News Settings",initialOpen:!0,children:[(0,o.jsx)(l.RadioControl,{label:"News source",selected:u,options:[{label:"Show latest news",value:"latest"},{label:"Select news article",value:"selected"}],onChange:e=>n({newsMode:e,selectedPostId:0})}),"selected"===u&&(0,o.jsx)(l.ComboboxControl,{label:"Search news",value:b,options:g,onChange:e=>n({selectedPostId:e})})]})}),(0,o.jsxs)("section",{...w,children:[(0,o.jsxs)("div",{className:"section-presentation",children:[(0,o.jsx)(s.RichText,{tagName:"div",className:"section-eyebrow",value:a,onChange:e=>n({eyebrow:e}),placeholder:"News category"}),(0,o.jsx)(s.RichText,{tagName:"div",className:"section-title",value:r,onChange:e=>n({title:e}),placeholder:"Section title"}),(0,o.jsxs)("div",{className:"contact-details",children:[(0,o.jsx)(s.RichText,{tagName:"div",className:"contact-label",value:c,onChange:e=>n({contactLabel:e}),placeholder:"Contact label"}),(0,o.jsx)(s.RichText,{tagName:"a",value:i,href:d,onChange:e=>n({email:e}),placeholder:"Email address"}),(0,o.jsx)(s.RichText,{tagName:"a",value:h,href:p,onChange:e=>n({phone:e}),placeholder:"Phone number"})]})]}),(0,o.jsxs)("div",{className:"section-details",children:[j&&(0,o.jsx)("h1",{children:(0,o.jsx)("a",{href:j.link,children:j.title.rendered})}),(0,o.jsx)("div",{className:"wp-block-button",children:(0,o.jsx)("a",{className:"wp-block-button__link wp-element-button",href:"#",children:"Shop Heru"})})]})]})]})},save:function(){return null}})}};const t={};function s(l){const o=t[l];if(void 0!==o)return o.exports;const n=t[l]={exports:{}};return e[l](n,n.exports,s),n.exports}s.m=e,(()=>{const e=[];s.O=(t,l,o,n)=>{if(l){n=n||0;for(var a=e.length;a>0&&e[a-1][2]>n;a--)e[a]=e[a-1];return void(e[a]=[l,o,n])}let r=1/0;for(a=0;a<e.length;a++){let[l,o,n]=e[a],i=!0;for(var c=0;c<l.length;c++)(!1&n||r>=n)&&Object.keys(s.O).every(e=>s.O[e](l[c]))?l.splice(c--,1):(i=!1,n<r&&(r=n));if(i){e.splice(a--,1);const s=o();void 0!==s&&(t=s)}}return t}})(),s.o=(e,t)=>Object.hasOwn(e,t),(()=>{const e={1908:0,3404:0};s.O.j=t=>0===e[t];const t=(t,l)=>{let[o,n,a]=l;var r,c,i=0;if(o.some(t=>0!==e[t])){for(r in n)s.o(n,r)&&(s.m[r]=n[r]);if(a)var d=a(s)}for(t&&t(l);i<o.length;i++)c=o[i],s.o(e,c)&&e[c]&&e[c][0](),e[c]=0;return s.O(d)},l=globalThis.webpackChunkheru||=[];l.forEach(t.bind(null,0)),l.push=t.bind(null,l.push.bind(l))})();let l=s.O(void 0,[3404],()=>s(979));l=s.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./blocks/split-card-b/style.scss"
+/*!****************************************!*\
+  !*** ./blocks/split-card-b/style.scss ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/data"
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["data"];
+
+/***/ },
+
+/***/ "./blocks/split-card-b/edit.js"
+/*!*************************************!*\
+  !*** ./blocks/split-card-b/edit.js ***!
+  \*************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    eyebrow,
+    title,
+    contactLabel,
+    email,
+    emailUrl,
+    phone,
+    phoneUrl,
+    newsMode,
+    selectedPostId
+  } = attributes;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
+
+  /**
+   * Get latest news
+   */
+  const latestPosts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select('core').getEntityRecords('postType', 'news', {
+    per_page: 1,
+    orderby: 'date',
+    order: 'desc'
+  }));
+
+  /**
+   * Get selected news
+   */
+  const selectedPost = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => selectedPostId ? select('core').getEntityRecord('postType', 'news', selectedPostId) : null, [selectedPostId]);
+
+  /**
+   * Search posts
+   */
+  const posts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select('core').getEntityRecords('postType', 'post', {
+    per_page: 20,
+    search: ''
+  }));
+  const postOptions = posts?.map(post => ({
+    label: post.title.rendered,
+    value: post.id
+  })) || [];
+  const newsPost = newsMode === 'latest' ? latestPosts?.[0] : selectedPost;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: "News Settings",
+        initialOpen: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
+          label: "News source",
+          selected: newsMode,
+          options: [{
+            label: 'Show latest news',
+            value: 'latest'
+          }, {
+            label: 'Select news article',
+            value: 'selected'
+          }],
+          onChange: value => setAttributes({
+            newsMode: value,
+            selectedPostId: 0
+          })
+        }), newsMode === 'selected' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ComboboxControl, {
+          label: "Search news",
+          value: selectedPostId,
+          options: postOptions,
+          onChange: value => setAttributes({
+            selectedPostId: value
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+      ...blockProps,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "section-presentation",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+          tagName: "div",
+          className: "section-eyebrow",
+          value: eyebrow,
+          onChange: value => setAttributes({
+            eyebrow: value
+          }),
+          placeholder: "News category"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+          tagName: "div",
+          className: "section-title",
+          value: title,
+          onChange: value => setAttributes({
+            title: value
+          }),
+          placeholder: "Section title"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "contact-details",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+            tagName: "div",
+            className: "contact-label",
+            value: contactLabel,
+            onChange: value => setAttributes({
+              contactLabel: value
+            }),
+            placeholder: "Contact label"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+            tagName: "a",
+            value: email,
+            href: emailUrl,
+            onChange: value => setAttributes({
+              email: value
+            }),
+            placeholder: "Email address"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+            tagName: "a",
+            value: phone,
+            href: phoneUrl,
+            onChange: value => setAttributes({
+              phone: value
+            }),
+            placeholder: "Phone number"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "section-details",
+        children: [newsPost && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+            href: newsPost.link,
+            children: newsPost.title.rendered
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "wp-block-button",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+            className: "wp-block-button__link wp-element-button",
+            href: "#",
+            children: "Shop Heru"
+          })
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ },
+
+/***/ "./blocks/split-card-b/index.js"
+/*!**************************************!*\
+  !*** ./blocks/split-card-b/index.js ***!
+  \**************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/split-card-b/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/split-card-b/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/split-card-b/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/split-card-b/block.json");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  /**
+   * @see ./edit.js
+   */
+  edit: _edit_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  /**
+   * @see ./save.js
+   */
+  save: _save_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ },
+
+/***/ "./blocks/split-card-b/save.js"
+/*!*************************************!*\
+  !*** ./blocks/split-card-b/save.js ***!
+  \*************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {Element} Element to render.
+ */
+function save() {
+  return null;
+}
+
+/***/ },
+
+/***/ "./blocks/split-card-b/block.json"
+/*!****************************************!*\
+  !*** ./blocks/split-card-b/block.json ***!
+  \****************************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/split-card-b","version":"0.1.0","title":"Split Card B","category":"heru","icon":"align-pull-right","description":"Split Card B","example":{"viewportWidth":1200},"supports":{"html":false},"attributes":{"eyebrow":{"type":"string","default":"NEWS & PRESS"},"title":{"type":"string","default":"What’s New with Heru"},"contactLabel":{"type":"string","default":"Media Inquiries:"},"email":{"type":"string","default":"pr@heru.net"},"emailUrl":{"type":"string","default":"mailto:pr@heru.net"},"phone":{"type":"string","default":"844-SEE-HERU (844-733-4378)"},"phoneUrl":{"type":"string","default":"tel:844-733-4378"},"newsMode":{"type":"string","default":"latest"},"selectedPostId":{"type":"number","default":0}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"split-card-b/index": 0,
+/******/ 			"split-card-b/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkheru"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["split-card-b/style-index"], () => (__webpack_require__("./blocks/split-card-b/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

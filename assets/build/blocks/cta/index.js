@@ -1,1 +1,496 @@
-(()=>{"use strict";var e={530(){const e=window.wp.blocks,t=window.wp.blockEditor,n=window.wp.components,l=window.ReactJSXRuntime;(0,e.registerBlockType)("heru/cta",{edit:function({attributes:e,setAttributes:i}){const{title:o,description:s,buttons:r=[],image:a={}}=e,c=(0,t.useBlockProps)({className:"alignfull"}),u=(e,t,n)=>{const l=r.map((l,i)=>i===e?{...l,[t]:n}:l);i({buttons:l})};return(0,l.jsxs)(l.Fragment,{children:[(0,l.jsxs)(t.InspectorControls,{children:[(0,l.jsx)(n.PanelBody,{title:"Image",initialOpen:!0,children:(0,l.jsx)(t.MediaUploadCheck,{children:(0,l.jsx)(t.MediaUpload,{onSelect:e=>i({image:{id:e.id,url:e.url,alt:e.alt||""}}),allowedTypes:["image"],value:a.id,render:({open:e})=>(0,l.jsxs)(l.Fragment,{children:[a.url&&(0,l.jsx)("img",{src:a.url,alt:"",style:{width:"100%",marginBottom:"12px"}}),(0,l.jsx)(n.Button,{variant:"secondary",onClick:e,children:a.url?"Replace Image":"Select Image"}),a.url&&(0,l.jsx)(n.Button,{isDestructive:!0,onClick:()=>i({image:{}}),children:"Remove Image"})]})})})}),(0,l.jsxs)(n.PanelBody,{title:"Buttons",initialOpen:!0,children:[r.map((e,t)=>(0,l.jsxs)("div",{children:[(0,l.jsx)(n.TextControl,{label:"Button Text",value:e.text,onChange:e=>u(t,"text",e)}),(0,l.jsx)(n.TextControl,{label:"Button URL",value:e.url,onChange:e=>u(t,"url",e)}),(0,l.jsx)(n.CheckboxControl,{label:"Outlined",checked:e.outlined,onChange:e=>u(t,"outlined",e)}),(0,l.jsx)(n.Button,{isDestructive:!0,variant:"secondary",onClick:()=>(e=>{i({buttons:r.filter((t,n)=>n!==e)})})(t),children:"Remove"})]},t)),(0,l.jsx)(n.Button,{variant:"primary",onClick:()=>{i({buttons:[...r,{text:"New Button",url:"#",outlined:!1}]})},children:"Add Button"})]})]}),(0,l.jsx)("section",{...c,children:(0,l.jsxs)("div",{className:"cta-inner",children:[(0,l.jsxs)("div",{className:"section-content",children:[(0,l.jsx)(t.RichText,{tagName:"h2",className:"section-title",value:o,placeholder:"Enter title...",onChange:e=>i({title:e})}),(0,l.jsx)(t.RichText,{tagName:"p",value:s,placeholder:"Enter description...",onChange:e=>i({description:e})}),r.length>0&&(0,l.jsx)("div",{className:"wp-block-buttons",children:r.map((e,t)=>(0,l.jsx)("div",{className:"wp-block-button"+(e.outlined?" is-style-outline":""),children:(0,l.jsx)("a",{className:"wp-block-button__link wp-element-button",href:e.url||"#",onClick:e=>e.preventDefault(),children:e.text})},t))})]}),(0,l.jsx)("div",{className:"section-image",children:a.url&&(0,l.jsx)("img",{src:a.url,alt:a.alt||""})})]})})]})},save:function(){return null}})}};const t={};function n(l){const i=t[l];if(void 0!==i)return i.exports;const o=t[l]={exports:{}};return e[l](o,o.exports,n),o.exports}n.m=e,(()=>{const e=[];n.O=(t,l,i,o)=>{if(l){o=o||0;for(var s=e.length;s>0&&e[s-1][2]>o;s--)e[s]=e[s-1];return void(e[s]=[l,i,o])}let r=1/0;for(s=0;s<e.length;s++){let[l,i,o]=e[s],c=!0;for(var a=0;a<l.length;a++)(!1&o||r>=o)&&Object.keys(n.O).every(e=>n.O[e](l[a]))?l.splice(a--,1):(c=!1,o<r&&(r=o));if(c){e.splice(s--,1);const n=i();void 0!==n&&(t=n)}}return t}})(),n.o=(e,t)=>Object.hasOwn(e,t),(()=>{const e={7010:0,3350:0};n.O.j=t=>0===e[t];const t=(t,l)=>{let[i,o,s]=l;var r,a,c=0;if(i.some(t=>0!==e[t])){for(r in o)n.o(o,r)&&(n.m[r]=o[r]);if(s)var u=s(n)}for(t&&t(l);c<i.length;c++)a=i[c],n.o(e,a)&&e[a]&&e[a][0](),e[a]=0;return n.O(u)},l=globalThis.webpackChunkheru||=[];l.forEach(t.bind(null,0)),l.push=t.bind(null,l.push.bind(l))})();let l=n.O(void 0,[3350],()=>n(530));l=n.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./blocks/cta/style.scss"
+/*!*******************************!*\
+  !*** ./blocks/cta/style.scss ***!
+  \*******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "./blocks/cta/edit.js"
+/*!****************************!*\
+  !*** ./blocks/cta/edit.js ***!
+  \****************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    title,
+    description,
+    buttons = [],
+    image = {}
+  } = attributes;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+    className: 'alignfull'
+  });
+  const updateButton = (index, field, value) => {
+    const updatedButtons = buttons.map((button, i) => i === index ? {
+      ...button,
+      [field]: value
+    } : button);
+    setAttributes({
+      buttons: updatedButtons
+    });
+  };
+  const addButton = () => {
+    setAttributes({
+      buttons: [...buttons, {
+        text: 'New Button',
+        url: '#',
+        outlined: false
+      }]
+    });
+  };
+  const removeButton = index => {
+    setAttributes({
+      buttons: buttons.filter((_, i) => i !== index)
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Image",
+        initialOpen: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+            onSelect: media => setAttributes({
+              image: {
+                id: media.id,
+                url: media.url,
+                alt: media.alt || ''
+              }
+            }),
+            allowedTypes: ['image'],
+            value: image.id,
+            render: ({
+              open
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [image.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: image.url,
+                alt: "",
+                style: {
+                  width: '100%',
+                  marginBottom: '12px'
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                variant: "secondary",
+                onClick: open,
+                children: image.url ? 'Replace Image' : 'Select Image'
+              }), image.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                isDestructive: true,
+                onClick: () => setAttributes({
+                  image: {}
+                }),
+                children: "Remove Image"
+              })]
+            })
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Buttons",
+        initialOpen: true,
+        children: [buttons.map((button, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: "Button Text",
+            value: button.text,
+            onChange: value => updateButton(index, 'text', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+            label: "Button URL",
+            value: button.url,
+            onChange: value => updateButton(index, 'url', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+            label: "Outlined",
+            checked: button.outlined,
+            onChange: value => updateButton(index, 'outlined', value)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+            isDestructive: true,
+            variant: "secondary",
+            onClick: () => removeButton(index),
+            children: "Remove"
+          })]
+        }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          variant: "primary",
+          onClick: addButton,
+          children: "Add Button"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+      ...blockProps,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cta-inner",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "section-content",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            tagName: "h2",
+            className: "section-title",
+            value: title,
+            placeholder: "Enter title...",
+            onChange: value => setAttributes({
+              title: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            tagName: "p",
+            value: description,
+            placeholder: "Enter description...",
+            onChange: value => setAttributes({
+              description: value
+            })
+          }), buttons.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "wp-block-buttons",
+            children: buttons.map((button, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: `wp-block-button${button.outlined ? ' is-style-outline' : ''}`,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                className: "wp-block-button__link wp-element-button",
+                href: button.url || '#',
+                onClick: e => e.preventDefault(),
+                children: button.text
+              })
+            }, index))
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "section-image",
+          children: image.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: image.url,
+            alt: image.alt || ''
+          })
+        })]
+      })
+    })]
+  });
+}
+
+/***/ },
+
+/***/ "./blocks/cta/index.js"
+/*!*****************************!*\
+  !*** ./blocks/cta/index.js ***!
+  \*****************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/cta/style.scss");
+/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.js */ "./blocks/cta/edit.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save.js */ "./blocks/cta/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/cta/block.json");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  /**
+   * @see ./edit.js
+   */
+  edit: _edit_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  /**
+   * @see ./save.js
+   */
+  save: _save_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ },
+
+/***/ "./blocks/cta/save.js"
+/*!****************************!*\
+  !*** ./blocks/cta/save.js ***!
+  \****************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {Element} Element to render.
+ */
+function save() {
+  return null;
+}
+
+/***/ },
+
+/***/ "./blocks/cta/block.json"
+/*!*******************************!*\
+  !*** ./blocks/cta/block.json ***!
+  \*******************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/cta","version":"0.1.0","title":"Call to action","category":"heru","icon":"align-pull-right","description":"Call to action","example":{"viewportWidth":1200},"supports":{"html":false,"align":["full"]},"attributes":{"title":{"type":"string","default":""},"description":{"type":"string","default":""},"image":{"type":"object","default":{}},"buttons":{"type":"array"}},"textdomain":"heru","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			let notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn, priority] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"cta/index": 0,
+/******/ 			"cta/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkheru"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["cta/style-index"], () => (__webpack_require__("./blocks/cta/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map
