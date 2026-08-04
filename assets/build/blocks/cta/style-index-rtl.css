@@ -1,1 +1,77 @@
-.wp-block-heru-cta{background-color:var(--wp--preset--color--heru-secondary);margin-right:-1rem;margin-left:-1rem;padding:4rem 1rem}@media(max-width:799.98px){.wp-block-heru-cta{padding:2rem 1rem}}.wp-block-heru-cta .cta-inner{align-items:center;display:flex;flex-direction:column;gap:4rem;margin:0 auto;max-width:var(--wp--style--global--content-size)}@media(min-width:800px){.wp-block-heru-cta .cta-inner{flex-direction:row}}.wp-block-heru-cta .section-content{color:var(--wp--preset--color--white);flex:1}.wp-block-heru-cta .section-content .section-title{font-size:2.5rem;margin:0}.wp-block-heru-cta .section-content .wp-block-buttons{display:flex;gap:1rem;margin-top:2rem}.wp-block-heru-cta .section-image{flex:1}.wp-block-heru-cta .section-image img{border-radius:20px}
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/cta/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
+.wp-block-heru-cta {
+  margin-right: -1rem;
+  margin-left: -1rem;
+  padding: 4rem 1rem;
+  background-color: var(--wp--preset--color--heru-secondary);
+}
+@media (max-width: 799.98px) {
+  .wp-block-heru-cta {
+    padding: 2rem 1rem;
+  }
+}
+.wp-block-heru-cta .cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  max-width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-cta .cta-inner {
+    flex-direction: row;
+  }
+}
+.wp-block-heru-cta .section-content {
+  flex: 1;
+  color: var(--wp--preset--color--white);
+}
+.wp-block-heru-cta .section-content .section-title {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.wp-block-heru-cta .section-content .wp-block-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.wp-block-heru-cta .section-image {
+  flex: 1;
+}
+.wp-block-heru-cta .section-image img {
+  border-radius: 20px;
+}

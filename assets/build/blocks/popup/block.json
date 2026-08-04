@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "heru/popup",
+  "version": "0.1.0",
+  "title": "Popup",
+  "category": "heru",
+  "icon": "welcome-widgets-menus",
+  "description": "A customizable popup.",
+  "textdomain": "heru",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "showOnce": {
+      "type": "boolean",
+      "default": true
+    },
+    "delay": {
+      "type": "number",
+      "default": 0
+    },
+    "buttons": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Learn More",
+          "url": "#",
+          "outlined": false
+        }
+      ],
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "inserter": false
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

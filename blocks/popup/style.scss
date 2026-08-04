@@ -1,0 +1,61 @@
+@use '../../assets/src/scss/mixins' as *;
+
+.wp-block-heru-popup {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.7);
+
+	&.is-visible {
+		display: flex;
+	}
+
+	.heru-popup__content {
+		background: var(--color-white);
+		padding: 1rem;
+		width: 100%;
+		max-width: 500px;
+		text-align: center;
+		position: relative;
+
+		.heru-popup__close {
+			border: none;
+			background: none;
+			font-size: 25px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.wp-block-buttons {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			gap: 1rem;
+			margin-top: 2rem;
+
+			@include breakpoint(small) {
+				flex-direction: row;
+			}
+		}
+
+		.wp-block-button {
+			&.is-style-outline {
+				.wp-element-button {
+					&:hover {
+						background-color: var(--color-primary);
+						color: var(--color-white);
+					}
+
+					background-color: transparent;
+					color: var(--color-primary);
+					border: 1px solid var(--wp--preset--color--heru-primary);
+				}
+			}
+		}
+
+	}
+}

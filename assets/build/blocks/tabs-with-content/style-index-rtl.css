@@ -1,1 +1,143 @@
-.wp-block-heru-tabs-with-content{font-family:var(--wp--preset--font-family--heru-heading-font);margin:4rem 0}@media(min-width:800px){.wp-block-heru-tabs-with-content{margin:6rem 0;padding:4rem 0}}.wp-block-heru-tabs-with-content .section-header{text-align:center}.wp-block-heru-tabs-with-content .section-header .section-title{font-size:3rem;margin-bottom:1rem;margin-top:0}.wp-block-heru-tabs-with-content .section-header p{line-height:1.5;margin:0 auto;max-width:600px}.wp-block-heru-tabs-with-content .tabs-container .tabs{display:flex;gap:1rem;justify-content:center;padding:3rem 0}@media(max-width:799.98px){.wp-block-heru-tabs-with-content .tabs-container .tabs{display:grid;grid-template-columns:repeat(2,1fr)}}.wp-block-heru-tabs-with-content .tabs-container .tabs .tab.is-active{background-color:var(--wp--preset--color--heru-primary);border:2px solid transparent;color:#fff}.wp-block-heru-tabs-with-content .tabs-container .tabs .tab{background-color:#fff;border:2px solid var(--wp--preset--color--heru-primary);border-radius:50px;color:var(--wp--preset--color--heru-primary);font-weight:700;padding:15px 30px 13px}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content{align-items:center;display:flex;display:none;flex-direction:column;gap:4rem}@media(min-width:800px){.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content{flex-direction:row}}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content.is-active{animation:fadeIn .3s ease-in}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .image-wrapper{flex:0 0 35%}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper h3{font-size:2.25rem;margin:0}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper p{font-size:1.25rem;line-height:1.5}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul{list-style:none;margin:0 0 2rem;padding:0}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li{align-items:center;display:flex;gap:12px;margin-bottom:1rem}.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li:before{align-items:center;background-color:#000;border-radius:50%;color:#fff;content:"✓";display:flex;flex-shrink:0;font-size:14px;font-weight:700;height:24px;justify-content:center;width:24px}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/tabs-with-content/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
+.wp-block-heru-tabs-with-content {
+  margin: 4rem 0;
+  font-family: var(--wp--preset--font-family--heru-heading-font);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-tabs-with-content {
+    margin: 6rem 0;
+    padding: 4rem 0;
+  }
+}
+.wp-block-heru-tabs-with-content .section-header {
+  text-align: center;
+}
+.wp-block-heru-tabs-with-content .section-header .section-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+.wp-block-heru-tabs-with-content .section-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+@media (max-width: 799.98px) {
+  .wp-block-heru-tabs-with-content .tabs-container .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs .tab.is-active {
+  background-color: var(--wp--preset--color--heru-primary);
+  border: 2px solid transparent;
+  color: #FFFFFF;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs .tab {
+  padding: 15px 30px 13px 30px;
+  background-color: #fff;
+  color: var(--wp--preset--color--heru-primary);
+  font-weight: 700;
+  border: 2px solid var(--wp--preset--color--heru-primary);
+  border-radius: 50px;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
+    flex-direction: row;
+  }
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content.is-active {
+  animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .image-wrapper {
+  flex: 0 0 35%;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper h3 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li::before {
+  content: "✓";
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
