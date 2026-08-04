@@ -29,6 +29,7 @@ $news_posts = new WP_Query(
 				<?php
 				$author = get_field('author');
 				$source = get_field('source');
+				$external_link = get_field('external_link');
 				?>
 
 				<div class="news-item">
@@ -49,13 +50,13 @@ $news_posts = new WP_Query(
 								<?php if ($author) : ?>
 									<span class="item-author">
 										By <?php echo esc_html($author); ?>
-									</span> - 
+									</span> -
 								<?php endif; ?>
 
 								<?php if ($source) : ?>
 									<span class="item-source">
 										<?php echo esc_html($source); ?>
-									</span> - 
+									</span> -
 								<?php endif; ?>
 							<?php endif; ?>
 							<span class="item-date">
@@ -64,9 +65,13 @@ $news_posts = new WP_Query(
 						</div>
 
 						<h3>
-							<a href="<?php the_permalink(); ?>">
-								<?php the_title(); ?>
-							</a>
+							<?php if ($external_link) : ?>
+								<a href="<?php echo $external_link; ?>" target="_blank">
+								<?php else : ?>
+									<a href="<?php the_permalink(); ?>">
+									<?php endif; ?>
+									<?php the_title(); ?>
+									</a>
 						</h3>
 
 					</div>
