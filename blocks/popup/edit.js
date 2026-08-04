@@ -20,6 +20,7 @@ export default function Edit({
 }) {
 
 	const {
+		enabled,
 		title,
 		description,
 		showOnce,
@@ -68,6 +69,23 @@ export default function Edit({
 	return (
 		<>
 			<InspectorControls>
+
+				<PanelBody
+					title="Popup Settings"
+					initialOpen={true}
+				>
+
+					<ToggleControl
+						label="Enable popup"
+						checked={enabled}
+						onChange={(value) =>
+							setAttributes({
+								enabled: value,
+							})
+						}
+					/>
+
+				</PanelBody>
 
 				<PanelBody
 					title="Popup Settings"
@@ -193,8 +211,8 @@ export default function Edit({
 							<div
 								key={index}
 								className={`wp-block-button${btn.outlined
-										? ' is-style-outline'
-										: ''
+									? ' is-style-outline'
+									: ''
 									}`}
 							>
 								<a

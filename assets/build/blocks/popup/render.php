@@ -6,6 +6,12 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	]
 );
 
+$enabled = $attributes['enabled'] ?? true;
+
+if ( ! $enabled ) {
+	return;
+}
+
 $title       = $attributes['title'] ?? '';
 $description = $attributes['description'] ?? '';
 $show_once   = $attributes['showOnce'] ?? true;

@@ -14,10 +14,10 @@
 	}
 
 	.heru-popup__content {
-		background: var(--color-white);
 		padding: 1rem;
-		width: 100%;
+		width: calc(100% - 2rem);
 		max-width: 500px;
+		background: var(--color-white);
 		text-align: center;
 		position: relative;
 

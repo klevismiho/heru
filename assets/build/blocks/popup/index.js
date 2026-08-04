@@ -87,6 +87,7 @@ function Edit({
   setAttributes
 }) {
   const {
+    enabled,
     title,
     description,
     showOnce,
@@ -119,7 +120,17 @@ function Edit({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Popup Settings",
+        initialOpen: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: "Enable popup",
+          checked: enabled,
+          onChange: value => setAttributes({
+            enabled: value
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: "Popup Settings",
         initialOpen: true,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
@@ -298,7 +309,7 @@ function save() {
   \*********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/popup","version":"0.1.0","title":"Popup","category":"heru","icon":"welcome-widgets-menus","description":"A customizable popup.","textdomain":"heru","attributes":{"title":{"type":"string","default":""},"description":{"type":"string","default":""},"showOnce":{"type":"boolean","default":true},"delay":{"type":"number","default":0},"buttons":{"type":"array","default":[{"text":"Learn More","url":"#","outlined":false}],"items":{"type":"object"}}},"supports":{"html":false,"inserter":false},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-index.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"heru/popup","version":"0.1.0","title":"Popup","category":"heru","icon":"welcome-widgets-menus","description":"A customizable popup.","textdomain":"heru","attributes":{"enabled":{"type":"boolean","default":true},"title":{"type":"string","default":""},"description":{"type":"string","default":""},"showOnce":{"type":"boolean","default":true},"delay":{"type":"number","default":0},"buttons":{"type":"array","default":[{"text":"Learn More","url":"#","outlined":false}],"items":{"type":"object"}}},"supports":{"html":false,"inserter":false},"editorScript":"file:./index.js","viewScript":"file:./view.js","style":"file:./style-index.css","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ }
 
