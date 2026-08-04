@@ -2,8 +2,7 @@
 
 .wp-block-heru-logo-grid {
 	max-width: var(--wp--custom--small-size);
-	margin: 0 auto;
-	margin-bottom: 4rem;
+	margin: 0 auto 4rem;
 	padding: 2rem 0;
 	text-align: center;
 
@@ -13,25 +12,47 @@
 		color: var(--color-primary);
 	}
 
-	.logo-grid__logos {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		gap: 3rem;
+	.logo-grid__viewport {
+		overflow: hidden;
 		margin: 3rem 0;
+	}
 
-		.logo-grid__item {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			@include breakpoint(small) {
-				width: calc(25% - 3rem);
-			}
-		}
+	.logo-grid__logos {
+		--logos-per-view: 2;
+
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.logo-grid__item {
+		flex: 0 0 calc((100% / var(--logos-per-view)) - 2rem);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		img {
-			display: inline-block;
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	@include breakpoint(small) {
+		.logo-grid__logos {
+			--logos-per-view: 3;
+		}
+	}
+
+	@include breakpoint(medium) {
+		.logo-grid__logos {
+			--logos-per-view: 4;
+		}
+	}
+
+	@include breakpoint(large) {
+		.logo-grid__logos {
+			--logos-per-view: 6;
 		}
 	}
 
