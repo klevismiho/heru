@@ -34,13 +34,17 @@ $news_posts = new WP_Query(
 
 				<div class="news-item">
 
-					<div class="item-image">
-
-						<?php if (has_post_thumbnail()) : ?>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-						<?php endif; ?>
-
-					</div>
+					<?php if (has_post_thumbnail()) : ?>
+						<div class="item-image">
+							<?php if ($external_link) : ?>
+							<a href="<?php echo $external_link; ?>" target="_blank">
+							<?php else : ?>
+								<a href="<?php the_permalink(); ?>">
+								<?php endif; ?>
+								<?php the_post_thumbnail(); ?>
+							</a>
+						</div>
+					<?php endif; ?>
 
 					<div class="item-content">
 
@@ -66,12 +70,12 @@ $news_posts = new WP_Query(
 
 						<h3>
 							<?php if ($external_link) : ?>
-								<a href="<?php echo $external_link; ?>" target="_blank">
-								<?php else : ?>
-									<a href="<?php the_permalink(); ?>">
-									<?php endif; ?>
-									<?php the_title(); ?>
-									</a>
+							<a href="<?php echo $external_link; ?>" target="_blank">
+							<?php else : ?>
+								<a href="<?php the_permalink(); ?>">
+								<?php endif; ?>
+								<?php the_title(); ?>
+							</a>
 						</h3>
 
 					</div>

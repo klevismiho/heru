@@ -5,6 +5,48 @@
   margin: 4rem auto;
   max-width: var(--wp--style--global--content-size);
 }
+.wp-block-heru-blog .blog-toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.wp-block-heru-blog .blog-toolbar .blog-categories {
+  flex: 1;
+}
+.wp-block-heru-blog .blog-toolbar .blog-categories ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+.wp-block-heru-blog .blog-toolbar .blog-categories ul a {
+  padding: 0.3rem 1rem;
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  color: var(--color-white);
+}
+.wp-block-heru-blog .blog-toolbar .blog-search {
+  flex: 1;
+}
+.wp-block-heru-blog .blog-toolbar .blog-search form {
+  display: flex;
+}
+.wp-block-heru-blog .blog-toolbar .blog-search input[type=search] {
+  width: 100%;
+  height: 40px;
+  padding: 0 1rem;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid #cbcbcb;
+  border-right: none;
+}
+.wp-block-heru-blog .blog-toolbar .blog-search button {
+  padding: 0 1rem;
+  background: none;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid #cbcbcb;
+  border-left: none;
+}
 .wp-block-heru-blog .section-title {
   font-size: 3rem;
 }

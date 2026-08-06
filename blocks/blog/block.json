@@ -13,6 +13,16 @@
   "supports": {
     "html": false
   },
+  "attributes": {
+    "showPagination": {
+      "type": "boolean",
+      "default": false
+    },
+    "postsPerPage": {
+      "type": "number",
+      "default": 5
+    }
+  },
   "textdomain": "heru",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
