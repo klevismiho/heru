@@ -1,14 +1,51 @@
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/blog/style.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************/
+/**
+ * Mobile-first breakpoint mixin.
+ *
+ * Usage:
+ *
+ * .element {
+ *   padding: 1rem;
+ *
+ *   @include breakpoint(medium) {
+ *     padding: 2rem;
+ *   }
+ * }
+ */
+/**
+ * Max-width breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-down(medium) {
+ *   ...
+ * }
+ */
+/**
+ * Range breakpoint mixin.
+ *
+ * Usage:
+ *
+ * @include breakpoint-between(small, large) {
+ *   ...
+ * }
+ */
 .wp-block-heru-blog {
   margin: 4rem auto;
-  max-width: var(--wp--style--global--content-size);
 }
 .wp-block-heru-blog .blog-toolbar {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   margin-bottom: 2rem;
+}
+@media (min-width: 800px) {
+  .wp-block-heru-blog .blog-toolbar {
+    flex-direction: row;
+  }
 }
 .wp-block-heru-blog .blog-toolbar .blog-categories {
   flex: 1;
@@ -28,6 +65,11 @@
 }
 .wp-block-heru-blog .blog-toolbar .blog-search {
   flex: 1;
+}
+@media (max-width: 799.98px) {
+  .wp-block-heru-blog .blog-toolbar .blog-search {
+    width: 100%;
+  }
 }
 .wp-block-heru-blog .blog-toolbar .blog-search form {
   display: flex;
@@ -52,16 +94,24 @@
 }
 .wp-block-heru-blog .blog-list .blog-item {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
   border-top: 2px solid var(--color-black);
+}
+@media (min-width: 800px) {
+  .wp-block-heru-blog .blog-list .blog-item {
+    flex-direction: row;
+  }
 }
 .wp-block-heru-blog .blog-list .blog-item h3 {
   margin-top: 1rem;
   margin-bottom: 0;
 }
-.wp-block-heru-blog .blog-list .blog-item .item-image {
-  max-width: 33%;
+@media (min-width: 800px) {
+  .wp-block-heru-blog .blog-list .blog-item .item-image {
+    max-width: 33%;
+  }
 }
 .wp-block-heru-blog .blog-list .blog-item .item-image img {
   height: auto;

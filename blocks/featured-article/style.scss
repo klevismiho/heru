@@ -1,36 +1,42 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-featured-article {
-    display: flex;
     max-width: var(--wp--style--global--content-size);
-    margin: 4rem auto;
     padding: 2rem;
     gap: 10rem;
-    background-color: var(--wp--preset--color--heru-secondary);
+    background-color: var(--color-secondary);
     border-radius: 20px;
+
+    @include breakpoint(small) {
+        display: flex;
+    }
 
     .section-presentation {
         flex: 0 0 30%;
         display: flex;
         flex-direction: column;
-        color: var(--wp--preset--color--white);
+        color: var(--color-white);
 
         .section-eyebrow {
             font-family: var(--wp--preset--font-family--heru-heading-font);
             font-size: 1.3rem;
-            color: var(--wp--preset--color--heru-lilac);
+            color: var(--color-lilac);
         }
 
         .section-title {
             margin: 1rem 0 1rem 0;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 3vh, 2.5rem);
             line-height: 1.2;
         }
 
         .contact-details {
             margin-top: auto;
+
             .contact-label {
                 margin-bottom: 1rem;
                 color: var(--color-grass);
             }
+
             a {
                 display: block;
             }
@@ -44,15 +50,30 @@
 
     .section-details {
         flex: 1;
-        padding: 2rem;
+        padding: 1rem;
         background-color: var(--wp--preset--color--white);
         border-radius: 20px;
 
-        .post-excerpt {
-            font-size: 1.5rem;
+        @include breakpoint-down(small) {
+            margin-top: 2rem;
         }
+
+        @include breakpoint(small) {
+            padding: 2rem;
+        }
+
+        .post-excerpt {
+            font-size: 1rem;
+            @include breakpoint(small) {
+                font-size: 1.5rem;
+            }
+        }
+
         .wp-block-button {
-            margin-top: 7rem;
+            margin-top: 1rem;
+            @include breakpoint(small) {
+                margin-top: 7rem;
+            }
         }
     }
 }

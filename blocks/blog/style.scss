@@ -1,11 +1,18 @@
+@use '../../assets/src/scss/mixins' as *;
+
 .wp-block-heru-blog {
     margin: 4rem auto;
-    max-width: var(--wp--style--global--content-size);
 
     .blog-toolbar {
         display: flex;
+        flex-direction: column;
+        gap: 2rem;
         align-items: center;
         margin-bottom: 2rem;
+
+        @include breakpoint(small) {
+            flex-direction: row;
+        }
 
         .blog-categories {
             flex: 1;
@@ -28,6 +35,10 @@
 
         .blog-search {
             flex: 1;
+
+            @include breakpoint-down(small) {
+                width: 100%;
+            }
 
             form {
                 display: flex;
@@ -59,9 +70,13 @@
     .blog-list {
         .blog-item {
             display: flex;
+            flex-direction: column;
             gap: 2rem;
             padding: 2rem 0;
             border-top: 2px solid var(--color-black);
+            @include breakpoint(small) {
+                flex-direction: row;
+            }
 
             h3 {
                 margin-top: 1rem;
@@ -69,7 +84,9 @@
             }
 
             .item-image {
-                max-width: 33%;
+                @include breakpoint(small) {
+                    max-width: 33%;
+                }
 
                 img {
                     height: auto;
