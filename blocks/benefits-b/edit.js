@@ -9,7 +9,6 @@ import {
 	PanelBody,
 	Button,
 	IconButton,
-	ToggleControl,
 	TextControl,
 	TextareaControl,
 } from '@wordpress/components';
@@ -102,24 +101,6 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-
-				<PanelBody
-					title="Settings"
-					initialOpen={true}
-				>
-
-					<ToggleControl
-						label="Enable background"
-						checked={hasBackground}
-						onChange={(value) =>
-							setAttributes({
-								hasBackground: value,
-							})
-						}
-					/>
-
-				</PanelBody>
-
 
 				<PanelBody
 					title="Benefits"
