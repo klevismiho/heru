@@ -1,7 +1,6 @@
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/tabs-with-content/style.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************/
-@charset "UTF-8";
 /**
  * Mobile-first breakpoint mixin.
  *
@@ -69,16 +68,16 @@
   }
 }
 .wp-block-heru-tabs-with-content .tabs-container .tabs .tab.is-active {
-  background-color: var(--wp--preset--color--heru-primary);
+  background-color: var(--color-primary);
   border: 2px solid transparent;
   color: #FFFFFF;
 }
 .wp-block-heru-tabs-with-content .tabs-container .tabs .tab {
   padding: 15px 30px 13px 30px;
   background-color: #fff;
-  color: var(--wp--preset--color--heru-primary);
+  color: var(t--color-primary);
   font-weight: 700;
-  border: 2px solid var(--wp--preset--color--heru-primary);
+  border: 2px solid var(--color-primary);
   border-radius: 50px;
 }
 .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
@@ -128,16 +127,10 @@
   margin-bottom: 1rem;
 }
 .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content .content-wrapper ul li::before {
-  content: "✓";
+  content: "";
   width: 24px;
   height: 24px;
-  background-color: #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  flex-shrink: 0;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAxQzUuOTI0ODcgMSAxIDUuOTI0ODcgMSAxMkMxIDE4LjA3NTEgNS45MjQ4NyAyMyAxMiAyM0MxOC4wNzUxIDIzIDIzIDE4LjA3NTEgMjMgMTJDMjMgNS45MjQ4NyAxOC4wNzUxIDEgMTIgMVpNMTcuMjA3MSA5LjcwNzExQzE3LjU5NzYgOS4zMTY1OCAxNy41OTc2IDguNjgzNDIgMTcuMjA3MSA4LjI5Mjg5QzE2LjgxNjYgNy45MDIzNyAxNi4xODM0IDcuOTAyMzcgMTUuNzkyOSA4LjI5Mjg5TDEwLjUgMTMuNTg1OEw4LjIwNzExIDExLjI5MjlDNy44MTY1OCAxMC45MDI0IDcuMTgzNDIgMTAuOTAyNCA2Ljc5Mjg5IDExLjI5MjlDNi40MDIzNyAxMS42ODM0IDYuNDAyMzcgMTIuMzE2NiA2Ljc5Mjg5IDEyLjcwNzFMOS43OTI4OSAxNS43MDcxQzEwLjE4MzQgMTYuMDk3NiAxMC44MTY2IDE2LjA5NzYgMTEuMjA3MSAxNS43MDcxTDE3LjIwNzEgOS43MDcxMVoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=);
+  background-repeat: no-repeat;
+  background-position: center;
 }

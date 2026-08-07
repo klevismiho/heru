@@ -1,11 +1,12 @@
-@use '../../assets/src/scss/mixins' as *; 
+@use '../../assets/src/scss/mixins' as *;
 
 .wp-block-heru-tabs-with-content {
     margin: 4rem 0;
     font-family: var(--wp--preset--font-family--heru-heading-font);
+
     @include breakpoint(small) {
         margin: 6rem 0;
-            padding: 4rem 0;
+        padding: 4rem 0;
     }
 
     .section-header {
@@ -31,6 +32,7 @@
             justify-content: center;
             gap: 1rem;
             padding: 3rem 0;
+
             @include breakpoint-down(small) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -38,16 +40,16 @@
 
             .tab {
                 &.is-active {
-                    background-color: var(--wp--preset--color--heru-primary);
+                    background-color: var(--color-primary);
                     border: 2px solid transparent;
                     color: #FFFFFF;
                 }
 
                 padding: 15px 30px 13px 30px;
                 background-color: #fff;
-                color: var(--wp--preset--color--heru-primary);
+                color: var(t--color-primary);
                 font-weight: 700;
-                border: 2px solid var(--wp--preset--color--heru-primary);
+                border: 2px solid var(--color-primary);
                 border-radius: 50px;
             }
         }
@@ -59,6 +61,7 @@
                 align-items: center;
                 flex-direction: column;
                 display: none;
+
                 @include breakpoint(small) {
                     flex-direction: row;
                 }
@@ -105,18 +108,12 @@
                             margin-bottom: 1rem;
 
                             &::before {
-                                content: "✓";
+                                content: "";
                                 width: 24px;
                                 height: 24px;
-                                background-color: #000;
-                                border-radius: 50%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                color: white;
-                                font-weight: bold;
-                                font-size: 14px;
-                                flex-shrink: 0;
+                                background-image: url("../../assets/src/images/check-circle.svg");
+                                background-repeat: no-repeat;
+                                background-position: center;
                             }
                         }
                     }
