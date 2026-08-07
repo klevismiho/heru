@@ -124,6 +124,7 @@
 .wp-block-heru-features-details .section-inner .features-content {
   flex: 1;
   height: fit-content;
+  min-width: 0;
   padding: 2rem;
   background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 10%, white);
   border-radius: 20px;
@@ -136,6 +137,12 @@
 }
 .wp-block-heru-features-details .section-inner .features-content .feature-content h3 {
   margin-top: 0;
+}
+.wp-block-heru-features-details .section-inner .features-content .feature-content .feature-media .feature-video {
+  width: 100%;
+}
+.wp-block-heru-features-details .section-inner .features-content .feature-content .feature-media img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

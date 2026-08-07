@@ -110,6 +110,7 @@
         .features-content {
             flex: 1;
             height: fit-content;
+            min-width: 0;
             padding: 2rem;
             background-color: color-mix(in srgb, var(--wp--preset--color--heru-primary) 10%, white);
             border-radius: 20px;
@@ -123,6 +124,15 @@
 
                 h3 {
                     margin-top: 0;
+                }
+
+                .feature-media {
+                    .feature-video {
+                        width: 100%;
+                    }
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
