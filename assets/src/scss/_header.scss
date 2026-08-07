@@ -3,49 +3,11 @@
 .site-header {
     padding: 2rem 0;
 
-    @include breakpoint-down(small) {
-        .wp-block-navigation__responsive-container-close {
-            top: 15px;
-            right: 15px;
-        }
-        .wp-block-navigation__responsive-container-content {
-            padding: 1rem;
-            padding-top: 2rem;
-        }
-        .wp-block-navigation__container {
-            width: 100%;
-            li {
-                width: 100%;
-                .wp-block-navigation-item__content {
-                    display: block;
-                    width: 100%;
-                    padding: .5rem 1rem !important;
-                }
-            }
-        }
-    }
-
-    .wp-block-navigation {
+    .wp-block-heru-navigation {
         order: 1;
 
         @include breakpoint(small) {
             order: 2;
-        }
-
-        ul {
-            gap: 2rem;
-
-            li {
-                a {
-                    transition: .2s all;
-                }
-
-                &:hover {
-                    a {
-                        color: var(--color-primary);
-                    }
-                }
-            }
         }
     }
 
