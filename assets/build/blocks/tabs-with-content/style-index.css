@@ -83,7 +83,6 @@
 .wp-block-heru-tabs-with-content .tabs-container .tabs-content .tab-content {
   display: flex;
   gap: 4rem;
-  align-items: center;
   flex-direction: column;
   display: none;
 }

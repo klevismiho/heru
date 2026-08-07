@@ -156,6 +156,21 @@ function Edit({
       contents: updatedContents
     });
   };
+  const moveFeature = (index, direction) => {
+    const newIndex = index + direction;
+    if (newIndex < 0 || newIndex >= features.length) {
+      return;
+    }
+    const updatedFeatures = [...features];
+    const updatedContents = [...contents];
+    [updatedFeatures[index], updatedFeatures[newIndex]] = [updatedFeatures[newIndex], updatedFeatures[index]];
+    [updatedContents[index], updatedContents[newIndex]] = [updatedContents[newIndex], updatedContents[index]];
+    setAttributes({
+      features: updatedFeatures,
+      contents: updatedContents
+    });
+    setOpenIndex(newIndex);
+  };
   const addFeature = () => {
     setAttributes({
       features: [...features, {
@@ -179,8 +194,6 @@ function Edit({
       features: newFeatures,
       contents: newContents
     });
-
-    // Keep the open index valid after removing an item.
     if (openIndex >= newFeatures.length) {
       setOpenIndex(Math.max(0, newFeatures.length - 1));
     }
@@ -214,7 +227,26 @@ function Edit({
           onClick: () => setOpenIndex(index),
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "feature-header",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "feature-actions",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                icon: "arrow-up-alt2",
+                label: "Move up",
+                disabled: index === 0,
+                onClick: event => {
+                  event.stopPropagation();
+                  moveFeature(index, -1);
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                icon: "arrow-down-alt2",
+                label: "Move down",
+                disabled: index === features.length - 1,
+                onClick: event => {
+                  event.stopPropagation();
+                  moveFeature(index, 1);
+                }
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
               onClick: event => event.stopPropagation(),
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                 type: "checkbox",
@@ -272,28 +304,20 @@ function Edit({
             })
           }), content.mediaUrl && content.mediaType === 'image' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "feature-media-preview",
-            style: {
-              marginTop: '15px'
-            },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
               src: content.mediaUrl,
               alt: "",
               style: {
-                display: 'block',
                 maxWidth: '100%',
                 height: 'auto'
               }
             })
           }), content.mediaUrl && content.mediaType === 'video' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "feature-media-preview",
-            style: {
-              marginTop: '15px'
-            },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
               src: content.mediaUrl,
               controls: true,
               style: {
-                display: 'block',
                 maxWidth: '100%',
                 height: 'auto'
               }
